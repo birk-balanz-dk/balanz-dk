@@ -36,8 +36,7 @@ async function loadData() {
       { name: 'Lidl', file: 'TilbudLidl.csv' },
       { name: 'Netto', file: 'TilbudNetto.csv' },
       { name: 'REMA 1000', file: 'TilbudRema.csv' },
-      { name: 'Føtex', file: 'TilbudFoetex.csv' },
-	  { name: 'Discount365', file: '365.csv' }
+      { name: 'Føtex', file: 'TilbudFoetex.csv' }
     ];
 
     dealData = []; // Reset deals array
@@ -423,8 +422,7 @@ function generateShoppingList(mealPlan) {
     rema: [], 
     lidl: [], 
     netto: [], 
-    foetex: [],
-    discount365: [],	
+    foetex: [], 
     almindelig: [] 
   };
   
@@ -457,9 +455,6 @@ function generateShoppingList(mealPlan) {
           case 'foetex':
             targetList = shoppingList.foetex;
             break;
-			case 'discount365':
-  targetList = shoppingList.discount365;
-  break;
           default:
             targetList = shoppingList.almindelig;
         }
@@ -486,7 +481,7 @@ function generateShoppingList(mealPlan) {
     
     // Redistribute some "almindelig" items to real stores if possible
     const almindeligItems = shoppingList.almindelig || [];
-    const realStores = ['coop', 'rema', 'lidl', 'netto', 'foetex', 'discount365'];
+    const realStores = ['coop', 'rema', 'lidl', 'netto', 'foetex'];
     
     almindeligItems.forEach((item, index) => {
       if (nonEmptyStores.length < minStores && index < 2) {
