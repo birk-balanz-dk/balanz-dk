@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balanz.dk - Kom i gang</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .selected { 
+            background-color: #7B9B7D !important; 
+            color: white !important; 
+            border-color: #7B9B7D !important; 
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="max-w-2xl mx-auto px-4 py-8">
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">Balanz.dk</h1>
+            <p class="text-gray-600 text-lg">Skab din 5-dages madplan på få sekunder</p>
+        </div>
+
+        <!-- Step 1: Household Size -->
+        <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">Hvor mange personer?</h2>
+            <div id="householdSection" class="grid grid-cols-3 gap-4">
+                <button data-value="2" class="p-4 rounded-lg border-2 border-gray-300 text-gray-700 font-semibold hover:border-green-500 transition-colors">
+                    1-2 personer
+                </button>
+                <button data-value="4" class="p-4 rounded-lg border-2 border-gray-300 text-gray-700 font-semibold hover:border-green-500 transition-colors">
+                    3-4 personer
+                </button>
+                <button data-value="6" class="p-4 rounded-lg border-2 border-gray-300 text-gray-700 font-semibold hover:border-green-500 transition-colors">
+                    5+ personer
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 2: Budget -->
+        <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">Ugentligt budget?</h2>
+            <div id="budgetSection" class="grid grid-cols-3 gap-4">
+                <button data-value="500" class="p-4 rounded-lg border-2 border-gray-300 text-gray-700 font-semibold hover:border-green-500 transition-colors">
+                    500 kr
+                </button>
+                <button data-value="750" class="p-4 rounded-lg border-2 border-gray-300 text-gray-700 font-semibold hover:border-green-500 transition-colors">
+                    750 kr
+                </button>
+                <button data-value="1000" class="p-4 rounded-lg border-2 border-gray-300 text-gray-700 font-semibold hover:border-green-500 transition-colors">
+                    1000 kr
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 3: Preferences -->
+        <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">Madpræferencer?</h2>
+            <div id="preferencesSection" class="grid grid-cols-3 gap-4">
+                <button data-value="standard" class="p-4 rounded-lg border-2 border-gray-300 text-gray-700 font-semibold hover:border-green-500 transition-colors">
+                    Standard
+                </button>
+                <button data-value="reduced-meat" class="p-4 rounded-lg border-2 border-gray-300 text-gray-700 font-semibold hover:border-green-500 transition-colors">
+                    Reduced meat
+                </button>
+                <button data-value="organic" class="p-4 rounded-lg border-2 border-gray-300 text-gray-700 font-semibold hover:border-green-500 transition-colors">
+                    Organic
+                </button>
+            </div>
+        </div>
+
+        <!-- Generate Button -->
+        <div class="text-center">
+            <button id="generateBtn" class="w-full bg-gray-400 text-white font-bold py-4 px-6 rounded-xl text-lg cursor-not-allowed" disabled>
+                Vælg dine præferencer først
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let selectedHousehold = null;
+        let selectedBudget = null;
+        let selectedPreferences = null;
+
+        function setupButtonSection(sectionId, callback) {
+            const buttons = document.querySelectorAll(`#${sectionId} button`);
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove selection from all buttons in this section
+                    buttons.forEach(btn => btn.classList.remove('selected'));
+                    // Add selection to clicked button
+                    this.classList.add('selected');
+                    // Call callback with selected value
+                    callback(this.dataset.value);
+                    updateGenerateButton();
+                });
+            });
+        }
+
+        setupButtonSection('householdSection', (value) => selectedHousehold = value);
+        setupButtonSection('budgetSection', (value) => selectedBudget = value);
+        setupButtonSection('preferencesSection', (value) => selectedPreferences = value);
+
+        function updateGenerateButton() {
+            const generateBtn = document.getElementById('generateBtn');
+            
+            if (selectedHousehold && selectedBudget && selectedPreferences) {
+                generateBtn.classList.remove('bg-gray-400', 'cursor-not-allowed');
+                generateBtn.classList.add('bg-green-600', 'hover:bg-green-700');
+                generateBtn.disabled = false;
+                generateBtn.textContent = 'Generer min 5-dages madplan';
+            } else {
+                generateBtn.classList.add('bg-gray-400', 'cursor-not-allowed');
+                generateBtn.classList.remove('bg-green-600', 'hover:bg-green-700');
+                generateBtn.disabled = true;
+                generateBtn.textContent = 'Vælg dine præferencer først';
+            }
+        }
+
+        document.getElementById('generateBtn').addEventListener('click', async function() {
+            if (!selectedHousehold || !selectedBudget || !selectedPreferences) return;
+
+            this.textContent = 'Genererer madplan...';
+            this.disabled = true;
+
+            const preferences = {
+                household: parseInt(selectedHousehold),
+                budget: parseInt(selectedBudget),
+                preferences: selectedPreferences
+            };
+
+            console.log('Generating meal plan with:', preferences);
+
+            try {
+                const response = await fetch('/api/generate-meal-plan', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(preferences)
+                });
+
+                const result = await response.json();
+                
+                if (result.success) {
+                    // Store meal plan and redirect to main app
+                    localStorage.setItem('mealPlan', JSON.stringify(result.mealPlan));
+                    window.location.href = '/';
+                } else {
+                    alert('Fejl ved generering af madplan: ' + result.error);
+                    this.textContent = 'Generer min 5-dages madplan';
+                    this.disabled = false;
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Netværksfejl. Prøv igen.');
+                this.textContent = 'Generer min 5-dages madplan';
+                this.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>

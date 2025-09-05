@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balanz.dk - AI Madplanlægger</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'balanz-green': '#7B9B7D',
+                        'balanz-blue': '#A8C4D0', 
+                        'balanz-beige': '#F5F1ED'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .loading { animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .recipe-card { transition: all 0.2s ease; }
+        .recipe-card:hover { transform: translateY(-2px); }
+    </style>
+</head>
+<body class="bg-balanz-beige min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-balanz-green rounded-lg flex items-center justify-center">
+                    <span class="text-white font-bold text-xl">B</span>
+                </div>
+                <span class="text-2xl font-bold text-gray-800">Balanz<span class="text-balanz-blue">.dk</span></span>
+            </div>
+            <div class="text-sm text-gray-600">
+                <span class="bg-balanz-green text-white px-2 py-1 rounded-full text-xs">AI-Powered</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Hero Section -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">
+                Smart Madplan med <span class="text-balanz-green">AI</span>
+            </h1>
+            <p class="text-gray-600 text-lg">Personlig madplan baseret på aktuelle tilbud og dine præferencer</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left Column: Form -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-xl shadow-md p-6 sticky top-8">
+                    <h2 class="text-xl font-bold text-gray-800 mb-6">Skab din madplan</h2>
+                    
+                    <form id="mealPlanForm" class="space-y-6">
+                        <!-- Family Size -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Antal personer</label>
+                            <select id="familySize" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-balanz-green focus:border-transparent">
+                                <option value="1">1 person</option>
+                                <option value="2" selected>2 personer</option>
+                                <option value="4">Familie (4 personer)</option>
+                                <option value="6">Stor familie (6+ personer)</option>
+                            </select>
+                        </div>
+
+                        <!-- Budget -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Ugebudget</label>
+                            <div class="relative">
+                                <input type="range" id="budgetRange" min="300" max="1500" value="750" step="50" 
+                                       class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                                <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                    <span>300 kr</span>
+                                    <span>1500 kr</span>
+                                </div>
+                            </div>
+                            <div class="text-center mt-2">
+                                <span id="budgetDisplay" class="text-lg font-bold text-balanz-green">750 kr</span>
+                            </div>
+                        </div>
+
+                        <!-- Days -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Antal dage</label>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button type="button" class="day-btn p-2 border border-gray-300 rounded-lg text-center hover:bg-balanz-green hover:text-white transition-colors" data-days="3">3 dage</button>
+                                <button type="button" class="day-btn p-2 border border-gray-300 rounded-lg text-center hover:bg-balanz-green hover:text-white transition-colors bg-balanz-green text-white" data-days="5">5 dage</button>
+                                <button type="button" class="day-btn p-2 border border-gray-300 rounded-lg text-center hover:bg-balanz-green hover:text-white transition-colors" data-days="7">7 dage</button>
+                            </div>
+                        </div>
+
+                        <!-- Preferences -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-3">Præferencer</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="organicPref" class="mr-2 rounded">
+                                    <span class="text-sm text-gray-700">Prioritér økologiske varer</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="lessMeatPref" class="mr-2 rounded">
+                                    <span class="text-sm text-gray-700">Mindre kød, mere grønt</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="familyFriendly" class="mr-2 rounded" checked>
+                                    <span class="text-sm text-gray-700">Børnevenlige retter</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Generate Button -->
+                        <button type="submit" id="generateBtn" 
+                                class="w-full bg-balanz-green text-white font-bold py-4 px-6 rounded-lg text-lg hover:bg-opacity-90 transition-all duration-200">
+                            <span id="buttonText">Generer Smart Madplan</span>
+                            <div id="loadingSpinner" class="loading w-5 h-5 border-2 border-white border-t-transparent rounded-full mx-auto hidden"></div>
+                        </button>
+
+                        <div class="text-xs text-gray-500 text-center">
+                            <span class="bg-yellow-100 px-2 py-1 rounded">Inkluderer skjulte sundhedsopgraderinger</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Right Column: Results -->
+            <div class="lg:col-span-2">
+                <div id="resultsContainer" class="hidden">
+                    <!-- Results will be populated here -->
+                </div>
+
+                <!-- Placeholder -->
+                <div id="placeholder" class="text-center py-16">
+                    <div class="w-24 h-24 bg-balanz-green bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-4xl">🍽️</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Klar til at lave din madplan?</h3>
+                    <p class="text-gray-600">Udfyld præferencerne til venstre og lad AI'en finde de bedste tilbud til dig.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let selectedDays = 5;
+        let currentMealPlanData = null;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeBudgetSlider();
+            initializeDayButtons();
+            initializeForm();
+        });
+
+        function initializeBudgetSlider() {
+            const budgetRange = document.getElementById('budgetRange');
+            const budgetDisplay = document.getElementById('budgetDisplay');
+            
+            budgetRange.addEventListener('input', function() {
+                budgetDisplay.textContent = this.value + ' kr';
+            });
+        }
+
+        function initializeDayButtons() {
+            const dayButtons = document.querySelectorAll('.day-btn');
+            
+            dayButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    dayButtons.forEach(b => {
+                        b.classList.remove('bg-balanz-green', 'text-white');
+                        b.classList.add('border-gray-300');
+                    });
+                    
+                    // Add active class to clicked button
+                    this.classList.add('bg-balanz-green', 'text-white');
+                    this.classList.remove('border-gray-300');
+                    
+                    selectedDays = parseInt(this.dataset.days);
+                });
+            });
+        }
+
+        function initializeForm() {
+            const form = document.getElementById('mealPlanForm');
+            
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                await generateMealPlan();
+            });
+        }
+
+        async function generateMealPlan() {
+            const generateBtn = document.getElementById('generateBtn');
+            const buttonText = document.getElementById('buttonText');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const resultsContainer = document.getElementById('resultsContainer');
+            const placeholder = document.getElementById('placeholder');
+
+            // Show loading state
+            generateBtn.disabled = true;
+            buttonText.classList.add('hidden');
+            loadingSpinner.classList.remove('hidden');
+
+            try {
+                // Collect form data
+                const formData = {
+                    familySize: parseInt(document.getElementById('familySize').value),
+                    budget: parseInt(document.getElementById('budgetRange').value),
+                    days: selectedDays,
+                    preferences: {
+                        organic: document.getElementById('organicPref').checked,
+                        lessMeat: document.getElementById('lessMeatPref').checked,
+                        familyFriendly: document.getElementById('familyFriendly').checked
+                    }
+                };
+
+                console.log('Generating meal plan with:', formData);
+
+                // Call API
+                const response = await fetch('/api/generate-meal-plan', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                console.log('Response status:', response.status);
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    console.error('API Error:', errorText);
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                console.log('API Response:', result);
+
+                if (result.success) {
+                    displayMealPlan(result);
+                    placeholder.classList.add('hidden');
+                    resultsContainer.classList.remove('hidden');
+                } else {
+                    throw new Error(result.error || 'Unknown error occurred');
+                }
+
+            } catch (error) {
+                console.error('Error generating meal plan:', error);
+                alert('Der opstod en fejl ved generering af madplan. Prøv venligst igen.\n\nFejl: ' + error.message);
+            } finally {
+                // Reset button state
+                generateBtn.disabled = false;
+                buttonText.classList.remove('hidden');
+                loadingSpinner.classList.add('hidden');
+            }
+        }
+
+        function displayMealPlan(data) {
+            // Store data globally for print function
+            currentMealPlanData = data;
+            
+            const resultsContainer = document.getElementById('resultsContainer');
+            
+            // Debug: Log the actual response structure
+            console.log('Received data:', data);
+            console.log('Shopping list structure:', data.shoppingList);
+            
+            const html = `
+                <!-- Summary Card -->
+                <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <div class="text-3xl font-bold text-balanz-green">${Math.round(data.totalCost)} kr</div>
+                            <div class="text-sm text-gray-600">Total pris</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-balanz-blue">${Math.round(data.totalDealMatches/data.totalIngredients*100)}%</div>
+                            <div class="text-sm text-gray-600">På tilbud</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-gray-800">${data.mealPlan.length}</div>
+                            <div class="text-sm text-gray-600">Retter</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold ${data.savings >= 0 ? 'text-green-600' : 'text-red-600'}">${Math.round(data.savings)} kr</div>
+                            <div class="text-sm text-gray-600">Besparelse</div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="text-gray-700">${data.summary}</p>
+                    </div>
+                </div>
+
+                <!-- Meal Plan -->
+                <div class="space-y-4">
+                    ${data.mealPlan.map((meal, index) => `
+                        <div class="recipe-card bg-white rounded-xl shadow-md overflow-hidden">
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div>
+                                        <h3 class="text-xl font-bold text-gray-800">Dag ${meal.day}: ${meal.recipe}</h3>
+                                        <div class="flex items-center space-x-4 mt-1 text-sm text-gray-600">
+                                            <span>👥 ${meal.servings} pers</span>
+                                            <span>💰 ${meal.cost} kr</span>
+                                            <span>🎯 ${meal.dealMatches} tilbud</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">
+                                        🥷 Stealth Upgrade
+                                    </div>
+                                </div>
+
+                                <div class="bg-green-50 border border-green-200 rounded-lg p-3 mb-4">
+                                    <h4 class="font-semibold text-green-800 text-sm mb-1">Balanz Opgradering:</h4>
+                                    <p class="text-green-700 text-sm">${meal.stealthUpgrade}</p>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">🛒 Indkøbsliste:</h4>
+                                    <ul class="space-y-1">
+                                        ${meal.ingredients.map(ing => `
+                                            <li class="flex justify-between text-sm">
+                                                <span class="flex items-center">
+                                                    ${ing.onSale ? '✅' : '⚫'} ${ing.item}
+                                                    ${ing.store !== 'Almindelig' ? `<span class="text-xs text-gray-500 ml-2">(${ing.store})</span>` : ''}
+                                                </span>
+                                                <span class="font-semibold">
+                                                    ${ing.onSale ? `${ing.price} kr` : `~${ing.price} kr`}
+                                                </span>
+                                            </li>
+                                        `).join('')}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+
+                <!-- Shopping List - Dynamic based on actual response -->
+                <div class="mt-8 bg-white rounded-xl shadow-md p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-bold text-gray-800">🏪 Komplet Indkøbsguide</h3>
+                        <button onclick="printShoppingList()" 
+                                class="bg-balanz-green text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors flex items-center space-x-2">
+                            <span>🖨️</span>
+                            <span>Print Liste</span>
+                        </button>
+                    </div>
+                    
+                    ${generateShoppingListHTML(data.shoppingList)}
+
+                    <div class="mt-4 text-xs text-gray-500 bg-gray-50 p-3 rounded-lg">
+                        💡 <strong>Tips:</strong> Krydderier, salt, peber og olie antages at være hjemme allerede
+                    </div>
+                </div>
+
+                <!-- Generate New Plan Button -->
+                <div class="text-center mt-6">
+                    <button onclick="generateMealPlan()" 
+                            class="bg-balanz-blue text-white font-semibold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors">
+                        🔄 Generer ny madplan
+                    </button>
+                </div>
+            `;
+            
+            resultsContainer.innerHTML = html;
+        }
+
+        function generateShoppingListHTML(shoppingList) {
+            if (!shoppingList || Object.keys(shoppingList).length === 0) {
+                return '<p class="text-gray-500">Ingen indkøbsliste tilgængelig</p>';
+            }
+
+            const storeNames = {
+                'coop': 'Coop',
+                'rema': 'REMA 1000', 
+                'lidl': 'Lidl',
+                'netto': 'Netto',
+                'foetex': 'Føtex',
+                'almindelig': 'Anden butik'
+            };
+
+            const storeColors = {
+                'coop': 'blue-800',
+                'rema': 'red-800',
+                'lidl': 'yellow-800', 
+                'netto': 'green-800',
+                'foetex': 'purple-800',
+                'almindelig': 'gray-800'
+            };
+
+            let html = '<div class="grid md:grid-cols-2 gap-6">';
+            
+            Object.keys(shoppingList).forEach((storeKey, index) => {
+                const items = shoppingList[storeKey] || [];
+                if (items.length === 0) return;
+                
+                const storeName = storeNames[storeKey] || storeKey;
+                const colorClass = storeColors[storeKey] || 'gray-800';
+                
+                html += `
+                    <div>
+                        <h4 class="font-semibold text-${colorClass} mb-2">${storeName} (${items.length} varer)</h4>
+                        <ul class="space-y-1">
+                            ${items.map(item => `
+                                <li class="flex justify-between text-sm">
+                                    <span class="flex items-center">
+                                        ${item.onSale ? '✅' : '⚫'} ${item.item}
+                                    </span>
+                                    <span class="font-semibold">
+                                        ${item.onSale ? `${item.price} kr` : `~${item.price} kr`}
+                                        <span class="text-xs text-gray-500 ml-1">
+                                            ${item.onSale ? '(På tilbud)' : '(Estimeret)'}
+                                        </span>
+                                    </span>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                `;
+                
+                // Add break after every 2 stores for better layout
+                if ((index + 1) % 2 === 0) {
+                    html += '</div><div class="grid md:grid-cols-2 gap-6 mt-6">';
+                }
+            });
+            
+            html += '</div>';
+            
+            return html;
+        }
+
+        function printShoppingList() {
+    if (!currentMealPlanData) {
+        alert('Ingen madplan data fundet. Generer venligst en madplan først.');
+        return;
+    }
+
+    // Store data in localStorage only
+    localStorage.setItem('currentMealPlan', JSON.stringify(currentMealPlanData));
+    
+    // Open print window without data in URL
+    const printWindow = window.open('/print-shopping-list.html?autoprint=true', '_blank', 'width=800,height=600');
+    
+    // Fallback if popup is blocked
+    if (!printWindow) {
+        alert('Din browser blokerede pop-up vinduet. Åbner i ny fane i stedet.');
+        window.open('/print-shopping-list.html', '_blank');
+    }
+}
+    </script>
+</body>
+</html>
