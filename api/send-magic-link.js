@@ -36,7 +36,7 @@ export default async function handler(req, res) {
     
     // Create magic link
     const baseUrl = req.headers.origin || `https://${req.headers.host}`;
-    const magicLink = `${baseUrl}/verify?token=${token}`;
+    const magicLink = `${baseUrl}/api/verify?token=${token}`;
 
     if (hasResendKey) {
       // Try to send real email
@@ -82,3 +82,4 @@ export default async function handler(req, res) {
     });
   }
 }
+
