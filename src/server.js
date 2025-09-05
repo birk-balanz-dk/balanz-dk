@@ -1025,7 +1025,7 @@ app.post('/api/send-magic-link', async (req, res) => {
     
     // Send email
     await resend.emails.send({
-      from: 'Balanz.dk <noreply@resend.dev>',
+      from: 'Balanz Meal Planner <mister.birk@gmail.com>',
       to: [email],
       subject: 'Din adgang til Balanz.dk',
       html: `
