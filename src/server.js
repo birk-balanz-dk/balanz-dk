@@ -4,15 +4,11 @@ const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
 const Papa = require('papaparse');
-const jwt = require('jsonwebtoken');
-const { Resend } = require('resend');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Initialize Resend and JWT secret
-const resend = new Resend(process.env.RESEND_API_KEY);
-const JWT_SECRET = process.env.JWT_SECRET || 'fallback-secret-for-local-dev';
 
 app.use(cors());
 app.use(express.json());
@@ -36,7 +32,8 @@ async function loadData() {
       { name: 'Lidl', file: 'TilbudLidl.csv' },
       { name: 'Netto', file: 'TilbudNetto.csv' },
       { name: 'REMA 1000', file: 'TilbudRema.csv' },
-      { name: 'Føtex', file: 'TilbudFoetex.csv' }
+      { name: 'Føtex', file: 'TilbudFoetex.csv' },
+	  { name: 'Discount365', file: '365.csv' }
     ];
 
     dealData = []; // Reset deals array
@@ -422,7 +419,8 @@ function generateShoppingList(mealPlan) {
     rema: [], 
     lidl: [], 
     netto: [], 
-    foetex: [], 
+    foetex: [],
+    discount365: [],	
     almindelig: [] 
   };
   
@@ -455,6 +453,9 @@ function generateShoppingList(mealPlan) {
           case 'foetex':
             targetList = shoppingList.foetex;
             break;
+			case 'discount365':
+  targetList = shoppingList.discount365;
+  break;
           default:
             targetList = shoppingList.almindelig;
         }
@@ -481,7 +482,7 @@ function generateShoppingList(mealPlan) {
     
     // Redistribute some "almindelig" items to real stores if possible
     const almindeligItems = shoppingList.almindelig || [];
-    const realStores = ['coop', 'rema', 'lidl', 'netto', 'foetex'];
+    const realStores = ['coop', 'rema', 'lidl', 'netto', 'foetex', 'discount365'];
     
     almindeligItems.forEach((item, index) => {
       if (nonEmptyStores.length < minStores && index < 2) {
@@ -1003,58 +1004,17 @@ app.get('/print-shopping-list.html', (req, res) => {
 });
 // ... your existing code ...
 
-// Magic link authentication with Resend
+// Simple demo authentication endpoints
 app.post('/api/send-magic-link', async (req, res) => {
-  try {
-    const { email } = req.body;
-    
-    if (!email || !email.includes('@')) {
-      return res.status(400).json({ error: 'Invalid email' });
-    }
-
-    // Generate JWT token (expires in 30 minutes)
-    const token = jwt.sign({ email, timestamp: Date.now() }, JWT_SECRET, { expiresIn: '30m' });
-    
-    // Create magic link
-    const magicLink = `https://balanz-dk.vercel.app/verify?token=${token}`;
-    
-    // Send email
-    await resend.emails.send({
-      from: 'Balanz Meal Planner <mister.birk@gmail.com>',
-      to: [email],
-      subject: 'Din adgang til Balanz.dk',
-      html: `
-        <h2>Velkommen til Balanz.dk</h2>
-        <p>Klik på linket for at få adgang til din madplan:</p>
-        <a href="${magicLink}" style="background: #7B9B7D; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px;">Åbn Balanz.dk</a>
-        <p><small>Linket udløber om 30 minutter</small></p>
-      `
-    });
-
-    res.json({ success: true });
-  } catch (error) {
-    console.error('Magic link error:', error);
-    res.status(500).json({ error: 'Failed to send email' });
-  }
+  const { email } = req.body;
+  console.log('Magic link requested for:', email);
+  res.json({ success: true, message: 'Magic link sent (demo mode)' });
 });
 
 app.get('/verify', (req, res) => {
-  try {
-    const { token } = req.query;
-    
-    if (!token) {
-      return res.redirect('/login.html?error=Missing token');
-    }
-
-    // Verify JWT token
-    const decoded = jwt.verify(token, JWT_SECRET);
-    
-    // Redirect to planner on success
-    res.redirect('/planner.html?verified=true');
-  } catch (error) {
-    console.error('Token verification error:', error);
-    res.redirect('/login.html?error=Invalid or expired link');
-  }
+  const { token } = req.query;
+  console.log('Verification requested with token:', token);
+  res.redirect('/planner.html?verified=true');
 });
 
 // Initialize server
