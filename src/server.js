@@ -40,7 +40,7 @@ async function loadData() {
 
     for (const supermarket of supermarketFiles) {
       try {
-        const csvData = fs.readFileSync(path.join(__dirname, `../${supermarket.file}`), 'utf8');
+        const csvData = fs.readFileSync(path.join(__dirname, '../public/data/', supermarket.file), 'utf8');
         const parsedDeals = Papa.parse(csvData, { header: true, skipEmptyLines: true }).data;
         
         // Add store identifier to each deal
@@ -68,7 +68,7 @@ async function loadData() {
 
     for (const recipeSource of recipeFiles) {
       try {
-        const csvData = fs.readFileSync(path.join(__dirname, `../${recipeSource.file}`), 'utf8');
+        const csvData = fs.readFileSync(path.join(__dirname, '../public/data/', recipeSource.file), 'utf8');
         const parsedRecipes = Papa.parse(csvData, { header: true, skipEmptyLines: true }).data;
         
         // Add source identifier to each recipe
