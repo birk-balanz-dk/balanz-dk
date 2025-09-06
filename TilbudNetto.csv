@@ -1,191 +1,165 @@
-Category,Deal Name,Amount,Price,,
-Organic,God Morgen shot eller økologisk juice,450-850 ml,42.-,,
-Organic,Kærgården økologisk smørbar,200 g,18.-,,
-Organic,Løgismose økologisk hakket oksekød 14-18%,300 g,40.-,,
-Organic,Løgismose økologisk rygeost,170 g,15.-,,
-Organic,Løgismose økologisk skyr,800 g,25.-,,
-Organic,ØGO økologiske bønner kikærter eller tomater,244-400 g,10.-,,
-Organic,ØGO økologisk dansk hokkaido græskar,Pr. stk.,12.-,,
-Organic,ØGO økologiske danske rødbeder,1 kg,10.-,,
-Organic,ØGO økologisk fuldkornspasta,500 g,8.37,,
-Organic,ØGO økologiske havregryn- Finvalsede eller grovvalsede,1 kg,10.-,,
-Organic,ØGO økologiske kartofler,1 kg,16.-,,
-Organic,ØGO økologiske kerne-knækbrød med havsalt,190 g,15.37,,
-Organic,ØGO økologisk sodavand,1 liter,10.-,,
-Organic,ØGO økologiske valnøddekerner,150 g,20.-,,
-Organic,Rock&Roots Organic Rødvin eller hvidvin,75 cl,28.-,,
-Organic,Urtekram økologisk ekstra jomfru olivenolie,1000 ml,99.-,,
-Organic,Valsemøllen økologisk mel,1 kg,15.-,,
-Produce,Danske porrer,2 stk,10.-,,
-Produce,La Campagna udenlandske specialiteter,50-250 g,10.-,,
-Produce,Næmt basissalat,200 g,10.-,,
-Produce,Premieur blommeabrikoser,8 stk,25.-,,
-Produce,Premieur stenfrie røde druer,750 g,28.-,,
-Meat & Poultry,Bistronne kyllingeburger,300 g,10.-,,
-Meat & Poultry,Bistronne kyllingemarked,Various,49.-,,
-Meat & Poultry,Brunchy bacon i strimler,200 g,20.-,,
-Meat & Poultry,Burger BOOST af dansk okse,Various,16.-,,
-Meat & Poultry,Dansk hakket kyllingekød 7-10% eller kyllingeinderfilet,1000 G,35.-,,
-Meat & Poultry,Dansk hakket kyllingekød 7-10% eller kyllingeinderfilet,500 G,10.-,,
-Meat & Poultry,Dansk hakket kyllingekød 7-10% eller kyllingeinderfilet,500 G,19.95,,
-Meat & Poultry,Dansk hel kylling,1350 g,45.-,,
-Meat & Poultry,Kyllingebrystfilet,750 g,59.-,,
-Meat & Poultry,Løgismose hel kylling,Various,25.-,,
-Meat & Poultry,Oksekebab,300 g,22.-,,
-Meat & Poultry,Velsmag dansk ribbenssteg,500 g,19.95,,
-Meat & Poultry,Velsmag entrecotes,600 g,129.-,,
-Meat & Poultry,Velsmag hakket oksekød 14-18%,400 g,45.-,,
-Meat & Poultry,Velsmag hakket oksekød 7-10%,650 g,75.-,,
-Meat & Poultry,Velsmag marineret koteletter eller strimler af gris,250 g,25.-,,
-Meat & Poultry,Velsmag marineret koteletter eller strimler af gris,350 g,40.-,,
-Meat & Poultry,Velsmag marineret nakkekoteletter eller dansk hakket grise- og kalvekød 4-7%,600-700 g,55.-,,
-Meat & Poultry,Velsmag marineret oksefilet,800-1000 g,109.-,,
-Fish & Seafood,Bådsmand fiskefrikadeller laksetopping eller varmrøget makrel,Various,14.-,,
-Fish & Seafood,Grønlandske rejer gravad eller røget laks,200-300 g,59.-,,
-Fish & Seafood,Grønlandske rejer eller panerede fisk,Various,25.-,,
-Fish & Seafood,Premieur varmrøget laks,Various,49.-,,
-Fish & Seafood,Sæby makrel i tomat 6-pak eller Glyngøre tun 4-pak- Filet eller findelt makrel tun i vand eller olie,420-750 g,25.-,,
-Dairy & Eggs,Athena græsk yoghurt,Various,12.-,,
-Dairy & Eggs,Buko smelteost,200 g,13.-,,
-Dairy & Eggs,Danske frilandsæg,Various,20.-,,
-Dairy & Eggs,Egelykke fraiche 9%,500 g,16.-,,
-Dairy & Eggs,Egelykke smørbar,200 g,14.-,,
-Dairy & Eggs,Fellino frisk mozarella ost,125 g,7.5,,
-Dairy & Eggs,Grønnelund skære- eller skiveost,Various,22.-,,
-Dairy & Eggs,Løgismose skiveost eller blå ost,125-150 g,25.-,,
-Dairy & Eggs,Revet pizza- eller mexi topping,150 g,10.-,,
-Dairy & Eggs,Zanetti Parmigiano Reggiano,200 g,45.-,,
-Deli & Cold Cuts,3-Stjernet pålæg eller pepperoni,100-125 g,12.-,,
-Deli & Cold Cuts,K-salat min første pålægssalat- Torskerognssalat æggesalat eller kyllingesalat,150 g,12.-,,
-Deli & Cold Cuts,Lampe storkøbspølser- Cheese BBQ frankfurter,840 g,59.-,,
-Deli & Cold Cuts,Pølsemesteren pølser,400-500 g,25.-,,
-Deli & Cold Cuts,Stryhns postej eller røget medister,Various,20.-,,
-Bakery & Crackers,Bakersfield mini baguettes,750 g,15.-,,
-Bakery & Crackers,Fiorentini glutenfri riskiks,40 g,10.-,,
-Bakery & Crackers,Kohberg brød- Solsikkerugbrød durum café sandwich eller yoghurtboller,440-750 g,20.-,,
-Bakery & Crackers,Kohberg fuldkorns-burgerboller,330 g,16.-,,
-Bakery & Crackers,Leibniz Disney Frost kiks,125 g,10.-,,
-Bakery & Crackers,Løgismose mini cookies- Mandel/honning eller chokolade,180 g,29.-,,
-Bakery & Crackers,Løgismose rugkiks,180 g,29.-,,
-Bakery & Crackers,Oreo Cookies,154-157 g,15.-,,
-Bakery & Crackers,Pågen solstykker,360 g,11.97,,
-Bakery & Crackers,Sigdal glutenfri knækbrød,190 g,25.-,,
-Pantry-Grains-Pasta & Baking,Garofalo pasta,500 g,15.-,,
-Pantry-Grains-Pasta & Baking,Reeva nudler,75 g,10.-,,
-Pantry-Grains-Pasta & Baking,Tørsleffs vanilje-stænger,5-pak (15 g),30.-,,
-Pantry-Canned & Jars,Karolines Køkken suppe- Karry tomat eller kartoffel/porre,1 liter,15.-,,
-Pantry-Canned & Jars,Karolines Køkken tomat-suppe,1 liter,22.-,,
-Pantry-Canned & Jars,Løgismose antipasti- Soltørrede tomater eller grillede peberfrugter,110-159 g,20.-,,
-Pantry-Canned & Jars,Mutti pizzasauce,400 g,12.-,,
-Pantry-Canned & Jars,Samsø Syltefabriks rødbedetern,250 g,12.-,,
-Pantry-Condiments-Oils & Sweeteners,Goma dressing,500 ml,29.-,,
-Pantry-Condiments-Oils & Sweeteners,Hellmann's mayonnaise,200 g,8.97,,
-Pantry-Condiments-Oils & Sweeteners,Jakobsens akacie- eller hverdags-honning,Various,22.-,,
-Pantry-Condiments-Oils & Sweeteners,K-Salat bearnaisesauce,325 g,15.-,,
-Frozen Food,Casa Tarradellas pizza,400-430 g,22.-,,
-Frozen Food,Dr. Oetker tradizionale pizza,Various,29.-,,
-Frozen Food,Harvest Best grøntsager eller stir fry,70-750 g,12.-,,
-Prepared Meals & Sides,Løgismose færdigret,1000 g,85.-,,
-Prepared Meals & Sides,Næmt orientalsk inspireret færdigret,800 g,30.-,,
-Prepared Meals & Sides,Peka flødekartofler,Various,10.-,,
-Snacks & Sweets,Carletti skum,60 g,10.-,,
-Snacks & Sweets,Chocobella mørk chokolade,100 g,14.-,,
-Snacks & Sweets,Elephant pretzel,125 g,12.-,,
-Snacks & Sweets,Remix slikpose,120 g,15.-,,
-Snacks & Sweets,Samba flødeboller,6-pak,25.-,,
-Snacks & Sweets,Sereno chilipeanuts,200 g,9.97,,
-Drinks-Hot,Amora formalet kaffe,400 g,35.-,,
-Drinks-Hot,Lavazza helbønner,Various,149.-,,
-Drinks-Hot,Løgismose kaffe helbønner eller formalet kaffe,200 g / 300 g,30.-,,
-Drinks-Hot,Merrild mellemristet eller Gevalia original formalet kaffe 3-pak,Various,149.-,,
-Drinks-Juice & Soft Drinks,Blue Keld vitamin drik,50 cl,7.-,,
-Drinks-Juice & Soft Drinks,Coca-cola sodavand- Hvid fersken jordbær eller vanilje,33 cl,15.-,,
-Drinks-Juice & Soft Drinks,Faxe Kondi eller Pepsi Max sodavand,1.5 liter,17.-,,
-Drinks-Juice & Soft Drinks,Peter Larsen iskaffe,Various,12.-,,
-Drinks-Juice & Soft Drinks,Red Bull,25 cl,10.-,,
-Drinks-Juice & Soft Drinks,Rynkeby 16-serien eller Naturig,1 liter,22.-,,
-Drinks-Beer & Wine,Auguste Bessac,Various,110.-,,
-Drinks-Beer & Wine,Blanc eller ambre,44 cl,4.5,,
-Drinks-Beer & Wine,Carlsberg Pilsner eller 1883,Various,45.-,,
-Drinks-Beer & Wine,Løgismose Bag-in-Box- Rødvin hvidvin eller rosé,2.25 liter,99.-,,
-Drinks-Beer & Wine,Mucho Mas,Various,110.-,,
-Drinks-Beer & Wine,Star Golden Zin eller Uno Grande Bag-in-Box,2.25-3 liter,89.-,,
-Pet Supplies,Cesar Sheba eller Pedigree snacks,53-150 g,12.-,,
-Pet Supplies,Hund hundeposer,40 stk,6.-,,
-Pet Supplies,Purina Latz partymix,60 g,10.-,,
-Pet Supplies,Raakraft snacks,75-100 g,15.-,,
-Pet Supplies,Raakraft tørfoder,5 kg,99.-,,
-Pet Supplies,Whiskas menuboks 12-pak eller tørkost,12-pak / Various,42.-,,
-Personal Care,Badesvamp 100% genanvendt polyethylen,5 x 30 cm,16.-,,
-Personal Care,Badesvamp 100% genanvendt polyethylen,Dia.: 12 cm,16.-,,
-Personal Care,Colgate tandpasta,Various,14.-,,
-Personal Care,Garnier micellar water L'Oréal Paris dag eller natcreme,50-400 ml,39.-,,
-Personal Care,Hårturban 100% økologisk bomuld,24 x 67 cm,30.-,,
-Personal Care,Neutral kropspleje,50-500 ml / 200 g,49.-,,
-Personal Care,Pantene shampoo eller balsam,160-250 ml,20.-,,
-Household & Cleaning,A+ flydende vaskemiddel eller pods,Various,40.-,,
-Household & Cleaning,Godt papir toiletpapir eller køkkenrulle,6 rl. / 3 rl.,20.-,,
-Household & Cleaning,Vel opvaskemiddel eller Bref WC-blok,475-500 ml / 50 g / 1-pak,15.-,,
-Home Textiles,Bademåtte 100% økologisk bomuld,50 x 80 cm,69.-,,
-Home Textiles,Håndklæder 100% økologisk bomuld,2-pak 50 x 100 cm,69.-,,
-Home Textiles,Håndklæder 100% økologisk bomuld,70 x 140 cm,69.-,,
-Home Textiles,Lagen 100% økologisk bomuldssatin Hvid,140 x 200 cm,129.-,,
-Home Textiles,Lagen 100% økologisk bomuldssatin Hvid,180 x 200 cm,149.-,,
-Home Textiles,Lagen 100% økologisk bomuldssatin Hvid,90 x 200 cm,99.-,,
-Home Textiles,Sengetøj 100% økologisk bomuldssatin,140 x 200 cm eller 140 x 220 cm,189.-,,
-Home Textiles,Vaskeklude 100% økologisk bomuld,5-pak (30 x 30 cm),40.-,,
-Home Goods & Decor,Badeforhæng 100% genanvendt polyester,180 x 200 cm,119.-,,
-Home Goods & Decor,Badeværelsestilbehør i marmor- Skål sæbeholder sæbedispenser eller tandbørstekrus,Various,59.-,,
-Home Goods & Decor,Brusestangshylde,Metal,40.-,,
-Home Goods & Decor,Brusehoved med vandforbrugsindikator,Farvekodet LED-indikator,99.-,,
-Home Goods & Decor,Dekoration- Buddhafigur fad eller lysholder,Various,39.-,,
-Home Goods & Decor,Duftlys Paraffin,Brændetid ca. 15 timer,30.-,,
-Home Goods & Decor,Duftlys Paraffin,Brændetid ca. 20 timer,20.-,,
-Home Goods & Decor,Duftolie,100 ml,30.-,,
-Home Goods & Decor,Duftolie,200 ml,40.-,,
-Home Goods & Decor,Gulvtæppe 100% jute,70 x 140 cm,199.-,,
-Home Goods & Decor,Kunstigt bonsaitræ,H: 24-43 cm,149.-,,
-Home Goods & Decor,Kurv 100% søgræs,19 x 19 x 14 cm eller 21 x 21 x 14 cm,59.-,,
-Home Goods & Decor,Kurv 100% søgræs,20 x 10 x 10 cm eller 2-pak 9 x 9 x 10 cm,40.-,,
-Home Goods & Decor,Kurv 100% søgræs,30 x 30 x 19 cm,129.-,,
-Home Goods & Decor,Kurv 100% søgræs,38 x 38 x 23 cm,149.-,,
-Home Goods & Decor,Kurv 100% søgræs,43 x 43 x 24 cm,169.-,,
-Home Goods & Decor,Kurv 100% søgræs,Dia.: 29 cm H: 24 cm,119.-,,
-Home Goods & Decor,Lanterne i metal,Dia.: 15.35-17 cm H: 17-18 cm,69.-,,
-Home Goods & Decor,Lanterne i metal,Dia.: 25 cm H: 38 cm,139.-,,
-Home Goods & Decor,Marmorfad,Dia.: 20 cm x H: 2 cm eller 20 x 20 cm,129.-,,
-Home Goods & Decor,Massagebrusehoved med filter,Inkl. 10 bomuldsfiltre,99.-,,
-Home Goods & Decor,Ophæng med trådkurve,25 x 15,5 x H: 66-76,5 cm,139.-
-Home Goods & Decor,Pyntepude 100% genanvendt polyester,40 x 40 cm,69.-,,
-Home Goods & Decor,Pyntepude 100% genanvendt polyester,50 x 17 cm,89.-,,
-Home Goods & Decor,Tæppe 100% genanvendt polyester,130 x 170 cm,119.-,,
-Home Goods & Decor,Tilbehør til badeværelset- Svaber brusedyse eller 2-pak smalle rengøringsbørster,Various,25.-,,
-Home Goods & Decor,Toiletbørste,H: 39 cm,50.-,,
-Home Goods & Decor,Toiletspand,1 liter,69.-,,
-Kitchenware,Drikkeflaske Plast,1 liter,30.-,,
-Kitchenware,Opbevaringsbokse med 3 rum,4-pak (900 ml),40.-,,
-Kitchenware,Paninigrill,Grillflade: 27.6 cm x 17 cm,169.-,,
-Kitchenware,Tilbehør til dit æg- Æggeåbner æggedeler eller 4-pak æggebægre,Various,25.-,,
-Kitchenware,Æggeur eller Opbevaringsboks med elastisk låg,Various,25.-,,
-Sport & Fitness,Boxershorts,3-pak (Str. M-XXL),99.-,,
-Sport & Fitness,Elastikbånd,3-pak,30.-,,
-Sport & Fitness,Kinesiotape,Various,30.-,,
-Sport & Fitness,Løbe-bh,Str. S-XXL,79.-,,
-Sport & Fitness,Løbetights,Str. S-XXL,89.-,,
-Sport & Fitness,Såler med gele,Str. 35-46,30.-,,
-Sport & Fitness,T-shirt,Str. M-XXL,79.-,,
-Sport & Fitness,Trigger massage-bold i kork,2-pak (8 cm),30.-,,
-Sport & Fitness,Yogablok i kork,2-pak (22.5 x 15 x 7.5 cm),99.-,,
-Sport & Fitness,Yogamåtte med overside i kork,183 x 61 x 0,4 cm,99.-,
-Clothing & Accessories,Badekåbe 100% økologisk bomuld,S/M eller L/XL,199.-,,
-Clothing & Accessories,Bukser med vidde,Str. S-XXL,99.-,,
-Clothing & Accessories,Håraccessories,Flere varianter,25.-,,
-Clothing & Accessories,Slippers,Str. 40-45,89.-,,
-Clothing & Accessories,Strømper 3-pak,Str. 36-48,25.-,,
-Clothing & Accessories,Strømper 3-pak,Str. 37-41,30.-,,
-Clothing & Accessories,Strømper 5-pak,Str. 36-45,40.-,,
-Clothing & Accessories,Sømløse leggings eller top,Str. S-XXL,59.-,,
-Clothing & Accessories,Taske,Flere varianter,99.-,,
-Clothing & Accessories,Top i rib,Str. S-XXL,40.-,,
-Stationery & Books,Malebog,21 x 28 cm (96 sider),50.-,,
-Stationery & Books,Spirituelle kort- Engle tarot- eller drømmetyderkort,Various,40.-,,
+Category,Deal Name,Amount,Price
+Bakery & Bread,Finton's lagkagebunde,240 g,12.-
+Bakery & Bread,Karen Volf kager,144-150 g,12.-
+Bakery & Bread,Kohberg grov café sandwich,400 g,10.97 kr.
+Bakery & Bread,Mamma proteinpandekager,200 g,18.-
+Bakery & Bread,Miss Bagel bagels,2-pak 140 g,10.-
+Bakery & Bread,Schulstad Signaturbrød,750 g,16.-
+Beverages,Alsace Varietals eller Rocca Alata Valpolicella Ripasso rødvin,75 cl,59.-
+Beverages,Amora formalet kaffe,400 g,35.-
+Beverages,BKI formalet kaffe,300-400 g,40.-
+Beverages,Breezer eller Somersby apple,27,5-33 cl,12.-
+Beverages,Coca-Cola eller Squash sodavand,1,5 liter,10.-
+Beverages,Coca-Cola sodavand,20 x 33 cl,65.-
+Beverages,Faxe Kondi eller Pepsi Max sodavand,24 x 33 cl,95.-
+Beverages,Gevalia oder Black Coffee helbønner,900 g,139.-
+Beverages,L'OR kaffekapsler,10 stk,29.-
+Beverages,Montgras Reserva rødvin- hvidvin eller rosé,75 cl,40.-
+Beverages,Monster Energy,50 cl,14.-
+Beverages,Rynkeby nektar eller drik til opblanding,1 liter,16.-
+Beverages,Singha,33 cl,10.-
+Beverages,Spiritusmarked - Johnnie Walker Red Label whisky- Captain Morgan- Smirnoff vodka- Gordons London Dry gin- Baileys- Aalborg Taffel Akvavit eller Tanqueray 0-0%,70 cl,99.-
+Beverages,Tuborg øl - grøn Tuborg eller Tuborg Classic,12 x 33 cl,65.-
+Dairy & Eggs,Actimel multifrugt- jordbær-banan eller jordbærsmag,8 x 100 ml,25.-
+Dairy & Eggs,Bakkedal smørbar,200 g,18.-
+Dairy & Eggs,Buko pikant flødeost,125 g,13.-
+Dairy & Eggs,Cheasy yoghurt,1 liter,14.-
+Dairy & Eggs,Dava skrabeæg M-L,8 stk,14.-
+Dairy & Eggs,Egelykke drikkeyoghurt,250 ml,5.-
+Dairy & Eggs,Egelykke skummetmælk kakao,1 liter,12.-
+Dairy & Eggs,Egelykke smørbar,200 g,14.-
+Dairy & Eggs,Fellino frisk mozarella ost,125 g,7.50 kr.
+Dairy & Eggs,Naturli' smørbar eller blok,200 g,15.-
+Dairy & Eggs,Premieur bøffel mozzarella,125 g,18.-
+Fish & Seafood,Bådsmand varmrøget laks,125 g,35.-
+Fish & Seafood,Premieur grønlandske rejer,300-330 g,59.-
+Fish & Seafood,Premieur røget laks,100 g,39.-
+Fish & Seafood,Premieur røget eller gravad laks,100-130 g,39.-
+Fish & Seafood,Røget eller gravad laks,180 g,45.-
+Fish & Seafood,Velsmag laksestykke,600 g,85.-
+Fruits & Vegetables,Danske Clara Friis pærer,1 kg,12.-
+Fruits & Vegetables,Danske kinakål,Pr. stk.,15.-
+Fruits & Vegetables,Danske knoldselleri,Pr. stk.,12.-
+Fruits & Vegetables,Danske løg,1 kg,6.-
+Fruits & Vegetables,Friske figner udenlandske,6 stk,15.-
+Fruits & Vegetables,Kiwibær udenlandske,125 g,12.-
+Fruits & Vegetables,Røde snack pebre udenlandske,500 g,18.-
+Household Items,Aktivitetsbog - makeup- hånd- negle- eller tatoveringsdesigner,1 stk,35.-
+Household Items,Aussie shampoo- balsam eller Elnett hårspray,200-400 ml,35.-
+Household Items,Babaria eller Body-X Fuze deodorant,50-150 ml,10.-
+Household Items,Blomstermuld,17 liter,16.-
+Household Items,Bog - flere titler,1 stk,50.-
+Household Items,Boxershorts,Str. M-XXL,33.75 kr.
+Household Items,Bueskydningssæt med bue- målskive og 4 bolde,1 stk,30.-
+Household Items,Burger- eller pizzabar legetøj,1 stk,99.-
+Household Items,Calluna lyng to-farvet,11 cm potte,20.-
+Household Items,Diamant-udgravningssæt med redskaber og 10 diamanter,1 stk,40.-
+Household Items,Fabulosa rengøringsmarked,300-500 ml,10.-
+Household Items,Foldekasse - 22 x 15 x 9 cm,1 stk,20.-
+Household Items,Foldekasse - 30-5 x 20-5 x 12-5 cm,1 stk,25.-
+Household Items,Foldekasse - 40 x 30 x 15-5 cm,1 stk,30.-
+Household Items,Havechrysanthemum,19 cm potte,35.-
+Household Items,Hello Sensitive vådservietter,100 stk,10.-
+Household Items,Hovedpude - 60 x 43 x H: 12 cm,1 stk,129.-
+Household Items,Klorin rengøring- Domestos WC-sticks eller Vel opvaskemiddel,750-1500 ml/ 5-pak,20.-
+Household Items,Komfortpude - knæpude- nakkepude eller multipude,1 stk,69.-
+Household Items,Komfortstrømper,Str. 37-46,14.25 kr.
+Household Items,Kreabog - malebog eller klistermærkebog,1 stk,20.-
+Household Items,Kurv - 2-pak 23 x 15-5 x 5-8 cm,2-pak,20.-
+Household Items,Kurv - 3-pak 15-5 x 11-3 x 5-3 cm,3-pak,20.-
+Household Items,Kurv - 33 x 24 x 6-4 cm,1 stk,20.-
+Household Items,Køretøj - politibil eller brandbil,1 stk,30.-
+Household Items,Køretøj 20 cm - traktor- ambulance eller politibil,1 stk,60.-
+Household Items,Lambi Classic toiletpapir eller køkkenrulle,4-8 rl,20.-
+Household Items,Lastbil med 2 biler og affyringsramme,1 stk,40.-
+Household Items,LED-lampe med magnet,1 stk,69.-
+Household Items,LED-strip 3 meter - varm hvid med 180 LED eller multifarvet,1 stk,69.-
+Household Items,Legesand - dinosaur eller enhjørning,1 stk,60.-
+Household Items,Lip gloss med smag,7-pak,40.-
+Household Items,Lyng Calluna vulgaris,9 cm potte,8.-
+Household Items,Maxitrusse,Str. M-XXL,21.75 kr.
+Household Items,Maxitrusser,3-pak,40.-
+Household Items,Modellervokssæt - kage- eller burgersæt,1 stk,69.-
+Household Items,Modellervokssæt - krokodilletandlægesæt,1 stk,60.-
+Household Items,Nicorette mundspray,1 stk,200.-
+Household Items,Nicorette tyggegummi,210 stk,219.-
+Household Items,Nicotinell tyggegummi,204 stk,219.-
+Household Items,Opbevaringskasse med låg - 26-5 x 17-9 x 12-7 cm,1 stk,30.-
+Household Items,Opbevaringskasse med låg - 36-5 x 27-3 x 14-5 cm,1 stk,45.-
+Household Items,Opbevaringskasse med låg - 36-5 x 27-3 x 22-5 cm,1 stk,50.-
+Household Items,Opbevaringskurv - 23-5 x 10-2 x 24-4 cm,1 stk,30.-
+Household Items,Opbevaringskurv - 24 x 9-2 x 35-6 cm,1 stk,30.-
+Household Items,Opbevaringskurv - 2-pak 25-5 x 17 x 12 cm,2-pak,30.-
+Household Items,Opbevaringskurv - 35-3 x 26-6 x 12-5 cm,1 stk,30.-
+Household Items,Opbevaringskurv - 35-3 x 26-6 x 21-2 cm,1 stk,40.-
+Household Items,Otrivin næsespray,10 ml,49.-
+Household Items,Palmolive showergel,500-650 ml,24.-
+Household Items,Pampasgræs,23 cm potte,119.-
+Household Items,Panodil 500 mg,10 stk,20.-
+Household Items,Pilleæsker - flere varianter,1 stk,40.-
+Household Items,Pink rengøringsmarked,1-10 stk,10.-
+Household Items,Press & go-racerbil,1 stk,60.-
+Household Items,Pufferbold - flere farver,1 stk,30.-
+Household Items,Pure living håndsæbe,300 ml,8.-
+Household Items,Sammenklappelig opbevaringsboks med låg - 52-3 x 36 x 34 cm,1 stk,199.-
+Household Items,Scania køretøj - lastbil- brandbil eller skraldebil,1 stk,119.-
+Household Items,Sensommerplanter - f-eks- Cauticola- lyng eller chrysanthemum,12 cm potte,20.-
+Household Items,Shine eddikesyre,1 liter,9.47 kr.
+Household Items,Siddehynde,Dia.: 40 cm,79.-
+Household Items,Skumpilepistol med skydeskive og 6 skumpile,1 stk,69.-
+Household Items,Spil eller puslespil - Gurli Gris eller Pippi Langstrømpe,1 stk,40.-
+Household Items,Strepsils sugetabletter - honning-citron eller jordbær sukkerfri,24 stk,60.-
+Household Items,Sudokubog - 256 opgaver,1 stk,25.-
+Household Items,Sutteklud - Gustav Gris eller Gurli Gris,1 stk,30.-
+Household Items,Sømløs BH med lynlås lukning foran,1 stk,59.-
+Household Items,Tandlæge-sæt 9 dele,1 stk,40.-
+Household Items,Tattoo gelpens 6-pak eller Metalliske tusser 12-pak,Frit valg,35.-
+Household Items,Tilbehør til hjemmet - lågåbner- støveklud- kløpind- pilleudtrykker eller 3-pak skohorn,Frit valg,20.-
+Household Items,Traktor med anhænger - flere varianter,1 stk,60.-
+Household Items,Træpuslespil 20 brikker - Gurli Gris,1 stk,30.-
+Household Items,Tryllestav med lys og lyd,1 stk,40.-
+Household Items,Vasketøjskurv - 56 x 37-3 x 25-2 cm,1 stk,79.-
+Household Items,Vasketøjskurv med låg - 44 x 34-5 x 57 cm,1 stk,139.-
+Household Items,Væglampe med sensor,1 stk,69.-
+Household Items,Vægtdyne - 6 kg - 135 x 200 cm,1 stk,349.-
+Meat & Poultry,Danske kyllingeunderlår eller hakket kylling 7-10%,400-500 g,20.-
+Meat & Poultry,Den Grønne Slagter pålæg,70-100 g,12.-
+Meat & Poultry,Hot & spicy eller fried ribs af kylling,250 g,20.-
+Meat & Poultry,Løgismose marineret kyllingesteak - citron-timian eller Karl Johan svampe,200 g,33.-
+Meat & Poultry,Næmt spareribs,500 g,39.-
+Meat & Poultry,Premieur røget mørbrad,180 g,25.-
+Meat & Poultry,Velsmag dansk flæskesteg,500 g,24.95 kr.
+Meat & Poultry,Velsmag flæsk i skiver eller koteletter,700-800 g,55.-
+Meat & Poultry,Velsmag hakket oksekød 14-18%,400 g,45.-
+Meat & Poultry,Velsmag hakket oksekød 4-7%,350 g,45.-
+Meat & Poultry,Velsmag marineret ribeye,150 g,39.-
+Meat & Poultry,ØGO økologisk hakket oksekød 8-12% eller Velsmag hakket oksekød 8-12%,800-1100 g,109.-
+Organic,Earth Control økologisk tørret frugt,150-300 g,29.-
+Organic,Mou økologisk suppe eller kød- og melboller,500-1000 g,32.-
+Organic,ØGO økologisk dansk broccoli,Pr. bundt,14.-
+Organic,ØGO økologisk grød smoothie,120 g,10.-
+Organic,ØGO økologisk hytteost,200 g,10.67 kr.
+Organic,ØGO økologisk ingefær shot,50 cl,17.50 kr.
+Organic,ØGO økologisk kernerugbrød,600 g,15.-
+Organic,ØGO økologisk mel,1 kg,13.96 kr.
+Organic,ØGO økologiske grøntsager,400-500 g,12.-
+Organic,ØGO økologiske majskiks med havsalt,130 g,7.17 kr.
+Pantry Items,Asian Kitchen soya,250 ml,8.-
+Pantry Items,Breakfast from Bell's mysli eller granola,500-750 g,22.-
+Pantry Items,Caputo mel - pizzeria- semola eller cuoco,1 kg,18.-
+Pantry Items,Chocobella mørk chokolade,100 g,14.-
+Pantry Items,Fras morgenmad eller Paulun's granola,450 g,30.-
+Pantry Items,Haribo slikpose,80 g,10.-
+Pantry Items,Harvest Best majs,3-pak 420 g,15.-
+Pantry Items,K-Salat pålægssalat,150 g,10.-
+Pantry Items,La Campagna basilikum creamy pesto,190 g,8.97 kr.
+Pantry Items,Lay's eller Doritos chips,170-175 g,16.-
+Pantry Items,Mamone frø eller kerner - græskarkerner- solsikkekerner- sesamfrø eller hørfrø,150-400 g,11.-
+Pantry Items,Murph whey proteinpulver - jordbær eller chokolade,1 kg,159.-
+Pantry Items,Mutti tomater,400 g,12.-
+Pantry Items,Oyakata kopnudler,63-93 g,10.-
+Pantry Items,Pad thai stir fry,400 g,29.-
+Pantry Items,Peanutbutter crunchy eller creamy,500 g,25.-
+Pantry Items,Premieur udenlandske specialiteter,65-170 g,25.-
+Pantry Items,Ritter Sport,100 g,18.-
+Pantry Items,Toms Guldbarre,45 g,10.-
