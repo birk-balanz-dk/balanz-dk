@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alle Tilbud - Balanz.dk</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'balanz-green': '#7B9B7D',
+                        'balanz-blue': '#A8C4D0', 
+                        'balanz-beige': '#f9f2e8'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-balanz-beige">
+    <!-- Navigation -->
+    <nav class="shadow-sm bg-balanz-beige">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/">
+                <img src="/images/header-logo.png" alt="Balanz.dk" class="h-10 w-auto">
+            </a>
+            <div class="flex gap-4">
+                <a href="/planner.html" class="bg-balanz-green text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all">
+                    Den Smarte Madplanlægger
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="max-w-7xl mx-auto px-4 py-16">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Hero Image -->
+            <div class="order-2 lg:order-1">
+                <img src="/images/deals.png" alt="Browse all current deals" class="aspect-square max-w-md mx-auto rounded-3xl shadow-lg">
+            </div>
+            
+            <!-- Hero Text -->
+            <div class="order-1 lg:order-2 text-center lg:text-left">
+                <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+                    AKTUELLE<br>
+                    <span class="text-balanz-green">TILBUD</span>
+                </h1>
+                
+                <p class="text-xl text-gray-600 mb-8 max-w-lg">
+                    Se bedste tilbud fra 6 danske supermarkeder samlet ét sted.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="max-w-7xl mx-auto px-4 py-8">
+        <div class="text-center mb-8">
+            <div id="category-filters" class="flex flex-wrap justify-center gap-4">
+                <button onclick="filterByCategory('all')" class="category-btn active bg-balanz-green text-white px-4 py-2 rounded-full font-semibold">
+                    Alle Kategorier
+                </button>
+                <!-- Dynamic category buttons will be added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Deals List -->
+    <section class="max-w-7xl mx-auto px-4 pb-16">
+        <div class="mb-6 flex justify-between items-center">
+            <div class="text-gray-600">
+                <span id="deals-count">0</span> tilbud fundet
+            </div>
+            <select id="sort-select" onchange="sortDeals()" class="bg-white border border-gray-300 rounded-lg px-4 py-2">
+                <option value="">Sorter efter</option>
+                <option value="store">Supermarkeder (incl kategori)</option>
+                <option value="category">Kategorier</option>
+            </select>
+        </div>
+
+        <!-- Simple List Container -->
+        <div class="bg-white rounded-lg shadow-sm border border-balanz-blue overflow-hidden">
+            <div id="deals-container" class="max-h-96 overflow-y-auto">
+                <div class="p-6 text-center text-gray-500">
+                    Henter tilbud...
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="text-center mt-12 p-8 bg-white rounded-2xl shadow-sm">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Se hvordan du kan spare penge med vores smarte ugeplanner!</h3>
+            <p class="text-gray-600 mb-6">Vælg dit budget og få en madplan baseret på disse tilbud</p>
+            <a href="/planner.html" class="inline-block bg-balanz-green text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all shadow-lg">
+                Start planneren →
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="mb-4">
+                © 2025 Balanz.dk - Den smartere måde at handle ind
+            </div>
+            <div class="mb-4">
+                <a href="#" class="text-gray-300 hover:text-balanz-green transition-colors mx-4">Privatlivspolitik</a>
+                <span class="text-gray-500">|</span>
+                <a href="#" class="text-gray-300 hover:text-balanz-green transition-colors mx-4">Vilkår og betingelser</a>
+                <span class="text-gray-500">|</span>
+                <a href="#" class="text-gray-300 hover:text-balanz-green transition-colors mx-4">Kontakt</a>
+            </div>
+            <div class="text-gray-400">
+                Lavet med ❤️ i Danmark
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let allDeals = [];
+        let filteredDeals = [];
+        let currentCategoryFilter = 'all';
+        let uniqueCategories = new Set();
+
+        // Translation mapping from English CSV categories to Danish UI labels
+        const categoryTranslations = {
+            'Bakery & Bread': 'Bageri',
+            'Beverages': 'Drikkevarer',
+            'Dairy & Eggs': 'Mejeri',
+            'Fish & Seafood': 'Fisk',
+            'Frozen Foods': 'Frost',
+            'Fruits & Vegetables': 'Grøntsager',
+            'Meat & Poultry': 'Kød',
+            'Pantry Items': 'Basisvarer',
+            'Organic': 'Økologisk'
+        };
+
+        // Load deals on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDeals();
+        });
+
+        async function loadDeals() {
+            try {
+                const response = await fetch('/api/deals');
+                const data = await response.json();
+                
+                // Try different possible data structures
+                if (data && Array.isArray(data)) {
+                    allDeals = data;
+                } else if (data && data.deals && Array.isArray(data.deals)) {
+                    allDeals = data.deals;
+                } else if (data && data.success && data.deals) {
+                    allDeals = data.deals;
+                } else {
+                    console.error('Unexpected data structure:', data);
+                    allDeals = [];
+                }
+                
+                // Collect unique categories
+                allDeals.forEach(deal => {
+                    if (deal.Category) uniqueCategories.add(deal.Category);
+                });
+                
+                // Create dynamic category filters
+                createCategoryFilters();
+                
+                filteredDeals = [...allDeals];
+                renderDeals();
+                updateDealsCount();
+                
+            } catch (error) {
+                console.error('Error loading deals:', error);
+                document.getElementById('deals-container').innerHTML = 
+                    '<div class="p-6 text-center text-red-500">Kunne ikke hente tilbud. Prøv igen senere.</div>';
+            }
+        }
+
+        function createCategoryFilters() {
+            const filterContainer = document.getElementById('category-filters');
+            const allButton = filterContainer.querySelector('.category-btn');
+            
+            // Create buttons for each unique category with Danish translations
+            Array.from(uniqueCategories).sort().forEach(category => {
+                const button = document.createElement('button');
+                button.onclick = () => filterByCategory(category);
+                button.className = 'category-btn bg-white text-gray-700 px-4 py-2 rounded-full font-semibold border hover:bg-gray-50';
+                
+                // Use Danish translation if available, otherwise use original English
+                const danishLabel = categoryTranslations[category] || category;
+                button.textContent = danishLabel;
+                button.setAttribute('data-category', category); // Store original English category for filtering
+                
+                filterContainer.appendChild(button);
+            });
+        }
+
+        function filterByCategory(category) {
+            currentCategoryFilter = category;
+            updateActiveButton('.category-btn', event.target);
+            applyFilters();
+        }
+
+        function updateActiveButton(selector, activeBtn) {
+            document.querySelectorAll(selector).forEach(btn => {
+                btn.classList.remove('active', 'bg-balanz-green', 'text-white');
+                btn.classList.add('bg-white', 'text-gray-700');
+            });
+            
+            activeBtn.classList.add('active', 'bg-balanz-green', 'text-white');
+            activeBtn.classList.remove('bg-white', 'text-gray-700');
+        }
+
+        function applyFilters() {
+            filteredDeals = allDeals.filter(deal => {
+                if (currentCategoryFilter === 'all') return true;
+                return deal.Category === currentCategoryFilter;
+            });
+            
+            sortDeals();
+        }
+
+        function sortDeals() {
+            const sortBy = document.getElementById('sort-select').value;
+            
+            if (sortBy === 'store') {
+                filteredDeals.sort((a, b) => {
+                    const storeA = a.Store || 'Ukendt';
+                    const storeB = b.Store || 'Ukendt';
+                    const storeCompare = storeA.localeCompare(storeB);
+                    if (storeCompare !== 0) return storeCompare;
+                    return (a.Category || '').localeCompare(b.Category || '');
+                });
+            } else if (sortBy === 'category') {
+                filteredDeals.sort((a, b) => {
+                    const categoryCompare = (a.Category || '').localeCompare(b.Category || '');
+                    if (categoryCompare !== 0) return categoryCompare;
+                    return (a["Deal Name"] || '').localeCompare(b["Deal Name"] || '');
+                });
+            }
+            
+            renderDeals();
+            updateDealsCount();
+        }
+
+        function renderDeals() {
+            const container = document.getElementById('deals-container');
+            
+            if (filteredDeals.length === 0) {
+                container.innerHTML = '<div class="p-6 text-center text-gray-500">Ingen tilbud fundet med de valgte filtre</div>';
+                return;
+            }
+            
+            const dealsList = filteredDeals.map((deal, index) => {
+                // Translate category for display
+                const displayCategory = categoryTranslations[deal.Category] || deal.Category;
+                
+                return `
+                <div class="flex justify-between items-center py-3 px-6 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-balanz-beige transition-colors border-b border-gray-100 last:border-b-0">
+                    <div class="flex-1">
+                        <span class="font-medium text-gray-800">${deal["Deal Name"] || 'Ukendt produkt'}</span>
+                        <span class="text-sm text-gray-500 ml-3">${deal.Amount || ''}</span>
+                        <span class="text-sm font-medium text-balanz-green ml-3">${deal.Store || 'Ukendt butik'}</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span class="text-sm bg-gray-100 px-2 py-1 rounded">${displayCategory}</span>
+                        <span class="font-bold text-balanz-green">${deal.Price || 'Se pris'}</span>
+                    </div>
+                </div>
+            `}).join('');
+            
+            container.innerHTML = dealsList;
+        }
+
+        function updateDealsCount() {
+            document.getElementById('deals-count').textContent = filteredDeals.length;
+        }
+    </script>
+</body>
+</html>
