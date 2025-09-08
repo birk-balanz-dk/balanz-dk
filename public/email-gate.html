@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Få din indkøbsliste - Balanz.dk</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'balanz-green': '#7B9B7D',
+                        'balanz-blue': '#A8C4D0', 
+                        'balanz-beige': '#f9f2e8'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-balanz-beige min-h-screen">
+    <!-- Navigation -->
+    <nav class="shadow-sm bg-balanz-beige">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/">
+                <img src="/images/header-logo.png" alt="Balanz.dk" class="h-10 w-auto">
+            </a>
+        </div>
+    </nav>
+
+    <div class="max-w-2xl mx-auto px-4 py-16">
+        <!-- Email Gate Card -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
+            <!-- Icon -->
+            <div class="w-20 h-20 bg-balanz-green bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span class="text-4xl">📋</span>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">
+                Få din print-venlige indkøbsliste
+            </h1>
+
+            <!-- Value Proposition -->
+            <p class="text-lg text-gray-600 mb-6">
+                Indtast din email og få adgang til en overskuelig indkøbsliste 
+                optimeret til print og mobile enheder.
+            </p>
+
+            <!-- Benefits List -->
+            <div class="bg-gray-50 rounded-lg p-6 mb-8 text-left">
+                <h3 class="font-semibold text-gray-800 mb-3">Du får:</h3>
+                <ul class="space-y-2">
+                    <li class="flex items-center text-gray-700">
+                        <span class="w-2 h-2 bg-balanz-green rounded-full mr-3"></span>
+                        Organiseret indkøbsliste efter butikker
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <span class="w-2 h-2 bg-balanz-green rounded-full mr-3"></span>
+                        Priser og besparelser tydelig markeret
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <span class="w-2 h-2 bg-balanz-green rounded-full mr-3"></span>
+                        Print-optimeret format til nemt shopping
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <span class="w-2 h-2 bg-balanz-green rounded-full mr-3"></span>
+                        Afkrydsningsfelter til indkøbstur
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Email Form -->
+            <form id="emailForm" class="space-y-4">
+                <div>
+                    <input 
+                        type="email" 
+                        id="emailInput"
+                        placeholder="Din email adresse"
+                        required
+                        class="w-full p-4 border border-gray-300 rounded-lg text-lg focus:ring-2 focus:ring-balanz-green focus:border-transparent"
+                    >
+                </div>
+                
+                <button 
+                    type="submit"
+                    id="submitBtn"
+                    class="w-full bg-balanz-green text-white font-bold py-4 px-6 rounded-lg text-lg hover:bg-opacity-90 transition-all duration-200"
+                >
+                    <span id="buttonText">Få min indkøbsliste</span>
+                    <div id="loadingSpinner" class="w-5 h-5 border-2 border-white border-t-transparent rounded-full mx-auto hidden animate-spin"></div>
+                </button>
+            </form>
+
+            <!-- Privacy Note -->
+            <p class="text-sm text-gray-500 mt-4">
+                Vi bruger kun din email til at give dig adgang til listen. 
+                Ingen spam eller videresalg.
+            </p>
+        </div>
+
+        <!-- Alternative Access -->
+        <div class="text-center mt-8">
+            <p class="text-gray-600 mb-4">Vil du hellere se tilbuddene først?</p>
+            <a 
+                href="/deals.html" 
+                class="inline-block bg-balanz-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all"
+            >
+                Se alle aktuelle tilbud
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if we have meal plan data available
+            const mealPlanData = localStorage.getItem('currentMealPlan');
+            if (!mealPlanData) {
+                // Redirect back to planner if no data found
+                alert('Ingen madplan fundet. Omdirigerer til madplanlæggeren.');
+                window.location.href = '/planner.html';
+                return;
+            }
+
+            // Handle form submission
+            document.getElementById('emailForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                handleEmailSubmission();
+            });
+        });
+
+        async function handleEmailSubmission() {
+            const emailInput = document.getElementById('emailInput');
+            const submitBtn = document.getElementById('submitBtn');
+            const buttonText = document.getElementById('buttonText');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+
+            const email = emailInput.value.trim();
+            
+            if (!email) {
+                alert('Indtast venligst din email adresse');
+                return;
+            }
+
+            // Show loading state
+            submitBtn.disabled = true;
+            buttonText.classList.add('hidden');
+            loadingSpinner.classList.remove('hidden');
+
+            try {
+                // Optional: Send email to your backend for storage/analytics
+                // await fetch('/api/collect-email', {
+                //     method: 'POST',
+                //     headers: { 'Content-Type': 'application/json' },
+                //     body: JSON.stringify({ email: email, source: 'print-gate' })
+                // });
+
+                // Store email for potential future use
+                localStorage.setItem('userEmail', email);
+                
+                // Small delay to show the loading state
+                setTimeout(() => {
+                    // Redirect to print page
+                    window.location.href = '/print-shopping-list.html?autoprint=true';
+                }, 1000);
+
+            } catch (error) {
+                console.error('Error processing email:', error);
+                
+                // Even if email storage fails, still allow access to print page
+                setTimeout(() => {
+                    window.location.href = '/print-shopping-list.html?autoprint=true';
+                }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balanz.dk - AI Madplanlægger</title>
+    <title>Balanz.dk - Smart Madplanlægger</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -12,7 +12,7 @@
                     colors: {
                         'balanz-green': '#7B9B7D',
                         'balanz-blue': '#A8C4D0', 
-                        'balanz-beige': '#F5F1ED'
+                        'balanz-beige': '#f9f2e8'
                     }
                 }
             }
@@ -25,36 +25,61 @@
         .recipe-card:hover { transform: translateY(-2px); }
     </style>
 </head>
-<body class="bg-balanz-beige min-h-screen">
-    <!-- Header -->
-    <header class="bg-white shadow-sm">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-            <div class="flex items-center space-x-2">
-                <div class="w-10 h-10 bg-balanz-green rounded-lg flex items-center justify-center">
-                    <span class="text-white font-bold text-xl">B</span>
-                </div>
-                <span class="text-2xl font-bold text-gray-800">Balanz<span class="text-balanz-blue">.dk</span></span>
-            </div>
-            <div class="text-sm text-gray-600">
-                <span class="bg-balanz-green text-white px-2 py-1 rounded-full text-xs">AI-Powered</span>
+<body class="font-sans bg-balanz-beige min-h-screen">
+    <!-- Navigation -->
+    <nav class="shadow-sm bg-balanz-beige">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/">
+                <img src="/images/header-logo.png" alt="Balanz.dk" class="h-10 w-auto">
+            </a>
+            <div class="flex gap-4">
+                <a href="/deals.html" class="bg-balanz-blue text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all">
+                    Se Alle Tilbud
+                </a>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <div class="max-w-6xl mx-auto px-4 py-8">
-        <!-- Hero Section -->
+    <!-- Hero Section -->
+    <section class="max-w-6xl mx-auto px-4 py-16">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Hero Image -->
+            <div class="order-2 lg:order-1">
+                <img src="/images/planner.png" alt="Plan your meals together" class="aspect-square max-w-md mx-auto rounded-3xl shadow-lg">
+            </div>
+            
+            <!-- Hero Text -->
+            <div class="order-1 lg:order-2 text-center lg:text-left">
+                <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+                    SMART<br>
+                    <span class="text-balanz-green">MADPLAN</span>
+                </h1>
+				<h1 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+                    SPARET<br>
+                    <span class="text-balanz-green">PENGE</span>
+                </h1>
+                
+                <p class="text-xl text-gray-600 mb-8 max-w-lg">
+                    MAD & ØKONOMI I BALANCE
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="max-w-6xl mx-auto px-4 pb-8">
+        <!-- Section Header -->
         <div class="text-center mb-8">
-            <h1 class="text-4xl font-bold text-gray-800 mb-2">
-                Smart Madplan med <span class="text-balanz-green">AI</span>
-            </h1>
-            <p class="text-gray-600 text-lg">Personlig madplan baseret på aktuelle tilbud og dine præferencer</p>
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">
+                Intelligent <span class="text-balanz-green">planlægning</span> starter her
+            </h2>
+            <p class="text-gray-600">Over 100 opskrifter tilpasset til aktuelle tilbud og dit budget</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <!-- Left Column: Form -->
             <div class="lg:col-span-1">
                 <div class="bg-white rounded-xl shadow-md p-6 sticky top-8">
-                    <h2 class="text-xl font-bold text-gray-800 mb-6">Skab din madplan</h2>
+                    <h3 class="text-xl font-bold text-gray-800 mb-6">Dine præferencer</h3>
                     
                     <form id="mealPlanForm" class="space-y-6">
                         <!-- Family Size -->
@@ -94,35 +119,12 @@
                             </div>
                         </div>
 
-                        <!-- Preferences -->
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-3">Præferencer</label>
-                            <div class="space-y-2">
-                                <label class="flex items-center">
-                                    <input type="checkbox" id="organicPref" class="mr-2 rounded">
-                                    <span class="text-sm text-gray-700">Prioritér økologiske varer</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" id="lessMeatPref" class="mr-2 rounded">
-                                    <span class="text-sm text-gray-700">Mindre kød, mere grønt</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" id="familyFriendly" class="mr-2 rounded" checked>
-                                    <span class="text-sm text-gray-700">Børnevenlige retter</span>
-                                </label>
-                            </div>
-                        </div>
-
                         <!-- Generate Button -->
                         <button type="submit" id="generateBtn" 
                                 class="w-full bg-balanz-green text-white font-bold py-4 px-6 rounded-lg text-lg hover:bg-opacity-90 transition-all duration-200">
-                            <span id="buttonText">Generer Smart Madplan</span>
+                            <span id="buttonText">Start Planlægning</span>
                             <div id="loadingSpinner" class="loading w-5 h-5 border-2 border-white border-t-transparent rounded-full mx-auto hidden"></div>
                         </button>
-
-                        <div class="text-xs text-gray-500 text-center">
-                            <span class="bg-yellow-100 px-2 py-1 rounded">Inkluderer skjulte sundhedsopgraderinger</span>
-                        </div>
                     </form>
                 </div>
             </div>
@@ -138,12 +140,31 @@
                     <div class="w-24 h-24 bg-balanz-green bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
                         <span class="text-4xl">🍽️</span>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Klar til at lave din madplan?</h3>
-                    <p class="text-gray-600">Udfyld præferencerne til venstre og lad AI'en finde de bedste tilbud til dig.</p>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Klar til at komme i gang?</h3>
+                    <p class="text-gray-600">Udfyld præferencerne til venstre.</p>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 mt-16">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="mb-4">
+                © 2025 Balanz.dk - Den smartere måde at handle ind
+            </div>
+            <div class="mb-4">
+                <a href="#" class="text-gray-300 hover:text-balanz-green transition-colors mx-4">Privatlivspolitik</a>
+                <span class="text-gray-500">|</span>
+                <a href="#" class="text-gray-300 hover:text-balanz-green transition-colors mx-4">Vilkår og betingelser</a>
+                <span class="text-gray-500">|</span>
+                <a href="#" class="text-gray-300 hover:text-balanz-green transition-colors mx-4">Kontakt</a>
+            </div>
+            <div class="text-gray-400">
+                Lavet med ❤️ i Danmark
+            </div>
+        </div>
+    </footer>
 
     <script>
         // Global variables
@@ -212,12 +233,7 @@
                 const formData = {
                     familySize: parseInt(document.getElementById('familySize').value),
                     budget: parseInt(document.getElementById('budgetRange').value),
-                    days: selectedDays,
-                    preferences: {
-                        organic: document.getElementById('organicPref').checked,
-                        lessMeat: document.getElementById('lessMeatPref').checked,
-                        familyFriendly: document.getElementById('familyFriendly').checked
-                    }
+                    days: selectedDays
                 };
 
                 console.log('Generating meal plan with:', formData);
@@ -267,9 +283,7 @@
             
             const resultsContainer = document.getElementById('resultsContainer');
             
-            // Debug: Log the actual response structure
             console.log('Received data:', data);
-            console.log('Shopping list structure:', data.shoppingList);
             
             const html = `
                 <!-- Summary Card -->
@@ -311,14 +325,6 @@
                                             <span>🎯 ${meal.dealMatches} tilbud</span>
                                         </div>
                                     </div>
-                                    <div class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">
-                                        🥷 Stealth Upgrade
-                                    </div>
-                                </div>
-
-                                <div class="bg-green-50 border border-green-200 rounded-lg p-3 mb-4">
-                                    <h4 class="font-semibold text-green-800 text-sm mb-1">Balanz Opgradering:</h4>
-                                    <p class="text-green-700 text-sm">${meal.stealthUpgrade}</p>
                                 </div>
 
                                 <div>
@@ -342,10 +348,10 @@
                     `).join('')}
                 </div>
 
-                <!-- Shopping List - Dynamic based on actual response -->
+                <!-- Shopping List -->
                 <div class="mt-8 bg-white rounded-xl shadow-md p-6">
                     <div class="flex justify-between items-center mb-4">
-                        <h3 class="text-xl font-bold text-gray-800">🏪 Komplet Indkøbsguide</h3>
+                        <h3 class="text-xl font-bold text-gray-800">🛪 Komplet Indkøbsguide</h3>
                         <button onclick="printShoppingList()" 
                                 class="bg-balanz-green text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors flex items-center space-x-2">
                             <span>🖨️</span>
@@ -425,7 +431,6 @@
                     </div>
                 `;
                 
-                // Add break after every 2 stores for better layout
                 if ((index + 1) % 2 === 0) {
                     html += '</div><div class="grid md:grid-cols-2 gap-6 mt-6">';
                 }
@@ -442,17 +447,11 @@
         return;
     }
 
-    // Store data in localStorage only
+    // Store data in localStorage for email gate access
     localStorage.setItem('currentMealPlan', JSON.stringify(currentMealPlanData));
     
-    // Open print window without data in URL
-    const printWindow = window.open('/print-shopping-list.html?autoprint=true', '_blank', 'width=800,height=600');
-    
-    // Fallback if popup is blocked
-    if (!printWindow) {
-        alert('Din browser blokerede pop-up vinduet. Åbner i ny fane i stedet.');
-        window.open('/print-shopping-list.html', '_blank');
-    }
+    // Redirect to email gate instead of direct print
+    window.location.href = '/email-gate.html';
 }
     </script>
 </body>
