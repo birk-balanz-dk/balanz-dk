@@ -69,17 +69,23 @@
     </section>
 
     <!-- Deals List -->
-    <section class="max-w-7xl mx-auto px-4 pb-16">
-        <div class="mb-6 flex justify-between items-center">
-            <div class="text-gray-600">
-                <span id="deals-count">0</span> tilbud fundet
-            </div>
-            <select id="sort-select" onchange="sortDeals()" class="bg-white border border-gray-300 rounded-lg px-4 py-2">
-                <option value="">Sorter efter</option>
-                <option value="store">Supermarkeder (incl kategori)</option>
-                <option value="category">Kategorier</option>
-            </select>
-        </div>
+    <div class="mb-6 flex justify-between items-center">
+    <div class="text-gray-600">
+        <span id="deals-count">0</span> tilbud fundet
+    </div>
+    <div class="flex gap-4 items-center">
+        <button onclick="printDeals()" 
+                class="bg-balanz-green text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors flex items-center space-x-2">
+            <span>🖨️</span>
+            <span>Print Tilbud</span>
+        </button>
+        <select id="sort-select" onchange="sortDeals()" class="bg-white border border-gray-300 rounded-lg px-4 py-2">
+            <option value="">Sorter efter</option>
+            <option value="store">Supermarkeder (incl kategori)</option>
+            <option value="category">Kategorier</option>
+        </select>
+    </div>
+</div>
 
         <!-- Simple List Container -->
         <div class="bg-white rounded-lg shadow-sm border border-balanz-blue overflow-hidden">
@@ -277,6 +283,9 @@
 
         function updateDealsCount() {
             document.getElementById('deals-count').textContent = filteredDeals.length;
+        }
+		function printDeals() {
+            window.open('/print-deals-list.html?autoprint=true', '_blank', 'width=800,height=600');
         }
     </script>
 </body>

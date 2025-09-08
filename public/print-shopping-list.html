@@ -17,6 +17,7 @@
             margin: 0 auto;
             padding: 20px;
             line-height: 1.4;
+            background: #f9f2e8;
         }
         
         .header {
@@ -25,6 +26,9 @@
             border-bottom: 2px solid #7B9B7D;
             padding-bottom: 15px;
             margin-bottom: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
         }
         
         .logo {
@@ -46,13 +50,14 @@
         }
         
         .summary {
-            background: #F7FAFC;
-            padding: 15px;
+            background: white;
+            padding: 20px;
             border-radius: 8px;
             margin-bottom: 25px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         
         .summary-item {
@@ -72,21 +77,24 @@
         }
         
         .store-section {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             break-inside: avoid;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         
         .store-header {
             background: #7B9B7D;
             color: white;
-            padding: 10px 15px;
+            padding: 15px 20px;
             font-weight: bold;
             font-size: 16px;
-            margin-bottom: 10px;
         }
         
         .item-list {
-            padding-left: 10px;
+            padding: 10px 20px 20px;
         }
         
         .item {
@@ -126,17 +134,28 @@
         .footer {
             margin-top: 40px;
             text-align: center;
-            border-top: 1px solid #E2E8F0;
-            padding-top: 20px;
-            color: #718096;
-            font-size: 12px;
+            background: #2D3748;
+            color: white;
+            padding: 30px 20px;
+            border-radius: 8px;
         }
         
         .footer-logo {
-            width: 30px;
-            height: 30px;
-            margin: 0 auto 10px auto;
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 15px auto;
             display: block;
+        }
+        
+        .footer p {
+            margin: 8px 0;
+            color: #E2E8F0;
+        }
+        
+        .footer p:first-of-type {
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
         }
         
         .print-button {
@@ -150,6 +169,7 @@
             border-radius: 8px;
             font-weight: bold;
             cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
         
         .print-button:hover {
@@ -158,6 +178,8 @@
         
         @media print {
             .print-button { display: none; }
+            body { background: white; }
+            .header, .store-section, .summary { box-shadow: none; }
         }
     </style>
 </head>
@@ -165,7 +187,7 @@
     <button class="print-button no-print" onclick="window.print()">🖨️ Print</button>
     
     <div class="header">
-        <img src="/images/logo.png" alt="Balanz.dk Logo" class="logo">
+        <img src="/images/header-logo.png" alt="Balanz.dk Logo" class="logo">
         <div class="header-text">
             <h1>Balanz.dk Indkøbsliste</h1>
             <p id="generated-date">Genereret: [DATE]</p>
@@ -181,9 +203,10 @@
     </div>
 
     <div class="footer">
-        <img src="/images/logo.png" alt="Balanz.dk" class="footer-logo">
-        <p><strong>Balanz.dk</strong> - Sund mad til smarte priser</p>
+        <img src="/images/header-logo.png" alt="Balanz.dk" class="footer-logo">
+        <p>© 2025 Balanz.dk - Den smartere måde at handle ind</p>
         <p>Genereret af AI-drevet madplanlægning • www.balanz.dk</p>
+        <p>Lavet med ❤️ i Danmark</p>
     </div>
 
     <script>
@@ -256,6 +279,7 @@
                 'lidl': 'Lidl',
                 'netto': 'Netto',
                 'foetex': 'Føtex',
+                'discount365': 'Discount365',
                 'almindelig': 'Anden butik'
             };
 

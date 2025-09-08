@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balanz.dk - Aktuelle Tilbud</title>
+    <style>
+        @media print {
+            body { margin: 0; font-family: Arial, sans-serif; }
+            .no-print { display: none; }
+            .page-break { page-break-after: always; }
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.4;
+            background: #f9f2e8;
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #7B9B7D;
+            padding: 20px;
+            margin-bottom: 20px;
+            background: white;
+            border-radius: 8px;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            margin-right: 15px;
+        }
+        
+        .header-text h1 {
+            margin: 0;
+            color: #2D3748;
+            font-size: 28px;
+        }
+        
+        .header-text p {
+            margin: 5px 0 0 0;
+            color: #718096;
+            font-size: 14px;
+        }
+        
+        .summary {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .summary-value {
+            font-size: 36px;
+            font-weight: bold;
+            color: #7B9B7D;
+            margin-bottom: 5px;
+        }
+        
+        .summary-label {
+            font-size: 14px;
+            color: #718096;
+        }
+        
+        .category-section {
+            margin-bottom: 25px;
+            break-inside: avoid;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .category-header {
+            background: #7B9B7D;
+            color: white;
+            padding: 15px 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .deals-grid {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .deal-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            border: 1px solid #E2E8F0;
+            border-radius: 6px;
+            background: #F7FAFC;
+        }
+        
+        .deal-info {
+            flex-grow: 1;
+        }
+        
+        .deal-name {
+            font-weight: bold;
+            color: #2D3748;
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+        
+        .deal-details {
+            font-size: 12px;
+            color: #718096;
+        }
+        
+        .deal-price {
+            font-weight: bold;
+            color: #7B9B7D;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        
+        .store-badge {
+            background: #A8C4D0;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            background: #2D3748;
+            color: white;
+            padding: 30px 20px;
+            border-radius: 8px;
+        }
+        
+        .footer-logo {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 15px auto;
+            display: block;
+        }
+        
+        .footer p {
+            margin: 8px 0;
+            color: #E2E8F0;
+        }
+        
+        .footer p:first-of-type {
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #7B9B7D;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        
+        .print-button:hover {
+            background: #6B8B6D;
+        }
+        
+        @media print {
+            .print-button { display: none; }
+            body { background: white; }
+            .header, .category-section, .summary { box-shadow: none; }
+            .deals-grid { grid-template-columns: 1fr; gap: 8px; }
+            .deal-item { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button no-print" onclick="window.print()">🖨️ Print</button>
+    
+    <div class="header">
+        <img src="/images/header-logo.png" alt="Balanz.dk Logo" class="logo">
+        <div class="header-text">
+            <h1>Aktuelle Tilbud</h1>
+            <p id="generated-date">Genereret: [DATE]</p>
+        </div>
+    </div>
+
+    <div class="summary" id="summary">
+        <div class="summary-value" id="total-deals">0</div>
+        <div class="summary-label">tilbud fra 6 danske supermarkeder</div>
+    </div>
+
+    <div id="deals-content">
+        <!-- Deals content will be populated by JavaScript -->
+    </div>
+
+    <div class="footer">
+        <img src="/images/header-logo.png" alt="Balanz.dk" class="footer-logo">
+        <p>© 2025 Balanz.dk - Den smartere måde at handle ind</p>
+        <p>Se alle aktuelle tilbud samlet ét sted • www.balanz.dk</p>
+        <p>Lavet med ❤️ i Danmark</p>
+    </div>
+
+    <script>
+        // Translation mapping from English CSV categories to Danish UI labels
+        const categoryTranslations = {
+            'Bakery & Bread': 'Bageri',
+            'Beverages': 'Drikkevarer',
+            'Dairy & Eggs': 'Mejeri',
+            'Fish & Seafood': 'Fisk',
+            'Frozen Foods': 'Frost',
+            'Fruits & Vegetables': 'Grøntsager',
+            'Meat & Poultry': 'Kød',
+            'Pantry Items': 'Basisvarer',
+            'Organic': 'Økologisk'
+        };
+
+        const storeNames = {
+            'Coop': 'Coop',
+            'REMA 1000': 'REMA',
+            'Lidl': 'Lidl',
+            'Netto': 'Netto',
+            'Føtex': 'Føtex',
+            'Discount365': '365'
+        };
+
+        // Load deals data
+        async function loadDeals() {
+            try {
+                const response = await fetch('/api/deals');
+                const data = await response.json();
+                
+                let allDeals = [];
+                
+                if (data && Array.isArray(data)) {
+                    allDeals = data;
+                } else if (data && data.deals && Array.isArray(data.deals)) {
+                    allDeals = data.deals;
+                } else if (data && data.success && data.deals) {
+                    allDeals = data.deals;
+                }
+                
+                return allDeals;
+                
+            } catch (error) {
+                console.error('Error loading deals:', error);
+                return [];
+            }
+        }
+
+        function displayDeals(deals) {
+            if (!deals || deals.length === 0) {
+                document.getElementById('deals-content').innerHTML = 
+                    '<p style="text-align: center; color: #718096;">Ingen tilbud fundet</p>';
+                return;
+            }
+
+            // Update date and count
+            document.getElementById('generated-date').textContent = 
+                `Genereret: ${new Date().toLocaleDateString('da-DK')}`;
+            document.getElementById('total-deals').textContent = deals.length;
+
+            // Group deals by category
+            const dealsByCategory = {};
+            deals.forEach(deal => {
+                const category = deal.Category || 'Andre';
+                if (!dealsByCategory[category]) {
+                    dealsByCategory[category] = [];
+                }
+                dealsByCategory[category].push(deal);
+            });
+
+            // Generate HTML for each category
+            let html = '';
+            Object.keys(dealsByCategory).sort().forEach(category => {
+                const categoryDeals = dealsByCategory[category];
+                const danishCategory = categoryTranslations[category] || category;
+                
+                html += `
+                    <div class="category-section">
+                        <div class="category-header">${danishCategory} (${categoryDeals.length} tilbud)</div>
+                        <div class="deals-grid">
+                            ${categoryDeals.map(deal => `
+                                <div class="deal-item">
+                                    <div class="deal-info">
+                                        <div class="deal-name">${deal["Deal Name"] || 'Ukendt produkt'}</div>
+                                        <div class="deal-details">
+                                            ${deal.Amount || ''}
+                                            <span class="store-badge">${storeNames[deal.Store] || deal.Store || 'Ukendt'}</span>
+                                        </div>
+                                    </div>
+                                    <div class="deal-price">${deal.Price || 'Se pris'}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+
+            document.getElementById('deals-content').innerHTML = html;
+        }
+
+        // Load and display data when page loads
+        document.addEventListener('DOMContentLoaded', async function() {
+            const deals = await loadDeals();
+            displayDeals(deals);
+            
+            // Auto-print after a short delay if this was opened programmatically
+            if (window.location.search.includes('autoprint=true')) {
+                setTimeout(() => {
+                    window.print();
+                }, 500);
+            }
+        });
+    </script>
+</body>
+</html>
