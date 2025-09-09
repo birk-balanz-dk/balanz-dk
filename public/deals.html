@@ -24,32 +24,32 @@
     <nav class="shadow-sm bg-balanz-beige">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <a href="/">
-                <img src="/images/header-logo.png" alt="Balanz.dk" class="h-10 w-auto">
+                <img src="/images/header-logo.png" alt="Balanz.dk" class="h-8 sm:h-10 w-auto">
             </a>
-            <div class="flex gap-4">
-                <a href="/planner.html" class="bg-balanz-green text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all">
-                    Den Smarte Madplanlægger
+            <div class="flex gap-2 sm:gap-4">
+                <a href="/choose-plan.html" class="bg-balanz-green text-white px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold hover:bg-opacity-90 transition-all">
+                    Madplanlægger
                 </a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="max-w-7xl mx-auto px-4 py-16">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
+    <section class="max-w-7xl mx-auto px-4 py-8 sm:py-16">
+        <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             <!-- Hero Image -->
             <div class="order-2 lg:order-1">
-                <img src="/images/deals.png" alt="Browse all current deals" class="aspect-square max-w-md mx-auto rounded-3xl shadow-lg">
+                <img src="/images/deals.png" alt="Browse all current deals" class="w-full max-w-sm sm:max-w-md mx-auto rounded-3xl shadow-lg">
             </div>
             
             <!-- Hero Text -->
             <div class="order-1 lg:order-2 text-center lg:text-left">
-                <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 sm:mb-6 leading-tight">
                     AKTUELLE<br>
                     <span class="text-balanz-green">TILBUD</span>
                 </h1>
                 
-                <p class="text-xl text-gray-600 mb-8 max-w-lg">
+                <p class="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0">
                     Se bedste tilbud fra 6 danske supermarkeder samlet ét sted.
                 </p>
             </div>
@@ -57,10 +57,10 @@
     </section>
 
     <!-- Filters Section -->
-    <section class="max-w-7xl mx-auto px-4 py-8">
-        <div class="text-center mb-8">
-            <div id="category-filters" class="flex flex-wrap justify-center gap-4">
-                <button onclick="filterByCategory('all')" class="category-btn active bg-balanz-green text-white px-4 py-2 rounded-full font-semibold">
+    <section class="max-w-7xl mx-auto px-4 py-4 sm:py-8">
+        <div class="text-center mb-6 sm:mb-8">
+            <div id="category-filters" class="flex flex-wrap justify-center gap-2 sm:gap-4">
+                <button onclick="filterByCategory('all')" class="category-btn active bg-balanz-green text-white px-3 sm:px-4 py-2 rounded-full text-sm font-semibold">
                     Alle Kategorier
                 </button>
                 <!-- Dynamic category buttons will be added here -->
@@ -69,25 +69,27 @@
     </section>
 
     <!-- Deals List -->
-    <div class="mb-6 flex justify-between items-center">
-    <div class="text-gray-600">
-        <span id="deals-count">0</span> tilbud fundet
-    </div>
-    <div class="flex gap-4 items-center">
-        <button onclick="printDeals()" 
-                class="bg-balanz-green text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors flex items-center space-x-2">
-            <span>🖨️</span>
-            <span>Print Tilbud</span>
-        </button>
-        <select id="sort-select" onchange="sortDeals()" class="bg-white border border-gray-300 rounded-lg px-4 py-2">
-            <option value="">Sorter efter</option>
-            <option value="store">Supermarkeder (incl kategori)</option>
-            <option value="category">Kategorier</option>
-        </select>
-    </div>
-</div>
+    <section class="max-w-7xl mx-auto px-4 pb-16">
+        <!-- Controls Bar -->
+        <div class="mb-4 sm:mb-6 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+            <div class="text-gray-600 text-center sm:text-left">
+                <span id="deals-count">0</span> tilbud fundet
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center">
+                <button onclick="printDeals()" 
+                        class="w-full sm:w-auto bg-balanz-green text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors flex items-center justify-center space-x-2">
+                    <span>🖨️</span>
+                    <span>Print Tilbud</span>
+                </button>
+                <select id="sort-select" onchange="sortDeals()" class="w-full sm:w-auto bg-white border border-gray-300 rounded-lg px-4 py-2">
+                    <option value="">Sorter efter</option>
+                    <option value="store">Supermarkeder (incl kategori)</option>
+                    <option value="category">Kategorier</option>
+                </select>
+            </div>
+        </div>
 
-        <!-- Simple List Container -->
+        <!-- Deals Container -->
         <div class="bg-white rounded-lg shadow-sm border border-balanz-blue overflow-hidden">
             <div id="deals-container" class="max-h-96 overflow-y-auto">
                 <div class="p-6 text-center text-gray-500">
@@ -97,29 +99,29 @@
         </div>
 
         <!-- CTA Section -->
-        <div class="text-center mt-12 p-8 bg-white rounded-2xl shadow-sm">
-            <h3 class="text-2xl font-bold text-gray-800 mb-4">Se hvordan du kan spare penge med vores smarte ugeplanner!</h3>
-            <p class="text-gray-600 mb-6">Vælg dit budget og få en madplan baseret på disse tilbud</p>
-            <a href="/planner.html" class="inline-block bg-balanz-green text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all shadow-lg">
+        <div class="text-center mt-8 sm:mt-12 p-6 sm:p-8 bg-white rounded-2xl shadow-sm">
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Se hvordan du kan spare penge med vores smarte ugeplanner!</h3>
+            <p class="text-gray-600 mb-4 sm:mb-6">Vælg dit budget og få en madplan baseret på disse tilbud</p>
+            <a href="/choose-plan.html" class="inline-block bg-balanz-green text-white px-6 sm:px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all shadow-lg">
                 Start planneren →
             </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
+    <footer class="bg-gray-800 text-white py-8 sm:py-12">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <div class="mb-4">
+            <div class="mb-4 text-sm sm:text-base">
                 © 2025 Balanz.dk - Den smartere måde at handle ind
             </div>
-            <div class="mb-4">
-                <a href="#" class="text-gray-300 hover:text-balanz-green transition-colors mx-4">Privatlivspolitik</a>
-                <span class="text-gray-500">|</span>
-                <a href="#" class="text-gray-300 hover:text-balanz-green transition-colors mx-4">Vilkår og betingelser</a>
-                <span class="text-gray-500">|</span>
-                <a href="#" class="text-gray-300 hover:text-balanz-green transition-colors mx-4">Kontakt</a>
+            <div class="mb-4 flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-0">
+                <a href="#" class="text-gray-300 hover:text-balanz-green transition-colors text-sm sm:mx-4">Privatlivspolitik</a>
+                <span class="hidden sm:inline text-gray-500">|</span>
+                <a href="#" class="text-gray-300 hover:text-balanz-green transition-colors text-sm sm:mx-4">Vilkår og betingelser</a>
+                <span class="hidden sm:inline text-gray-500">|</span>
+                <a href="#" class="text-gray-300 hover:text-balanz-green transition-colors text-sm sm:mx-4">Kontakt</a>
             </div>
-            <div class="text-gray-400">
+            <div class="text-gray-400 text-sm">
                 Lavet med ❤️ i Danmark
             </div>
         </div>
@@ -193,7 +195,7 @@
             Array.from(uniqueCategories).sort().forEach(category => {
                 const button = document.createElement('button');
                 button.onclick = () => filterByCategory(category);
-                button.className = 'category-btn bg-white text-gray-700 px-4 py-2 rounded-full font-semibold border hover:bg-gray-50';
+                button.className = 'category-btn bg-white text-gray-700 px-3 sm:px-4 py-2 rounded-full text-sm font-semibold border hover:bg-gray-50';
                 
                 // Use Danish translation if available, otherwise use original English
                 const danishLabel = categoryTranslations[category] || category;
@@ -265,15 +267,17 @@
                 const displayCategory = categoryTranslations[deal.Category] || deal.Category;
                 
                 return `
-                <div class="flex justify-between items-center py-3 px-6 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-balanz-beige transition-colors border-b border-gray-100 last:border-b-0">
-                    <div class="flex-1">
-                        <span class="font-medium text-gray-800">${deal["Deal Name"] || 'Ukendt produkt'}</span>
-                        <span class="text-sm text-gray-500 ml-3">${deal.Amount || ''}</span>
-                        <span class="text-sm font-medium text-balanz-green ml-3">${deal.Store || 'Ukendt butik'}</span>
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center py-4 px-4 sm:px-6 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-balanz-beige transition-colors border-b border-gray-100 last:border-b-0">
+                    <div class="flex-1 mb-2 sm:mb-0">
+                        <div class="font-medium text-gray-800 mb-1">${deal["Deal Name"] || 'Ukendt produkt'}</div>
+                        <div class="text-sm text-gray-500 flex flex-wrap gap-2">
+                            <span>${deal.Amount || ''}</span>
+                            <span class="font-medium text-balanz-green">${deal.Store || 'Ukendt butik'}</span>
+                        </div>
                     </div>
-                    <div class="flex items-center gap-4">
-                        <span class="text-sm bg-gray-100 px-2 py-1 rounded">${displayCategory}</span>
-                        <span class="font-bold text-balanz-green">${deal.Price || 'Se pris'}</span>
+                    <div class="flex items-center justify-between sm:justify-end gap-3 sm:gap-4">
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded whitespace-nowrap">${displayCategory}</span>
+                        <span class="font-bold text-balanz-green text-lg">${deal.Price || 'Se pris'}</span>
                     </div>
                 </div>
             `}).join('');
@@ -284,7 +288,8 @@
         function updateDealsCount() {
             document.getElementById('deals-count').textContent = filteredDeals.length;
         }
-		function printDeals() {
+
+        function printDeals() {
             window.open('/print-deals-list.html?autoprint=true', '_blank', 'width=800,height=600');
         }
     </script>
