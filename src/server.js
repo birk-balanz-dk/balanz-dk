@@ -40,7 +40,7 @@ async function loadData() {
 
     for (const supermarket of supermarketFiles) {
       try {
-        const csvData = fs.readFileSync(path.join(__dirname, '../public/data/', supermarket.file), 'utf8');
+        const csvData = fs.readFileSync(path.join(__dirname, `../${supermarket.file}`), 'utf8');
         const parsedDeals = Papa.parse(csvData, { header: true, skipEmptyLines: true }).data;
         
         // Add store identifier to each deal
@@ -68,7 +68,7 @@ async function loadData() {
 
     for (const recipeSource of recipeFiles) {
       try {
-        const csvData = fs.readFileSync(path.join(__dirname, '../public/data/', recipeSource.file), 'utf8');
+        const csvData = fs.readFileSync(path.join(__dirname, `../${recipeSource.file}`), 'utf8');
         const parsedRecipes = Papa.parse(csvData, { header: true, skipEmptyLines: true }).data;
         
         // Add source identifier to each recipe
@@ -655,7 +655,7 @@ while (selectedRecipes.length < days && processedRecipes.length > 0) {
       shoppingList: shoppingList,
       savings: savings,
       storesUsed: Array.from(allStoresUsed),
-      summary: `Smart ${days}-dages madplan med ${dealPercentage}% tilbuds-match fra ${Array.from(allStoresUsed).length} butikskæder og skjulte sundhedsopgraderinger`,
+      summary: `Smart ${days}-dages madplan med ${dealPercentage}% tilbuds-match fra ${Array.from(allStoresUsed).length} butikskæder`,
       generatedAt: new Date().toISOString(),
       dealCount: availableDeals.length,
       storesCount: getUniqueStores().length
@@ -690,7 +690,7 @@ app.get('/api/deals', (req, res) => {
   
   res.json({
     success: true,
-    deals: deals.slice(0, 50),
+    deals: deals,
     total: deals.length,
     stores: getUniqueStores()
   });
@@ -850,7 +850,7 @@ app.post('/api/meal-plan', async (req, res) => {
       shoppingList: shoppingList,
       savings: savings,
       storesUsed: Array.from(allStoresUsed),
-      summary: `Smart 5-dages madplan med ${dealPercentage}% tilbuds-match fra ${Array.from(allStoresUsed).length} butikskæder og skjulte sundhedsopgraderinger`,
+      summary: `Smart 5-dages madplan med ${dealPercentage}% tilbuds-match fra ${Array.from(allStoresUsed).length} butikskæder`,
       generatedAt: new Date().toISOString(),
       dealCount: availableDeals.length,
       storesCount: getUniqueStores().length
