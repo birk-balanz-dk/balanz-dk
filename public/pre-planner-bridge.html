@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vælg din madplan - Balanz.dk</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'balanz-green': '#7B9B7D',
+                        'balanz-blue': '#A8C4D0', 
+                        'balanz-beige': '#f9f2e8'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-balanz-beige min-h-screen">
+    <!-- Navigation -->
+    <nav class="shadow-sm bg-balanz-beige">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/">
+                <img src="/images/header-logo.png" alt="Balanz.dk" class="h-10 w-auto">
+            </a>
+            <div class="flex gap-4">
+                <a href="/deals.html" class="bg-balanz-blue text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all">
+                    Se Alle Tilbud
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-6xl mx-auto px-4 py-16">
+        <!-- Header Section -->
+        <div class="text-center mb-16">
+            <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                Vælg din <span class="text-balanz-green">madplan</span>
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                To måder at spare penge på mad - begge baseret på aktuelle tilbud og dit budget
+            </p>
+        </div>
+
+        <!-- Two Plan Options -->
+        <div class="grid lg:grid-cols-2 gap-8 mb-16">
+            <!-- Klassisk Plan -->
+            <div class="bg-white rounded-2xl shadow-lg p-8 border-2 border-transparent hover:border-balanz-green transition-all duration-300">
+                <div class="text-center mb-6">
+                    <div class="w-20 h-20 bg-balanz-green bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-4xl">🍽️</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-2">Klassisk Balanz</h2>
+                    <p class="text-lg text-balanz-green font-semibold">GRATIS</p>
+                </div>
+
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-center text-gray-700">
+                        <span class="w-2 h-2 bg-balanz-green rounded-full mr-3"></span>
+                        Traditionelle og velkendte danske retter
+                    </div>
+                    <div class="flex items-center text-gray-700">
+                        <span class="w-2 h-2 bg-balanz-green rounded-full mr-3"></span>
+                        Smart plalægning baseret på aktuelle tilbud
+                    </div>
+                    <div class="flex items-center text-gray-700">
+                        <span class="w-2 h-2 bg-balanz-green rounded-full mr-3"></span>
+                        Budget-optimeret indkøbsliste
+                    </div>
+                    <div class="flex items-center text-gray-700">
+                        <span class="w-2 h-2 bg-balanz-green rounded-full mr-3"></span>
+                        Print-venlig format
+                    </div>
+                </div>
+
+                <button onclick="selectPlan('klassisk')" 
+                        class="w-full bg-balanz-green text-white font-bold py-4 px-6 rounded-lg text-lg hover:bg-opacity-90 transition-all duration-200">
+                    Start Klassisk Plan
+                </button>
+            </div>
+
+            <!-- Premium Økologisk Plan -->
+            <div class="bg-white rounded-2xl shadow-lg p-8 border-2 border-balanz-blue relative overflow-hidden">
+                <!-- Coming Soon Badge -->
+                <div class="absolute top-4 right-4 bg-balanz-blue text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    Kommer snart
+                </div>
+
+                <div class="text-center mb-6">
+                    <div class="w-20 h-20 bg-balanz-blue bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-4xl">🌱</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-2">Balanz+ Økologisk</h2>
+                    <p class="text-lg text-balanz-blue font-semibold">PREMIUM</p>
+                </div>
+
+                <!-- Challenge Statement -->
+                <div class="bg-balanz-blue bg-opacity-10 rounded-lg p-4 mb-6">
+                    <p class="text-center text-gray-800 font-semibold text-lg">
+                        "Du tror ikke du har råd til økologisk?"
+                    </p>
+                    <p class="text-center text-orange-600 font-bold text-xl mt-2">
+                        Tænk igen!
+                    </p>
+                </div>
+
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-center text-gray-700">
+                        <span class="w-2 h-2 bg-balanz-blue rounded-full mr-3"></span>
+                        Velkendte danske retter med nutrition boost
+                    </div>
+                    <div class="flex items-center text-gray-700">
+                        <span class="w-2 h-2 bg-balanz-blue rounded-full mr-3"></span>
+                        Budget-optimeret økologisk indkøb
+                    </div>
+                    <div class="flex items-center text-gray-700">
+                        <span class="w-2 h-2 bg-balanz-blue rounded-full mr-3"></span>
+                        "Vælg dit budget - vi gør resten"
+                    </div>
+                    <div class="flex items-center text-gray-700">
+                        <span class="w-2 h-2 bg-balanz-blue rounded-full mr-3"></span>
+                        Nutrition boost forklaringer
+                    </div>
+                </div>
+
+                <button disabled 
+                        class="w-full bg-gray-300 text-gray-500 font-bold py-4 px-6 rounded-lg text-lg cursor-not-allowed">
+                    Tilgængelig snart
+                </button>
+            </div>
+        </div>
+
+        <!-- The Secret -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Hemmeligheden bag budget-økologisk</h3>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
+                Nutrition Boost gør økologisk mere overkommeligt fordi smarte substitutioner reducerer behovet for dyrt økologisk kød, 
+                mens du får dobbelt så meget protein og mere næring.
+            </p>
+            
+            <div class="bg-balanz-beige rounded-lg p-6 max-w-2xl mx-auto">
+                <h4 class="font-semibold text-gray-800 mb-3">Eksempel: Økologiske frikadeller</h4>
+                <div class="grid md:grid-cols-2 gap-6 text-left">
+                    <div>
+                        <p class="font-semibold text-red-600">Traditionelt:</p>
+                        <p class="text-sm text-gray-600">500g økologisk oksekød: 89 kr</p>
+                        <p class="text-sm text-gray-600">Lav næring per krone</p>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-balanz-green">Balanz+ metode:</p>
+                        <p class="text-sm text-gray-600">300g økologisk kød + 200g røde linser: 58 kr</p>
+                        <p class="text-sm text-gray-600">Dobbelt protein, mere næringsstoffer</p>
+                    </div>
+                </div>
+                <p class="text-center font-bold text-balanz-green mt-4">= 31 kr besparelse + bedre næring</p>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="text-center mt-12">
+            <p class="text-gray-600 mb-6">Klar til at spare penge på mad?</p>
+            <button onclick="selectPlan('klassisk')" 
+                    class="bg-balanz-green text-white font-bold py-4 px-8 rounded-lg text-lg hover:bg-opacity-90 transition-all duration-200">
+                Start med Klassisk Balanz
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 mt-16">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="mb-4">
+                © 2025 Balanz.dk - Den smartere måde at handle ind
+            </div>
+            <div class="mb-4">
+                <a href="#" class="text-gray-300 hover:text-balanz-green transition-colors mx-4">Privatlivspolitik</a>
+                <span class="text-gray-500">|</span>
+                <a href="#" class="text-gray-300 hover:text-balanz-green transition-colors mx-4">Vilkår og betingelser</a>
+                <span class="text-gray-500">|</span>
+                <a href="#" class="text-gray-300 hover:text-balanz-green transition-colors mx-4">Kontakt</a>
+            </div>
+            <div class="text-gray-400">
+                Lavet med ❤️ i Danmark
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function selectPlan(planType) {
+            if (planType === 'klassisk') {
+                window.location.href = '/planner.html';
+            } else if (planType === 'premium') {
+                // For future premium plan
+                alert('Premium plan kommer snart! Prøv den gratis klassiske plan i mellemtiden.');
+            }
+        }
+    </script>
+</body>
+</html>
