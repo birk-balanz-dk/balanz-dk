@@ -27,7 +27,7 @@
                 <img src="/images/header-logo.png" alt="Balanz.dk" class="h-8 sm:h-10 w-auto">
             </a>
             <div class="flex gap-2 sm:gap-4">
-                <a href="/choose-plan.html" class="bg-balanz-green text-white px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold hover:bg-opacity-90 transition-all">
+                <a href="/pre-planner-bridge.html" class="bg-balanz-green text-white px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold hover:bg-opacity-90 transition-all">
                     Madplanlægger
                 </a>
             </div>
@@ -69,27 +69,26 @@
     </section>
 
     <!-- Deals List -->
-    <section class="max-w-7xl mx-auto px-4 pb-16">
-        <!-- Controls Bar -->
-        <div class="mb-4 sm:mb-6 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
-            <div class="text-gray-600 text-center sm:text-left">
-                <span id="deals-count">0</span> tilbud fundet
-            </div>
-            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center">
-                <button onclick="printDeals()" 
-                        class="w-full sm:w-auto bg-balanz-green text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors flex items-center justify-center space-x-2">
-                    <span>🖨️</span>
-                    <span>Print Tilbud</span>
-                </button>
-                <select id="sort-select" onchange="sortDeals()" class="w-full sm:w-auto bg-white border border-gray-300 rounded-lg px-4 py-2">
-                    <option value="">Sorter efter</option>
-                    <option value="store">Supermarkeder (incl kategori)</option>
-                    <option value="category">Kategorier</option>
-                </select>
-            </div>
+    <div class="max-w-7xl mx-auto px-4 mb-4 sm:mb-6 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-4">
+        <div class="text-gray-600 text-center sm:text-left">
+            <span id="deals-count">0</span> tilbud fundet
         </div>
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center">
+            <button onclick="printDeals()" 
+                    class="w-full sm:w-auto bg-balanz-green text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors flex items-center justify-center space-x-2">
+                <span>🖨️</span>
+                <span>Print Tilbud</span>
+            </button>
+            <select id="sort-select" onchange="sortDeals()" class="w-full sm:w-auto bg-white border border-gray-300 rounded-lg px-4 py-2">
+                <option value="">Sorter efter</option>
+                <option value="store">Supermarkeder (incl kategori)</option>
+                <option value="category">Kategorier</option>
+            </select>
+        </div>
+    </div>
 
-        <!-- Deals Container -->
+    <!-- Simple List Container -->
+    <div class="max-w-7xl mx-auto px-4">
         <div class="bg-white rounded-lg shadow-sm border border-balanz-blue overflow-hidden">
             <div id="deals-container" class="max-h-96 overflow-y-auto">
                 <div class="p-6 text-center text-gray-500">
@@ -102,14 +101,14 @@
         <div class="text-center mt-8 sm:mt-12 p-6 sm:p-8 bg-white rounded-2xl shadow-sm">
             <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Se hvordan du kan spare penge med vores smarte ugeplanner!</h3>
             <p class="text-gray-600 mb-4 sm:mb-6">Vælg dit budget og få en madplan baseret på disse tilbud</p>
-            <a href="/choose-plan.html" class="inline-block bg-balanz-green text-white px-6 sm:px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all shadow-lg">
+            <a href="/pre-planner-bridge.html" class="inline-block bg-balanz-green text-white px-6 sm:px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all shadow-lg">
                 Start planneren →
             </a>
         </div>
-    </section>
+    </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 sm:py-12">
+    <footer class="bg-gray-800 text-white py-8 sm:py-12 mt-8">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <div class="mb-4 text-sm sm:text-base">
                 © 2025 Balanz.dk - Den smartere måde at handle ind
