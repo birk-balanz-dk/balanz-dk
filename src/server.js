@@ -28,13 +28,13 @@ async function loadData() {
     
     // Load supermarket deals from all chains
     const supermarketFiles = [
-      { name: 'Coop', file: 'TilbudCoop.csv' },
-      { name: 'Lidl', file: 'TilbudLidl.csv' },
-      { name: 'Netto', file: 'TilbudNetto.csv' },
-      { name: 'REMA 1000', file: 'TilbudRema.csv' },
-      { name: 'Føtex', file: 'TilbudFoetex.csv' },
-	  { name: 'Discount365', file: '365.csv' }
-    ];
+  { name: 'Coop', file: 'public/data/TilbudCoop.csv' },
+  { name: 'Lidl', file: 'public/data/TilbudLidl.csv' },
+  { name: 'Netto', file: 'public/data/TilbudNetto.csv' },
+  { name: 'REMA 1000', file: 'public/data/TilbudRema.csv' },
+  { name: 'Føtex', file: 'public/data/TilbudFoetex.csv' },
+  { name: 'Discount365', file: 'public/data/365.csv' }
+];
 
     dealData = []; // Reset deals array
 
@@ -60,9 +60,9 @@ async function loadData() {
 
     // Load recipes from all sources
     const recipeFiles = [
-      { name: 'Arla', file: 'arla_recipes.csv' },
-      { name: 'Valdemarsro', file: 'valdemarsro_recipes.csv' }
-    ];
+  { name: 'Arla', file: 'public/data/arla_recipes.csv' },
+  { name: 'Valdemarsro', file: 'public/data/valdemarsro_recipes.csv' }
+];
 
     recipeData = []; // Reset recipes array
 
