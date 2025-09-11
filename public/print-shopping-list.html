@@ -198,9 +198,13 @@
         <!-- Summary will be populated by JavaScript -->
     </div>
 
-    <div id="shopping-content">
-        <!-- Shopping list content will be populated by JavaScript -->
-    </div>
+    <div id="meal-plan-content">
+    <!-- Meal plan will be populated by JavaScript -->
+</div>
+
+<div id="shopping-content">
+    <!-- Shopping list content will be populated by JavaScript -->
+</div>
 
     <div class="footer">
         <img src="/images/header-logo.png" alt="Balanz.dk" class="footer-logo">
@@ -270,7 +274,27 @@
                     <div class="summary-label">Besparelse</div>
                 </div>
             `;
-
+// Add meal plan section before shopping list
+if (data.mealPlan && data.mealPlan.length > 0) {
+    const mealPlanHtml = `
+        <div class="store-section" style="margin-bottom: 30px;">
+            <div class="store-header">📅 Din Ugeplan</div>
+            <div class="item-list">
+                ${data.mealPlan.map((meal, index) => `
+                    <div class="item" style="border-bottom: 1px solid #E2E8F0; padding: 12px 0;">
+                        <div style="font-weight: bold; color: #7B9B7D; min-width: 80px; flex-shrink: 0;">
+                            Dag ${index + 1}:
+                        </div>
+                        <div style="flex-grow: 1; margin-left: 12px;">
+                            ${meal.title || meal.name || meal.recipe || meal.recipeName || 'Måltid'}
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+    document.getElementById('meal-plan-content').innerHTML = mealPlanHtml;
+}
             // Generate shopping list content
             const shoppingList = data.shoppingList;
             const storeNames = {

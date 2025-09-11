@@ -243,27 +243,35 @@
 
         // Load deals data
         async function loadDeals() {
-            try {
-                const response = await fetch('/api/deals');
-                const data = await response.json();
-                
-                let allDeals = [];
-                
-                if (data && Array.isArray(data)) {
-                    allDeals = data;
-                } else if (data && data.deals && Array.isArray(data.deals)) {
-                    allDeals = data.deals;
-                } else if (data && data.success && data.deals) {
-                    allDeals = data.deals;
-                }
-                
-                return allDeals;
-                
-            } catch (error) {
-                console.error('Error loading deals:', error);
-                return [];
-            }
+    // First check if we have filtered deals from parent page
+    const storedDeals = localStorage.getItem('filteredDeals');
+    if (storedDeals) {
+        localStorage.removeItem('filteredDeals'); // Clean up
+        return JSON.parse(storedDeals);
+    }
+    
+    // Otherwise load all deals (fallback behavior)
+    try {
+        const response = await fetch('/api/deals');
+        const data = await response.json();
+        
+        let allDeals = [];
+        
+        if (data && Array.isArray(data)) {
+            allDeals = data;
+        } else if (data && data.deals && Array.isArray(data.deals)) {
+            allDeals = data.deals;
+        } else if (data && data.success && data.deals) {
+            allDeals = data.deals;
         }
+        
+        return allDeals;
+        
+    } catch (error) {
+        console.error('Error loading deals:', error);
+        return [];
+    }
+}
 
         function displayDeals(deals) {
             if (!deals || deals.length === 0) {

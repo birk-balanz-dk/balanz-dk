@@ -289,8 +289,10 @@
         }
 
         function printDeals() {
-            window.open('/print-deals-list.html?autoprint=true', '_blank', 'width=800,height=600');
-        }
+    // Store the currently filtered deals for the print page
+    localStorage.setItem('filteredDeals', JSON.stringify(filteredDeals));
+    window.open('/print-deals-list.html?autoprint=true', '_blank', 'width=800,height=600');
+}
     </script>
 </body>
 </html>
