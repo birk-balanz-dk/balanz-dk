@@ -1,89 +1,114 @@
+```csv
 Category,Deal Name,Amount,Price
-Bakery & Bread,Cheddartwist,3 stk,25.00 kr.
-Bakery & Bread,ITALIAMO Croissanter med cremefyld,500 g / ps.,30.00 kr.
-Bakery & Bread,ITALIAMO Friske macarons,12 x 13 g / pk.,35.00 kr.
-Bakery & Bread,ITALIAMO Italienske småkager med fløde og honning,350 g / pk.,15.00 kr.
-Bakery & Bread,ITALIAMO Ladyfingers,400 g / ps.,20.00 kr.
-Bakery & Bread,Pistaciesnurre,105 g / stk.,10.00 kr.
-Beverages,ALLINI Pinot Grigio rosé eller Prosecco Treviso 11-12% alc.,2 x 75 cl / stk.,80.00 kr.
-Beverages,AQUA D’OR Vand uden brus,20 x 300 ml / pk.,35.00 kr.
-Beverages,BELLAROM Kaffekapsler- flere varianter,112-116 g / pk.,25.00 kr.
-Beverages,CAFÉ EMILIA Formalet kaffe Classic,500 g / ps.,55.00 kr.
-Beverages,DUCA DI SASSETA Primitivo Cabernet 13-5% alc.,75 cl / stk.,40.00 kr.
-Beverages,ITALIAMO Kaffe Espresso Magnifico bønner,1 kg / ps.,109.00 kr.
-Beverages,KONG STRONG Energidrik- flere varianter,3 stk,10.00 kr.
-Beverages,MATILDE Kakao,1 liter / stk.,15.00 kr.
-Beverages,MERRILD Hele bønner Signatur Blend eller Crema,400 g / ps.,65.00 kr.
-Beverages,MONSTER Energidrik,4 x 50 cl / pk.,40.00 kr.
-Beverages,Nero de Troia 13-5% alc.,75 cl / stk.,50.00 kr.
-Beverages,PEPSI-FAXE KONDI-EGEKILDE Sodavand- flere varianter,24 x 330 ml / pk.,73.00 kr.
-Beverages,PERONI Øl 1-2-5-0% alc.,33 cl / stk.,10.00 kr.
-Beverages,ROYAL Øl 0-0-4-6% alc.,20 x 33 cl / pk.,59.00 kr.
-Beverages,SCOOP Hindbær,950 ml / stk.,15.00 kr.
-Dairy & Eggs,ARLA Laktosefri hytteost 4% fedt,250 g / stk.,15.00 kr.
-Dairy & Eggs,BUKO Flødeost,300 g / stk.,20.00 kr.
-Dairy & Eggs,ITALIAMO Burrata,200 g / stk.,20.00 kr.
-Dairy & Eggs,ITALIAMO Mozzarella-pizzaost,400 g / stk.,25.00 kr.
-Dairy & Eggs,ITALIAMO Parmesan revet eller stykker,100 g / ps.,20.00 kr.
-Dairy & Eggs,KLOVBORG Ost Mellemlagret 45+,900 g / stk.,75.00 kr.
-Dairy & Eggs,MILBONA High Protein drik- flere varianter,350 g / stk.,8.00 kr.
-Dairy & Eggs,THEM Kras ost Ekstralagret 45+ i skiver,175 g / pk.,20.00 kr.
-Fish & Seafood,HAVBLÅ Lakseside,600 g / stk.,99.00 kr.
-Fish & Seafood,ITALIAMO Blæksprutte- carpaccio,150 g / pk.,10.00 kr.
-Fish & Seafood,ITALIAMO Sardiner i olivenolie,80 g / stk.,20.00 kr.
-Fish & Seafood,NAUTICA Grønlandsrejer,350 g / stk.,49.00 kr.
-Fish & Seafood,SKIPPER Sild- flere varianter,500-570 g / stk.,20.00 kr.
-Frozen Foods,CHEF SELECT Baguettes med hvidløgssmør,2 x 175 g / ps.,10.00 kr.
-Frozen Foods,CULINEA Biksemad eller pølsemix,600 g / ps.,25.00 kr.
-Frozen Foods,CULINEA Kyllingevinger eller -nuggets,750 g / ps.,35.00 kr.
-Frozen Foods,DANPO Spicy nuggets,600 g / ps.,29.00 kr.
-Frozen Foods,FLENSTED Flødekartofler,800 g / ps.,20.00 kr.
-Frozen Foods,ITALIAMO Appelsinsorbet,200 g / stk.,10.00 kr.
-Frozen Foods,ITALIAMO Calzone,250 g / stk.,20.00 kr.
-Frozen Foods,ITALIAMO Italiensk-inspireret is- flere varianter,750 ml / stk.,35.00 kr.
-Frozen Foods,ITALIAMO Italiensk-inspireret lasagne,400 g / stk.,20.00 kr.
-Frozen Foods,ITALIAMO Kaffeis,350 ml / stk.,20.00 kr.
-Frozen Foods,ITALIAMO Pizza,346-400 g / stk.,20.00 kr.
-Frozen Foods,ITALIAMO Pizza med bacon og burrata,350 g / stk.,25.00 kr.
-Frozen Foods,ITALIAMO Tiramisu eller panna cotta,2 x 80-100 g / pk.,15.00 kr.
-Frozen Foods,KRAMER’S Is,500 ml / stk.,25.00 kr.
-Fruits & Vegetables,Granatæble- Klasse 1,Stk.,5.00 kr.
-Fruits & Vegetables,Mango- Klasse 1,Stk.,8.00 kr.
-Meat & Poultry,DANISH CROWN Burger Boost,350 g / pk.,39.00 kr.
-Meat & Poultry,DULANO Kyllinge- cocktailpølser,200 g / pk.,15.00 kr.
-Meat & Poultry,GB MEAT GROUP Okseflanksteak med hvidløg,Pr. 1/2 kg,65.00 kr.
-Meat & Poultry,GB MEAT GROUP Ribeyefilet,Pr. 1/2 kg,75.00 kr.
-Meat & Poultry,GRILLMESTER-VILSTRUPGÅRD Kyllingelårfilet eller -spareribs,400-450 g / pk.,29.00 kr.
-Meat & Poultry,ITALIAMO 'Nduja Smørbar salami,200 g / stk.,10.00 kr.
-Meat & Poultry,ITALIAMO Guanciale salami,300 g / stk.,40.00 kr.
-Meat & Poultry,ITALIAMO Italiensk-inspireret skinke,100 g / pk.,20.00 kr.
-Meat & Poultry,ITALIAMO Kyllinge-bryststykker,150 g / pk.,15.00 kr.
-Meat & Poultry,ITALIAMO Mortadella,150 g / pk.,20.00 kr.
-Meat & Poultry,ITALIAMO Pancetta,90 g / pk.,20.00 kr.
-Meat & Poultry,VILSTRUPGÅRD-DANISH CROWN Baconbøffer- paneret XL schnitzel eller minikarbonader,360-400 g / pk.,29.00 kr.
-Meat & Poultry,VILSTRUPGÅRD Hakket gris og kalv 8-12% fedt,300 g / pk.,29.00 kr.
-Meat & Poultry,VILSTRUPGÅRD Hakket oksekød 15-20% fedt,400 g / pk.,35.00 kr.
-Meat & Poultry,VILSTRUPGÅRD Mørbrad af gris med bimørbrad,Pr. 1/2 kg,49.00 kr.
-Organic,NATURLI’ Økologisk drik,1 liter / stk.,10.00 kr.
-Pantry Items,ALESTO Ristede og saltede peanuts,500 g / ps.,15.00 kr.
-Pantry Items,ITALIAMO Bechamel-sauce,500 ml / stk.,12.00 kr.
-Pantry Items,ITALIAMO Cashewnødder med parmesan,150 g / ps.,20.00 kr.
-Pantry Items,ITALIAMO Frisk pasta med fyld- flere varianter,250 g / pk.,20.00 kr.
-Pantry Items,ITALIAMO Frisk pesto,90 g / stk.,10.00 kr.
-Pantry Items,ITALIAMO Gnocchi,500 g / pk.,20.00 kr.
-Pantry Items,ITALIAMO Italiensk-inspireret antipasti- Borettane-løg- grillede svampe- tørrede tomater eller artiskokker med persille,285 g / stk.,20.00 kr.
-Pantry Items,ITALIAMO Pastasauce- flere varianter,350 g / stk.,20.00 kr.
-Pantry Items,ITALIAMO Pistaciecreme,190 g / stk.,20.00 kr.
-Pantry Items,ITALIAMO Pistaciepesto,190 g / stk.,20.00 kr.
-Pantry Items,ITALIAMO Pistacienødder med chokolade,150 g / ps.,35.00 kr.
-Pantry Items,ITALIAMO Risottoris,1 kg / pk.,30.00 kr.
-Pantry Items,ITALIAMO Tørrede svampe,30 g / ps.,39.00 kr.
-Pantry Items,K-SALAT Bearnaisesauce,325 g / stk.,15.00 kr.
-Pantry Items,KAREN VOLF Minikager,75-107 g / pk.,10.00 kr.
-Pantry Items,KAREN VOLF Snøfler,400 g / pk.,22.00 kr.
-Pantry Items,NORDTHY Mini Waffers,150 g / ps.,20.00 kr.
-Pantry Items,SNACK DAY Dipmix,3 stk,10.00 kr.
-Pantry Items,SØNDERJYSKE FRISTELSER Pålægssalat,140 g / stk.,12.00 kr.
-Pantry Items,SWEET CORNER Flødebolsjer,200 g / ps.,20.00 kr.
-Pantry Items,TOMS Slikposer- flere varianter,325-375 g / ps.,35.00 kr.
-Pantry Items,VITA D´OR Flydende margarine,500 ml / stk.,8.00 kr.
+Bakery & Bread,DELUXE Ølandsbrød,550 g,12.-
+Bakery & Bread,Friskbagt Chokolade- cheesecake- muffin,95 g,10.-
+Bakery & Bread,Friskbagt Dagmartærte,366 g,20.-
+Bakery & Bread,Friskbagt Frusta med skinke,180 g,12.-
+Bakery & Bread,Friskbagt Toffee- muffin,80 g,6.-
+Bakery & Bread,HALLOWEEN Friskbagt Berlinere,4 x 92 g,39.-
+Beverages,BELLAROM Jubilæumskaffe,400 g,49.-
+Beverages,CARIBIA Ginger Beer,330 ml,5.-
+Beverages,CIMAROSA Chardonnay Colombard 13% alc.,75 cl,33.33 kr.
+Beverages,COCA-COLA-FANTA Sodavand,1.5 liter,15.-
+Beverages,HATA Sodavand,200 ml,15.-
+Beverages,HOSHI Japansk Dry Gin 38% alc.,70 cl,139.-
+Beverages,INSTANT Bubbletea Kit,240 g,65.-
+Beverages,MILBONA Kaffedrik,330 ml,8.-
+Beverages,RIBENA Solbær light eller blandet,850 ml,20.-
+Beverages,SOLEVITA Juice,1 liter,20.-
+Beverages,Uludag Almindelig eller sukkerfri,330 ml,5.-
+Dairy & Eggs,HENRIETTELUND Danske skrabeæg M-L,8 stk,10.-
+Dairy & Eggs,KAROLINES KØKKEN Piskefløde,500 ml,18.-
+Dairy & Eggs,LURPAK Smørbar,200 g,12.-
+Dairy & Eggs,MADVÆRKET Danbo eller Samsø ost i skiver - Produceret i Danmark,300 g,25.-
+Dairy & Eggs,MILBONA High Protein,150-200 g,7.-
+Dairy & Eggs,MILBONA Langtidsholdbar mælk 1.5-3.5% fedt,1 liter,10.-
+Dairy & Eggs,MILBONA Rund ostesnack,120 g,15.-
+Dairy & Eggs,PHILADELPHIA Friskost,200-300 g,15.-
+Dairy & Eggs,VEMONDO Mandel- eller havredrik,1 liter,10.-
+Fish & Seafood,HAVBLÅ Hel dorade,Pr. 1/2 kg,59.-
+Fish & Seafood,HAVBLÅ Laksefileter Med skind,225 g,39.-
+Fish & Seafood,VITASIA Norisnack,5.5 g,5.-
+Fish & Seafood,VITASIA Noritang,5 stk,10.-
+Fish & Seafood,VITASIA Tangsalat,100 g,18.-
+Frozen Foods,BON GELATI Premium is Dybfrost,900 ml,35.-
+Frozen Foods,CULINEA Gyoza dumplings Dybfrost,400 g,20.-
+Frozen Foods,DR. OETKER Pizza Dybfrost,385-390 g,20.-
+Frozen Foods,FRESHONA Grøntsager Dybfrost,750-1000 g,12.-
+Frozen Foods,FRESHONA Wokmix Dybfrost,500 g,10.-
+Frozen Foods,HALLOWEEN Kartofler Dybfrost,450 g,12.-
+Frozen Foods,HALLOWEEN Minipizzaer Dybfrost,360 g,30.-
+Frozen Foods,HALLOWEEN Monster Chilli Cheese Nuggets Dybfrost,420 g,39.-
+Frozen Foods,HALLOWEEN Nuggets Dybfrost,400 g,30.-
+Frozen Foods,HARVEST BASKET Pommes frites eller røsti Dybfrost,800-1000 g,20.-
+Frozen Foods,TASTINO Håndværkere eller blandede rundstykker Dybfrost,600 g,12.-
+Frozen Foods,VITASIA Gyoza Flere varianter Dybfrost,212-238 g,20.-
+Frozen Foods,VITASIA Gyoza Flere varianter Dybfrost,212-238 g,25.-
+Frozen Foods,VITASIA Grøntsags- tempura eller kyllingeret med teriyaki Dybfrost,400 g,25.-
+Frozen Foods,VITASIA Misosuppe Dybfrost,500 g,25.-
+Frozen Foods,VITASIA Mochi-is,6 x 35 g,30.-
+Frozen Foods,VITASIA Paneret kylling med chilidip Dybfrost,500 g,30.-
+Frozen Foods,VITASIA Ramensuppe Dybfrost,400 g,20.-
+Fruits & Vegetables,Avocado Klasse 1,500 g,12.-
+Fruits & Vegetables,CHEF SELECT Salatblanding,100-200 g,12.-
+Fruits & Vegetables,Danske æbler eller pærer Klasse 1,1 stk,1.-
+Fruits & Vegetables,Danske bagekartofler Klasse 1,1.5 kg,10.-
+Fruits & Vegetables,Danske gulerødder Klasse 1,2 kg,10.-
+Fruits & Vegetables,Danske løg Klasse 1,750 g,5.-
+Fruits & Vegetables,Danske majs Klasse 1,1 stk,3.-
+Fruits & Vegetables,Mango Klasse 1,1 stk,9.-
+Meat & Poultry,3-STJERNET Pålæg,80-90 g,10.-
+Meat & Poultry,BUTCHER'S-DANISH CROWN Cevapcici eller hakket oksekød med 35% grønt,400 g,35.-
+Meat & Poultry,DULANO Mini Salami,2 x 25 g,5.-
+Meat & Poultry,DULANO Skinke,80 g,5.-
+Meat & Poultry,GB MEATGROUP Marineret middagskotelet,125 g,15.-
+Meat & Poultry,GRILLMESTER-VILSTRUPGÅRD Kalkuninderfileter eller -wings,400-1100 g,39.-
+Meat & Poultry,HIMMERLANDSKØD Kalveculotte,Pr. 1/2 kg,69.-
+Meat & Poultry,KAMAR Kødpålæg,200 g,10.-
+Meat & Poultry,SLAGTER LAMPE Salami,250 g,25.-
+Meat & Poultry,STEFF HOULBERG Pølser,375-400 g,20.-
+Meat & Poultry,STRYHN'S Leverpostej,275 g,15.-
+Meat & Poultry,VILSTRUPGÅRD Dansk ribbenssteg Produceret i Danmark,Pr. 1/2 kg,29.-
+Meat & Poultry,VILSTRUPGÅRD-DANISH CROWN Skinkeschnitzler eller gourmetsaltet filet a la mørbrad,380-600 g,35.-
+Meat & Poultry,VILSTRUPGÅRD-ROSE Kyllingeoverlår - underlår - hakket gris eller gris og kalv 14-18% fedt,300-600 g,20.-
+Pantry Items,AXA Crunchy granola,750 g,25.-
+Pantry Items,CARLETTI Afhugget finger af skum,300 g,59.-
+Pantry Items,CARLETTI Chokopålæg,73.5 g,10.-
+Pantry Items,CHEF SELECT Færdigretter,400 g,15.-
+Pantry Items,CORNY Myslibar,40-50 g,5.-
+Pantry Items,DANSUKKER Sukker,1 kg,5.-
+Pantry Items,FALENGREEN Pizzatopping,500 g,20.-
+Pantry Items,FRESHONA Nødder og frugt,60 g,6.-
+Pantry Items,GRAASTEN Dressing,425 g,12.-
+Pantry Items,HALLOWEEN Chokoladekugler,200 g,30.-
+Pantry Items,HALLOWEEN Figur med chokoladeknapper,200 g,45.-
+Pantry Items,HALLOWEEN Græskar med slik,200 g,49.-
+Pantry Items,HALLOWEEN Karameller,1200 g,99.-
+Pantry Items,HALLOWEEN Kranium med slik,333 g,69.-
+Pantry Items,J.D. GROSS Chokolade,125 g,20.-
+Pantry Items,JENSENS Sauce,250 ml,8.-
+Pantry Items,K-SALAT Remoulade eller mayonnaise,375 g,10.-
+Pantry Items,KAREN VOLF Halloween Bites,144-200 g,10.-
+Pantry Items,KOIKEYA Chilichips,60 g,20.-
+Pantry Items,NISSIN Instant nudler,63-67 g,10.-
+Pantry Items,OTA Solgryn,1800 g,25.-
+Pantry Items,SAMLIP Panko rasp,200 g,15.-
+Pantry Items,SONDEY Cookies,210 g,12.-
+Pantry Items,TAFFEL Chips,110-175 g,15.-
+Pantry Items,TOMS Yankie Bar,40 g,5.-
+Pantry Items,TROLLI Skumøjne med fyld,75 g,15.-
+Pantry Items,TROLLI Sweet & Sour Mix,360 g,49.-
+Pantry Items,TROLLI Tarantula,800 g,65.-
+Pantry Items,VITASIA Japansk- inspireret paste,50 g,10.-
+Pantry Items,VITASIA Mochi-puffs,140 g,35.-
+Pantry Items,VITASIA Nudler i boks,180 g,12.-
+Pantry Items,VITASIA Ramennudler,300 g,10.-
+Pantry Items,VITASIA Ramenbouillon,1 liter,15.-
+Pantry Items,VITASIA Soba- eller udonnudler,300 g,8.-
+Pantry Items,VITASIA Soba- eller udonnudler,400 g,28.-
+Pantry Items,VITASIA Stegt tofu,180 g,10.-
+Pantry Items,VITASIA Sushiris,500 g,10.-
+Pantry Items,VITASIA Teriyakisauce,250 ml,20.-
+Pantry Items,VITASIA Udonnudler,200 g,10.-
+Pantry Items,VITASIA Wasabi,43 g,8.-
+Pantry Items,YUKI&LOVE Mochi-kage,128 g,35.-
