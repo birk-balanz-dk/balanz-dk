@@ -169,7 +169,7 @@
                 
                 // Collect unique categories
                 allDeals.forEach(deal => {
-                    if (deal.Category) uniqueCategories.add(deal.Category);
+                    if (deal.category) uniqueCategories.add(deal.category);
                 });
                 
                 // Create dynamic category filters
@@ -222,13 +222,13 @@
         }
 
         function applyFilters() {
-            filteredDeals = allDeals.filter(deal => {
-                if (currentCategoryFilter === 'all') return true;
-                return deal.Category === currentCategoryFilter;
-            });
-            
-            sortDeals();
-        }
+    filteredDeals = allDeals.filter(deal => {
+        if (currentCategoryFilter === 'all') return true;
+        return deal.category === currentCategoryFilter; // Changed from deal.Category
+    });
+    
+    sortDeals();
+}
 
         function sortDeals() {
             const sortBy = document.getElementById('sort-select').value;
@@ -263,20 +263,20 @@
             
             const dealsList = filteredDeals.map((deal, index) => {
                 // Translate category for display
-                const displayCategory = categoryTranslations[deal.Category] || deal.Category;
+                const displayCategory = categoryTranslations[deal.category] || deal.category;
                 
                 return `
                 <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center py-4 px-4 sm:px-6 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-balanz-beige transition-colors border-b border-gray-100 last:border-b-0">
                     <div class="flex-1 mb-2 sm:mb-0">
-                        <div class="font-medium text-gray-800 mb-1">${deal["Deal Name"] || 'Ukendt produkt'}</div>
+                        <div class="font-medium text-gray-800 mb-1">${deal.title || 'Ukendt produkt'}</div>
                         <div class="text-sm text-gray-500 flex flex-wrap gap-2">
-                            <span>${deal.Amount || ''}</span>
-                            <span class="font-medium text-balanz-green">${deal.Store || 'Ukendt butik'}</span>
+                            <span>${deal.amount || ''}</span>
+<span class="font-medium text-balanz-green">${deal.store || 'Ukendt butik'}</span>
                         </div>
                     </div>
                     <div class="flex items-center justify-between sm:justify-end gap-3 sm:gap-4">
                         <span class="text-xs bg-gray-100 px-2 py-1 rounded whitespace-nowrap">${displayCategory}</span>
-                        <span class="font-bold text-balanz-green text-lg">${deal.Price || 'Se pris'}</span>
+                        <span class="font-bold text-balanz-green text-lg">${deal.price || 'Se pris'}</span>
                     </div>
                 </div>
             `}).join('');

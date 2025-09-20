@@ -21,8 +21,6 @@
     <style>
         .loading { animation: spin 1s linear infinite; }
         @keyframes spin { to { transform: rotate(360deg); } }
-        .recipe-card { transition: all 0.2s ease; }
-        .recipe-card:hover { transform: translateY(-2px); }
     </style>
 </head>
 <body class="font-sans bg-balanz-beige min-h-screen">
@@ -43,18 +41,16 @@
     <!-- Hero Section -->
     <section class="max-w-6xl mx-auto px-4 py-16">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <!-- Hero Image -->
             <div class="order-2 lg:order-1">
                 <img src="/images/planner.png" alt="Plan your meals together" class="aspect-square max-w-md mx-auto rounded-3xl shadow-lg">
             </div>
             
-            <!-- Hero Text -->
             <div class="order-1 lg:order-2 text-center lg:text-left">
                 <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
                     SMART<br>
                     <span class="text-balanz-green">MADPLAN</span>
                 </h1>
-				<h1 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+                <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
                     SPARET<br>
                     <span class="text-balanz-green">PENGE</span>
                 </h1>
@@ -131,9 +127,7 @@
 
             <!-- Right Column: Results -->
             <div class="lg:col-span-2">
-                <div id="resultsContainer" class="hidden">
-                    <!-- Results will be populated here -->
-                </div>
+                <div id="resultsContainer" class="hidden"></div>
 
                 <!-- Placeholder -->
                 <div id="placeholder" class="text-center py-16">
@@ -171,14 +165,15 @@
         let selectedDays = 5;
         let currentMealPlanData = null;
 
-        // Initialize
+        // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
-            initializeBudgetSlider();
-            initializeDayButtons();
-            initializeForm();
+            console.log('🚀 Planner initialized');
+            setupBudgetSlider();
+            setupDayButtons();
+            setupForm();
         });
 
-        function initializeBudgetSlider() {
+        function setupBudgetSlider() {
             const budgetRange = document.getElementById('budgetRange');
             const budgetDisplay = document.getElementById('budgetDisplay');
             
@@ -187,58 +182,59 @@
             });
         }
 
-        function initializeDayButtons() {
+        function setupDayButtons() {
             const dayButtons = document.querySelectorAll('.day-btn');
             
             dayButtons.forEach(btn => {
                 btn.addEventListener('click', function() {
-                    // Remove active class from all buttons
+                    // Remove active state from all buttons
                     dayButtons.forEach(b => {
                         b.classList.remove('bg-balanz-green', 'text-white');
                         b.classList.add('border-gray-300');
                     });
                     
-                    // Add active class to clicked button
+                    // Add active state to clicked button
                     this.classList.add('bg-balanz-green', 'text-white');
                     this.classList.remove('border-gray-300');
                     
                     selectedDays = parseInt(this.dataset.days);
+                    console.log('📅 Selected days:', selectedDays);
                 });
             });
         }
 
-        function initializeForm() {
+        function setupForm() {
             const form = document.getElementById('mealPlanForm');
-            
-            form.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                await generateMealPlan();
-            });
+            form.addEventListener('submit', handleFormSubmit);
         }
 
-        async function generateMealPlan() {
+        async function handleFormSubmit(e) {
+            e.preventDefault();
+            console.log('📝 Form submitted');
+            
+            const formData = {
+                familySize: parseInt(document.getElementById('familySize').value),
+                budget: parseInt(document.getElementById('budgetRange').value),
+                days: selectedDays
+            };
+            
+            console.log('📊 Request data:', formData);
+            await generateMealPlan(formData);
+        }
+
+        async function generateMealPlan(formData) {
             const generateBtn = document.getElementById('generateBtn');
             const buttonText = document.getElementById('buttonText');
             const loadingSpinner = document.getElementById('loadingSpinner');
-            const resultsContainer = document.getElementById('resultsContainer');
-            const placeholder = document.getElementById('placeholder');
-
+            
             // Show loading state
             generateBtn.disabled = true;
             buttonText.classList.add('hidden');
             loadingSpinner.classList.remove('hidden');
 
             try {
-                // Collect form data
-                const formData = {
-                    familySize: parseInt(document.getElementById('familySize').value),
-                    budget: parseInt(document.getElementById('budgetRange').value),
-                    days: selectedDays
-                };
-
-                console.log('Generating meal plan with:', formData);
-
-                // Call API
+                console.log('🔄 Sending request to API...');
+                
                 const response = await fetch('/api/generate-meal-plan', {
                     method: 'POST',
                     headers: {
@@ -247,27 +243,25 @@
                     body: JSON.stringify(formData)
                 });
 
-                console.log('Response status:', response.status);
+                console.log('📡 Response status:', response.status);
 
                 if (!response.ok) {
                     const errorText = await response.text();
-                    console.error('API Error:', errorText);
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    console.error('❌ API Error:', errorText);
+                    throw new Error(`API fejl: ${response.status}`);
                 }
 
                 const result = await response.json();
-                console.log('API Response:', result);
+                console.log('✅ API Success:', result);
 
-                if (result.success) {
+                if (result.success && result.mealPlan) {
                     displayMealPlan(result);
-                    placeholder.classList.add('hidden');
-                    resultsContainer.classList.remove('hidden');
                 } else {
-                    throw new Error(result.error || 'Unknown error occurred');
+                    throw new Error(result.error || 'Ukendt fejl');
                 }
 
             } catch (error) {
-                console.error('Error generating meal plan:', error);
+                console.error('💥 Error:', error);
                 alert('Der opstod en fejl ved generering af madplan. Prøv venligst igen.\n\nFejl: ' + error.message);
             } finally {
                 // Reset button state
@@ -278,23 +272,27 @@
         }
 
         function displayMealPlan(data) {
-            // Store data globally for print function
+            console.log('🎨 Displaying meal plan:', data);
             currentMealPlanData = data;
             
             const resultsContainer = document.getElementById('resultsContainer');
+            const placeholder = document.getElementById('placeholder');
             
-            console.log('Received data:', data);
+            // Calculate display values
+            const totalCost = Math.round(data.totalCost || 0);
+            const savings = Math.round(data.savings || 0);
+            const dealPercentage = Math.round((data.totalDealMatches / data.totalIngredients) * 100) || 0;
             
             const html = `
                 <!-- Summary Card -->
                 <div class="bg-white rounded-xl shadow-md p-6 mb-6">
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                         <div>
-                            <div class="text-3xl font-bold text-balanz-green">${Math.round(data.totalCost)} kr</div>
+                            <div class="text-3xl font-bold text-balanz-green">${totalCost} kr</div>
                             <div class="text-sm text-gray-600">Total pris</div>
                         </div>
                         <div>
-                            <div class="text-3xl font-bold text-balanz-blue">${Math.round(data.totalDealMatches/data.totalIngredients*100)}%</div>
+                            <div class="text-3xl font-bold text-balanz-blue">${dealPercentage}%</div>
                             <div class="text-sm text-gray-600">På tilbud</div>
                         </div>
                         <div>
@@ -302,19 +300,19 @@
                             <div class="text-sm text-gray-600">Retter</div>
                         </div>
                         <div>
-                            <div class="text-3xl font-bold ${data.savings >= 0 ? 'text-green-600' : 'text-red-600'}">${Math.round(data.savings)} kr</div>
+                            <div class="text-3xl font-bold ${savings >= 0 ? 'text-green-600' : 'text-red-600'}">${savings} kr</div>
                             <div class="text-sm text-gray-600">Besparelse</div>
                         </div>
                     </div>
                     <div class="mt-4 text-center">
-                        <p class="text-gray-700">${data.summary}</p>
+                        <p class="text-gray-700">${data.summary || 'Smart madplan genereret!'}</p>
                     </div>
                 </div>
 
                 <!-- Meal Plan -->
                 <div class="space-y-4">
-                    ${data.mealPlan.map((meal, index) => `
-                        <div class="recipe-card bg-white rounded-xl shadow-md overflow-hidden">
+                    ${data.mealPlan.map(meal => `
+                        <div class="bg-white rounded-xl shadow-md overflow-hidden">
                             <div class="p-6">
                                 <div class="flex justify-between items-start mb-4">
                                     <div>
@@ -328,27 +326,83 @@
                                 </div>
 
                                 <div>
-                                    <h4 class="font-semibold text-gray-800 mb-2">🛒 Indkøbsliste:</h4>
+                                    <h4 class="font-semibold text-gray-800 mb-2">🛒 Ingredienser:</h4>
                                     <ul class="space-y-1">
                                         ${meal.ingredients.map(ing => `
                                             <li class="flex justify-between text-sm">
                                                 <span class="flex items-center">
                                                     ${ing.onSale ? '✅' : '⚫'} ${ing.item}
-                                                    ${ing.store !== 'Almindelig' ? `<span class="text-xs text-gray-500 ml-2">(${ing.store})</span>` : ''}
+                                                    ${ing.store && ing.store !== 'Almindelig' ? `<span class="text-xs text-gray-500 ml-2">(${ing.store})</span>` : ''}
                                                 </span>
                                                 <span class="font-semibold">
-                                                    ${ing.onSale ? `${ing.price} kr` : `~${ing.price} kr`}
+                                                    ${ing.onSale ? `${Math.round(ing.price)} kr` : `~${Math.round(ing.price)} kr`}
                                                 </span>
                                             </li>
                                         `).join('')}
                                     </ul>
                                 </div>
+
+                                ${meal.stealthUpgrade ? `
+                                    <div class="mt-4 p-3 bg-green-50 rounded-lg">
+                                        <h5 class="font-semibold text-green-800 text-sm mb-1">🥬 Skjult sundhedsboost:</h5>
+                                        <p class="text-green-700 text-sm">${meal.stealthUpgrade}</p>
+                                    </div>
+                                ` : ''}
                             </div>
                         </div>
                     `).join('')}
                 </div>
 
                 <!-- Shopping List -->
+                ${generateShoppingListHTML(data.shoppingList)}
+
+                <!-- Generate New Plan Button -->
+                <div class="text-center mt-6">
+                    <button onclick="location.reload()" 
+                            class="bg-balanz-blue text-white font-semibold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors">
+                        🔄 Generer ny madplan
+                    </button>
+                </div>
+            `;
+            
+            resultsContainer.innerHTML = html;
+            placeholder.classList.add('hidden');
+            resultsContainer.classList.remove('hidden');
+            
+            // Scroll to results
+            resultsContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function generateShoppingListHTML(shoppingList) {
+            if (!shoppingList || Object.keys(shoppingList).length === 0) {
+                return '<div class="mt-8 bg-white rounded-xl shadow-md p-6"><p class="text-gray-500">Ingen indkøbsliste tilgængelig</p></div>';
+            }
+
+            const storeNames = {
+                'coop': 'Coop',
+                'rema': 'REMA 1000',
+                'rema 1000': 'REMA 1000',
+                'lidl': 'Lidl',
+                'netto': 'Netto',
+                'foetex': 'Føtex',
+                'føtex': 'Føtex',
+                'discount365': 'Discount365',
+                'almindelig': 'Anden butik'
+            };
+
+            const storeColors = {
+                'coop': 'blue-600',
+                'rema': 'red-600',
+                'rema 1000': 'red-600',
+                'lidl': 'yellow-600',
+                'netto': 'green-600',
+                'foetex': 'purple-600',
+                'føtex': 'purple-600',
+                'discount365': 'orange-600',
+                'almindelig': 'gray-600'
+            };
+
+            let html = `
                 <div class="mt-8 bg-white rounded-xl shadow-md p-6">
                     <div class="flex justify-between items-center mb-4">
                         <h3 class="text-xl font-bold text-gray-800">🛪 Komplet Indkøbsguide</h3>
@@ -359,56 +413,14 @@
                         </button>
                     </div>
                     
-                    ${generateShoppingListHTML(data.shoppingList)}
-
-                    <div class="mt-4 text-xs text-gray-500 bg-gray-50 p-3 rounded-lg">
-                        💡 <strong>Tips:</strong> Krydderier, salt, peber og olie antages at være hjemme allerede
-                    </div>
-                </div>
-
-                <!-- Generate New Plan Button -->
-                <div class="text-center mt-6">
-                    <button onclick="generateMealPlan()" 
-                            class="bg-balanz-blue text-white font-semibold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors">
-                        🔄 Generer ny madplan
-                    </button>
-                </div>
+                    <div class="grid md:grid-cols-2 gap-6">
             `;
             
-            resultsContainer.innerHTML = html;
-        }
-
-        function generateShoppingListHTML(shoppingList) {
-            if (!shoppingList || Object.keys(shoppingList).length === 0) {
-                return '<p class="text-gray-500">Ingen indkøbsliste tilgængelig</p>';
-            }
-
-            const storeNames = {
-                'coop': 'Coop',
-                'rema': 'REMA 1000', 
-                'lidl': 'Lidl',
-                'netto': 'Netto',
-                'foetex': 'Føtex',
-                'almindelig': 'Anden butik'
-            };
-
-            const storeColors = {
-                'coop': 'blue-800',
-                'rema': 'red-800',
-                'lidl': 'yellow-800', 
-                'netto': 'green-800',
-                'foetex': 'purple-800',
-                'almindelig': 'gray-800'
-            };
-
-            let html = '<div class="grid md:grid-cols-2 gap-6">';
-            
-            Object.keys(shoppingList).forEach((storeKey, index) => {
-                const items = shoppingList[storeKey] || [];
-                if (items.length === 0) return;
+            Object.entries(shoppingList).forEach(([storeKey, items]) => {
+                if (!items || items.length === 0) return;
                 
-                const storeName = storeNames[storeKey] || storeKey;
-                const colorClass = storeColors[storeKey] || 'gray-800';
+                const storeName = storeNames[storeKey.toLowerCase()] || storeKey;
+                const colorClass = storeColors[storeKey.toLowerCase()] || 'gray-600';
                 
                 html += `
                     <div>
@@ -417,12 +429,12 @@
                             ${items.map(item => `
                                 <li class="flex justify-between text-sm">
                                     <span class="flex items-center">
-                                        ${item.onSale ? '✅' : '⚫'} ${item.item}
+                                        ${item.onSale ? '✅' : '⚫'} ${item.item || 'Ukendt vare'}
                                     </span>
                                     <span class="font-semibold">
-                                        ${item.onSale ? `${item.price} kr` : `~${item.price} kr`}
+                                        ${item.price ? (item.onSale ? `${Math.round(item.price)} kr` : `~${Math.round(item.price)} kr`) : 'Se pris'}
                                         <span class="text-xs text-gray-500 ml-1">
-                                            ${item.onSale ? '(På tilbud)' : '(Estimeret)'}
+                                            ${item.onSale ? '(På tilbud)' : '(Est.)'}
                                         </span>
                                     </span>
                                 </li>
@@ -430,29 +442,31 @@
                         </ul>
                     </div>
                 `;
-                
-                if ((index + 1) % 2 === 0) {
-                    html += '</div><div class="grid md:grid-cols-2 gap-6 mt-6">';
-                }
             });
             
-            html += '</div>';
+            html += `
+                    </div>
+                    <div class="mt-4 text-xs text-gray-500 bg-gray-50 p-3 rounded-lg">
+                        💡 <strong>Tips:</strong> Krydderier, salt, peber og olie antages at være hjemme allerede
+                    </div>
+                </div>
+            `;
             
             return html;
         }
 
         function printShoppingList() {
-    if (!currentMealPlanData) {
-        alert('Ingen madplan data fundet. Generer venligst en madplan først.');
-        return;
-    }
+            if (!currentMealPlanData) {
+                alert('Ingen madplan data fundet. Generer venligst en madplan først.');
+                return;
+            }
 
-    // Store data in localStorage for email gate access
-    localStorage.setItem('currentMealPlan', JSON.stringify(currentMealPlanData));
-    
-    // Redirect to email gate instead of direct print
-    window.location.href = '/email-gate.html';
-}
+            // Store data for print page
+            localStorage.setItem('currentMealPlan', JSON.stringify(currentMealPlanData));
+            
+            // Open print page
+            window.open('/print-shopping-list.html', '_blank');
+        }
     </script>
 </body>
 </html>
