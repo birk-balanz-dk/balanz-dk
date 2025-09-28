@@ -1,114 +1,100 @@
-```csv
 Category,Deal Name,Amount,Price
-Bakery & Bread,DELUXE Ølandsbrød,550 g,12.-
-Bakery & Bread,Friskbagt Chokolade- cheesecake- muffin,95 g,10.-
-Bakery & Bread,Friskbagt Dagmartærte,366 g,20.-
-Bakery & Bread,Friskbagt Frusta med skinke,180 g,12.-
-Bakery & Bread,Friskbagt Toffee- muffin,80 g,6.-
-Bakery & Bread,HALLOWEEN Friskbagt Berlinere,4 x 92 g,39.-
-Beverages,BELLAROM Jubilæumskaffe,400 g,49.-
-Beverages,CARIBIA Ginger Beer,330 ml,5.-
-Beverages,CIMAROSA Chardonnay Colombard 13% alc.,75 cl,33.33 kr.
-Beverages,COCA-COLA-FANTA Sodavand,1.5 liter,15.-
-Beverages,HATA Sodavand,200 ml,15.-
-Beverages,HOSHI Japansk Dry Gin 38% alc.,70 cl,139.-
-Beverages,INSTANT Bubbletea Kit,240 g,65.-
-Beverages,MILBONA Kaffedrik,330 ml,8.-
-Beverages,RIBENA Solbær light eller blandet,850 ml,20.-
-Beverages,SOLEVITA Juice,1 liter,20.-
-Beverages,Uludag Almindelig eller sukkerfri,330 ml,5.-
-Dairy & Eggs,HENRIETTELUND Danske skrabeæg M-L,8 stk,10.-
-Dairy & Eggs,KAROLINES KØKKEN Piskefløde,500 ml,18.-
-Dairy & Eggs,LURPAK Smørbar,200 g,12.-
-Dairy & Eggs,MADVÆRKET Danbo eller Samsø ost i skiver - Produceret i Danmark,300 g,25.-
-Dairy & Eggs,MILBONA High Protein,150-200 g,7.-
-Dairy & Eggs,MILBONA Langtidsholdbar mælk 1.5-3.5% fedt,1 liter,10.-
-Dairy & Eggs,MILBONA Rund ostesnack,120 g,15.-
-Dairy & Eggs,PHILADELPHIA Friskost,200-300 g,15.-
-Dairy & Eggs,VEMONDO Mandel- eller havredrik,1 liter,10.-
-Fish & Seafood,HAVBLÅ Hel dorade,Pr. 1/2 kg,59.-
-Fish & Seafood,HAVBLÅ Laksefileter Med skind,225 g,39.-
-Fish & Seafood,VITASIA Norisnack,5.5 g,5.-
-Fish & Seafood,VITASIA Noritang,5 stk,10.-
-Fish & Seafood,VITASIA Tangsalat,100 g,18.-
-Frozen Foods,BON GELATI Premium is Dybfrost,900 ml,35.-
-Frozen Foods,CULINEA Gyoza dumplings Dybfrost,400 g,20.-
-Frozen Foods,DR. OETKER Pizza Dybfrost,385-390 g,20.-
-Frozen Foods,FRESHONA Grøntsager Dybfrost,750-1000 g,12.-
-Frozen Foods,FRESHONA Wokmix Dybfrost,500 g,10.-
-Frozen Foods,HALLOWEEN Kartofler Dybfrost,450 g,12.-
-Frozen Foods,HALLOWEEN Minipizzaer Dybfrost,360 g,30.-
-Frozen Foods,HALLOWEEN Monster Chilli Cheese Nuggets Dybfrost,420 g,39.-
-Frozen Foods,HALLOWEEN Nuggets Dybfrost,400 g,30.-
-Frozen Foods,HARVEST BASKET Pommes frites eller røsti Dybfrost,800-1000 g,20.-
-Frozen Foods,TASTINO Håndværkere eller blandede rundstykker Dybfrost,600 g,12.-
-Frozen Foods,VITASIA Gyoza Flere varianter Dybfrost,212-238 g,20.-
-Frozen Foods,VITASIA Gyoza Flere varianter Dybfrost,212-238 g,25.-
-Frozen Foods,VITASIA Grøntsags- tempura eller kyllingeret med teriyaki Dybfrost,400 g,25.-
-Frozen Foods,VITASIA Misosuppe Dybfrost,500 g,25.-
-Frozen Foods,VITASIA Mochi-is,6 x 35 g,30.-
-Frozen Foods,VITASIA Paneret kylling med chilidip Dybfrost,500 g,30.-
-Frozen Foods,VITASIA Ramensuppe Dybfrost,400 g,20.-
-Fruits & Vegetables,Avocado Klasse 1,500 g,12.-
-Fruits & Vegetables,CHEF SELECT Salatblanding,100-200 g,12.-
-Fruits & Vegetables,Danske æbler eller pærer Klasse 1,1 stk,1.-
-Fruits & Vegetables,Danske bagekartofler Klasse 1,1.5 kg,10.-
-Fruits & Vegetables,Danske gulerødder Klasse 1,2 kg,10.-
-Fruits & Vegetables,Danske løg Klasse 1,750 g,5.-
-Fruits & Vegetables,Danske majs Klasse 1,1 stk,3.-
-Fruits & Vegetables,Mango Klasse 1,1 stk,9.-
-Meat & Poultry,3-STJERNET Pålæg,80-90 g,10.-
-Meat & Poultry,BUTCHER'S-DANISH CROWN Cevapcici eller hakket oksekød med 35% grønt,400 g,35.-
-Meat & Poultry,DULANO Mini Salami,2 x 25 g,5.-
-Meat & Poultry,DULANO Skinke,80 g,5.-
-Meat & Poultry,GB MEATGROUP Marineret middagskotelet,125 g,15.-
-Meat & Poultry,GRILLMESTER-VILSTRUPGÅRD Kalkuninderfileter eller -wings,400-1100 g,39.-
-Meat & Poultry,HIMMERLANDSKØD Kalveculotte,Pr. 1/2 kg,69.-
-Meat & Poultry,KAMAR Kødpålæg,200 g,10.-
-Meat & Poultry,SLAGTER LAMPE Salami,250 g,25.-
-Meat & Poultry,STEFF HOULBERG Pølser,375-400 g,20.-
-Meat & Poultry,STRYHN'S Leverpostej,275 g,15.-
-Meat & Poultry,VILSTRUPGÅRD Dansk ribbenssteg Produceret i Danmark,Pr. 1/2 kg,29.-
-Meat & Poultry,VILSTRUPGÅRD-DANISH CROWN Skinkeschnitzler eller gourmetsaltet filet a la mørbrad,380-600 g,35.-
-Meat & Poultry,VILSTRUPGÅRD-ROSE Kyllingeoverlår - underlår - hakket gris eller gris og kalv 14-18% fedt,300-600 g,20.-
-Pantry Items,AXA Crunchy granola,750 g,25.-
-Pantry Items,CARLETTI Afhugget finger af skum,300 g,59.-
-Pantry Items,CARLETTI Chokopålæg,73.5 g,10.-
-Pantry Items,CHEF SELECT Færdigretter,400 g,15.-
-Pantry Items,CORNY Myslibar,40-50 g,5.-
-Pantry Items,DANSUKKER Sukker,1 kg,5.-
-Pantry Items,FALENGREEN Pizzatopping,500 g,20.-
-Pantry Items,FRESHONA Nødder og frugt,60 g,6.-
-Pantry Items,GRAASTEN Dressing,425 g,12.-
-Pantry Items,HALLOWEEN Chokoladekugler,200 g,30.-
-Pantry Items,HALLOWEEN Figur med chokoladeknapper,200 g,45.-
-Pantry Items,HALLOWEEN Græskar med slik,200 g,49.-
-Pantry Items,HALLOWEEN Karameller,1200 g,99.-
-Pantry Items,HALLOWEEN Kranium med slik,333 g,69.-
-Pantry Items,J.D. GROSS Chokolade,125 g,20.-
-Pantry Items,JENSENS Sauce,250 ml,8.-
-Pantry Items,K-SALAT Remoulade eller mayonnaise,375 g,10.-
-Pantry Items,KAREN VOLF Halloween Bites,144-200 g,10.-
-Pantry Items,KOIKEYA Chilichips,60 g,20.-
-Pantry Items,NISSIN Instant nudler,63-67 g,10.-
-Pantry Items,OTA Solgryn,1800 g,25.-
-Pantry Items,SAMLIP Panko rasp,200 g,15.-
-Pantry Items,SONDEY Cookies,210 g,12.-
-Pantry Items,TAFFEL Chips,110-175 g,15.-
-Pantry Items,TOMS Yankie Bar,40 g,5.-
-Pantry Items,TROLLI Skumøjne med fyld,75 g,15.-
-Pantry Items,TROLLI Sweet & Sour Mix,360 g,49.-
-Pantry Items,TROLLI Tarantula,800 g,65.-
-Pantry Items,VITASIA Japansk- inspireret paste,50 g,10.-
-Pantry Items,VITASIA Mochi-puffs,140 g,35.-
-Pantry Items,VITASIA Nudler i boks,180 g,12.-
-Pantry Items,VITASIA Ramennudler,300 g,10.-
-Pantry Items,VITASIA Ramenbouillon,1 liter,15.-
-Pantry Items,VITASIA Soba- eller udonnudler,300 g,8.-
-Pantry Items,VITASIA Soba- eller udonnudler,400 g,28.-
-Pantry Items,VITASIA Stegt tofu,180 g,10.-
-Pantry Items,VITASIA Sushiris,500 g,10.-
-Pantry Items,VITASIA Teriyakisauce,250 ml,20.-
-Pantry Items,VITASIA Udonnudler,200 g,10.-
-Pantry Items,VITASIA Wasabi,43 g,8.-
-Pantry Items,YUKI&LOVE Mochi-kage,128 g,35.-
+Bakery & Bread,Crodots eller cronuts 2-pak,156-158 g / pk.,20.-
+Bakery & Bread,Croissant med ost og skinke,95 g / stk.,15.-
+Bakery & Bread,HALLOWEEN Lilla donuts,4 stk- 228 g / pk.,25.-
+Bakery & Bread,HATTING Brød,340-438 g / ps.,15.-
+Bakery & Bread,HATTING Halloween-boller,414 g / ps.,18.-
+Bakery & Bread,Pizzadonut,125 g / stk.,8.-
+Bakery & Bread,Rustikke hvedestykker TA' 2 FOR,2 stk- 85 g / stk.,10.-
+Bakery & Bread,Smørcroissant TA' 2 FOR,2 stk- 76 g / stk.,8.-
+Bakery & Bread,TASTINO Sandwichtoast Almindelig eller grov,750 g / pk.,10.-
+Beverages,COCA-COLA- FANTA- TUBORG Sodavand,24 x 330 ml / pk.,59.-
+Beverages,MERRILD Kaffe,400 g / ps.,39.-
+Beverages,NESTLÉ Nescafé Gold,100 g / stk.,39.-
+Beverages,RED BULL Energidrik,8 x 25 cl / pk.,69.-
+Beverages,SOLEVITA Juice,1-5 liter / stk.,12.-
+Beverages,Sierra Tequila eller Jägermeister 35-38 % alc.,50 cl / stk.,99.-
+Beverages,Spansk rosé eller Felici rødvin 11-12-5 % alc.,3 liter / stk.,99.-
+Beverages,TUBORG Pilsner- Classic eller Rød 4-6-5-6 % alc.,18 x 33 cl / pk.,69.-
+Dairy & Eggs,ARLA FOODS Ostehaps,18 x 18 g / pk.,20.-
+Dairy & Eggs,HALLOWEEN Græskarformet gouda I skiver,100 g / pk.,20.-
+Dairy & Eggs,KLOVBORG Skiveost Mellemlagret 45+,240 g / pk.,32.-
+Dairy & Eggs,MADVÆRKET Danbo ost 45+,540-567 g / stk.,55.-
+Dairy & Eggs,MILBONA Madlavningsjævner Med fløde,250 ml / stk.,8.-
+Dairy & Eggs,MILBONA Mozzarella Light eller Classic,125 g / pk.,7.-
+Dairy & Eggs,MILBONA Mozzarella Light eller Classic,125 g / pk.,10.-
+Dairy & Eggs,THEM Ost,150-175 g / pk.,20.-
+Fish & Seafood,HAVBLÅ-THORFISK Panerede fiske-- sej-- lange- eller rødspættefileter,225-400 g / pk.,39.-
+Fish & Seafood,LASCHINGER Hel lakseside,Pr- 1-2 kg,69.-
+Fish & Seafood,NAUTICA Skagensalat,400 g / stk.,25.-
+Frozen Foods,ALFREDO Pizza,2 x 330-355 g / pk.,29.-
+Frozen Foods,ALMONDY Daimtærte,400 g / stk.,45.-
+Frozen Foods,BON GELATI-GELATELLI Is,6 x 120 ml / pk.,25.-
+Frozen Foods,CHEF SELECT Flødekartofler,700 g / pk.,12.-
+Frozen Foods,FRESHONA Frosne bær,300 g / pk.,20.-
+Frozen Foods,FRESHONA Grøntsagsret,600 g / stk.,20.-
+Frozen Foods,HALLOWEEN Stenovnspizza,330 g / stk.,20.-
+Frozen Foods,HALLOWEEN Stenovnspizza Med græskar og bacon,390 g / stk.,25.-
+Frozen Foods,HALLOWEEN Sorte kyllinge-nuggets,300 g / pk.,20.-
+Frozen Foods,HALLOWEEN Vaffelis,4 x 75-78 ml / pk.,25.-
+Frozen Foods,VEMONDO Smoothiebowl,250 g / stk.,20.-
+Fruits & Vegetables,Dansk icebergsalat Klasse 1,Stk,6.-
+Fruits & Vegetables,Dansk spidskål Klasse 1,Stk,9.-
+Fruits & Vegetables,Danske rødløg Klasse 1,750 g / net.,8.-
+Fruits & Vegetables,Lammefjords-aspargeskartofler Klasse 1,1 kg / ps.,20.-
+Fruits & Vegetables,Mørke kernefri vindruer Klasse 1,500 g / bk.,12.-
+Fruits & Vegetables,Pebermix Klasse 1,1 kg / ps.,19.-
+Fruits & Vegetables,Rainforestbananer Klasse 1,Stk,1.-
+Fruits & Vegetables,SELECT & GO Salatblanding med dressing,250-350 g / stk.,20.-
+Meat & Poultry,3-STJERNET DEN LETTE Pålæg 8-9 % fedt,110 g / pk.,12.-
+Meat & Poultry,BUTCHER’S Angus burgerbøffer,260 g / pk.,35.-
+Meat & Poultry,BUTCHER’S Hakket kalkunkød,500 g / pk.,25.-
+Meat & Poultry,DANISH CROWN Kalvesteak Rosmarin og hvidløg eller steakpebermarinade,125 g / pk.,20.-
+Meat & Poultry,DULANO Frikadeller eller bockwurst,400-500 g / pk.,25.-
+Meat & Poultry,JENSENS FOODS Pulled chicken eller spareribs,500-550 g / pk.,39.-
+Meat & Poultry,MADVÆRKET Kyllingepølser Klassisk eller chili,300 g / pk.,12.-
+Meat & Poultry,TULIP Bacon Skiver eller tern,300 g / pk.,20.-
+Meat & Poultry,VILSTRUPGÅRD Dansk stegeflæsk,800 g / pk.,55.-
+Meat & Poultry,VILSTRUPGÅRD Danske kyllingeinderfileter,650 g / pk.,55.-
+Meat & Poultry,VILSTRUPGÅRD Hakket oksekød 8-12 % fedt,350 g / pk.,32.00 kr.
+Meat & Poultry,VILSTRUPGÅRD Hel dansk kylling,1350 g / stk.,49.-
+Meat & Poultry,VILSTRUPGÅRD Nakke- eller kamkoteletter,1200 g / pk.,79.-
+Organic,ALESTO Økologiske æble- eller bananchips,80-150 g / ps.,20.-
+Organic,CHEF SELECT Økologisk hummus,200 g / pk.,15.-
+Organic,CHEF SELECT Økologisk pasta,250 g / pk.,20.-
+Organic,COMBINO Økologisk pasta,500 g / pk.,10.-
+Organic,MILBONA Økologisk mango-lassi 3-6 % fedt,230 ml / stk.,9.-
+Pantry Items,ALESTO Luksusnøddeblanding eller cashewnødder Flere varianter,200 g / ps.,10.-
+Pantry Items,ALESTO Luksusnøddeblanding eller cashewnødder Flere varianter,200 g / ps.,20.-
+Pantry Items,CHEF SELECT Pizzakit,600 g / pk.,20.-
+Pantry Items,CHEF SELECT Tagliatelle,250 g / pk.,8.-
+Pantry Items,DEN GAMLE FABRIK Marmelade,600 g / stk.,20.-
+Pantry Items,FERRERO Chokoladegaveæske,359 g / pk.,99.-
+Pantry Items,FERRERO Nutella,630 g / stk.,65.-
+Pantry Items,FIN CARRÉ Chokolade med fyld Flere varianter,295-300 g / stk.,49.-
+Pantry Items,GALLE & JESSEN Pålægschokolade,2 x 108 g / pk.,35.-
+Pantry Items,GREEN DATES Dadler med smag,70-90 g / ps.,10.-
+Pantry Items,HALLOWEEN Blå tortillachips,200 g / ps.,14.-
+Pantry Items,HALLOWEEN Chokolade-slikkepinde,150 g / pk.,30.-
+Pantry Items,HALLOWEEN Chokoladeøjne,200 g / ps.,39.-
+Pantry Items,HALLOWEEN Flødeboller,225 g / pk.,35.-
+Pantry Items,HALLOWEEN Kageblanding,279 g / pk.,25.-
+Pantry Items,HALLOWEEN Karameller med tattoo,90 g / ps.,19.-
+Pantry Items,HALLOWEEN Kurv eller plyslegetøj med slik,55-94 g / stk.,49.-
+Pantry Items,HALLOWEEN Minichokoladebar Dybfrost,500 g / ps.,65.-
+Pantry Items,HALLOWEEN Morgenmad Dybfrost,375 g / pk.,20.-
+Pantry Items,HALLOWEEN Neo rulle Med lilla fyld,2 x 154 g / pk.,20.-
+Pantry Items,HALLOWEEN Pasta,500 g / ps.,12.-
+Pantry Items,HALLOWEEN Slikkepinde,209 g / ps.,25.-
+Pantry Items,HALLOWEEN Syrlige vingummi-knogler,200 g / ps.,20.-
+Pantry Items,HALLOWEEN Vampyrsnack Flere varianter,100 g / ps.,12.-
+Pantry Items,HALLOWEEN Vampyrtænder,200 g / ps.,20.-
+Pantry Items,HALLOWEEN Vingummi- og skumblanding,1000 g / stk.,79.-
+Pantry Items,HELLMANN´S Mayonnaise,400 g / stk.,20.-
+Pantry Items,J-D- GROSS Dubaichokolade,122 g / stk.,49.-
+Pantry Items,KAREN WOLF Snøfler,400 g / pk.,25.-
+Pantry Items,KIMS Chips Flere varianter,75-95 g / ps.,8.-
+Pantry Items,RAGOLDS Vingummimix,291 g / ps.,25.-
+Pantry Items,SONDEY Risvafler,120 g / pk.,15.-
+Pantry Items,TOMS Guldbarre Flere varianter,45 g / stk.,10.-
+Pantry Items,TOMS Skildpadder,112 g / pk.,15.-

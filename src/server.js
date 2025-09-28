@@ -493,16 +493,16 @@ app.post('/api/generate-meal-plan', async (req, res) => {
 
     // Stealth upgrade templates
     const stealthUpgrades = {
-      'lasagne': 'Skjult protein-boost: Bland 200g røde linser (kogt bløde) ind i kødsaucen. De bliver usynlige og øger protein med 30%.',
-      'boller i karry': 'Skjulte grøntsager: Fintrev gulerødderne og bland direkte i kødfasen. Giver saftighed og vitaminer.',
-      'frikadeller': 'Protein-power: Erstat 30% af kødet med kogte røde linser - usynlige og sundere.',
-      'kylling': 'Grøntsags-boost: Tilsæt finthakket selleri og gulerødder til sovsen.',
-      'carbonara': 'Fiber-upgrade: Brug fuldkornspasta og tilsæt finhakket broccoli til cremesovsen.',
-      'pasta': 'Linse-trick: Bland kogte røde linser i kødsovsen - dobler proteinet uden smagesforskel.',
-      'sandwich': 'Grønt boost: Tilsæt finhakket avocado eller spinat - øger vitaminer og fiber.',
-      'suppe': 'Protein-power: Tilsæt røde linser til suppen - de koger op og bliver usynlige.',
-      'fisk': 'Omega boost: Server med dampede broccoli-stilke for ekstra fiber og vitaminer.',
-      'kød': 'Saftighedsboost: Bland fintrevne gulerødder i kødet for vitaminer og naturlig sødme.'
+      'lasagne': '🌱 Ekstra godt for dig: Bland 200g røde linser (kogt bløde) ind i kødsaucen. De bliver usynlige og øger protein med 30%.',
+      'boller i karry': '🌱 Ekstra godt for dig: Fintrev gulerødderne og bland direkte i kødfasen. Giver saftighed og vitaminer.',
+      'frikadeller': '🌱 Ekstra godt for dig: Erstat 30% af kødet med kogte røde linser - usynlige og sundere.',
+      'kylling': '🌱 Ekstra godt for dig: Tilsæt finthakket selleri og gulerødder til sovsen.',
+      'carbonara': '🌱 Ekstra godt for dig: Brug fuldkornspasta og tilsæt finhakket broccoli til cremesovsen.',
+      'pasta': '🌱 Ekstra godt for dig: Bland kogte røde linser i kødsovsen - dobler proteinet uden smagesforskel.',
+      'sandwich': '🌱 Ekstra godt for dig: Tilsæt finhakket avocado eller spinat - øger vitaminer og fiber.',
+      'suppe': '🌱 Ekstra godt for dig: Tilsæt røde linser til suppen - de koger op og bliver usynlige.',
+      'fisk': '🌱 Ekstra godt for dig: Server med dampede broccoli-stilke for ekstra fiber og vitaminer.',
+      'kød': '🌱 Ekstra godt for dig: Bland fintrevne gulerødder i kødet for vitaminer og naturlig sødme.'
     };
 
     // Process recipes
@@ -517,7 +517,7 @@ app.post('/api/generate-meal-plan', async (req, res) => {
         const recipeKey = Object.keys(stealthUpgrades).find(key => 
           recipe.title.toLowerCase().includes(key)
         );
-        const stealthUpgrade = stealthUpgrades[recipeKey] || 'Naturlig opgradering: Brug økologiske ingredienser når muligt for bedre smag og sundhed.';
+        const stealthUpgrade = stealthUpgrades[recipeKey] || '🌱 Ekstra godt for dig: Brug økologiske ingredienser når muligt for bedre smag og sundhed.';
 
         return {
           recipe: recipe.title,
