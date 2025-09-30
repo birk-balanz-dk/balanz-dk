@@ -59,9 +59,8 @@ async function loadData() {
 
     // Load recipes
     const recipeFiles = [
-      { name: 'Arla', file: 'public/data/arla_recipes.csv' },
-      { name: 'Valdemarsro', file: 'public/data/valdemarsro_recipes.csv' }
-    ];
+  { name: 'Balanz', file: 'public/data/balanz_recipes_clean.csv' }
+];
 
     recipeData = [];
 
@@ -181,7 +180,7 @@ function debugIngredientMatching(ingredientList, availableDeals) {
   console.log('================================\n');
 }
 
-// Filter deals for food categories - RELAXED VERSION
+// Filter deals for food categories and preferred stores
 function getFoodDeals(preferences = {}) {
   const foodCategories = [
     'Meat & Poultry', 'Dairy & Eggs', 'Dairy & Cheese', 
@@ -197,7 +196,7 @@ function getFoodDeals(preferences = {}) {
   const allCategories = [...new Set(dealData.map(deal => deal.Category))].filter(cat => cat);
   console.log('Available categories:', allCategories);
   
-  // RELAXED: Filter by food categories only - don't filter by price
+  // Filter by food categories
   let deals = dealData.filter(deal => {
     const category = deal.Category || '';
     return foodCategories.includes(category);
@@ -205,7 +204,14 @@ function getFoodDeals(preferences = {}) {
   
   console.log('Food deals found:', deals.length);
   
-  // Apply preferences
+  // NEW: Filter by preferred stores
+  if (preferences.stores && preferences.stores.length > 0) {
+    deals = deals.filter(deal => preferences.stores.includes(deal.Store));
+    console.log('Deals after store filter:', deals.length);
+    console.log('Selected stores:', preferences.stores);
+  }
+  
+  // Apply other preferences
   if (preferences.organic) {
     deals = deals.filter(deal => 
       deal.Category === 'Organic' || 
@@ -217,27 +223,43 @@ function getFoodDeals(preferences = {}) {
     deals = deals.filter(deal => deal.Category !== 'Meat & Poultry');
   }
 
-  console.log('Final deals after preferences:', deals.length);
+  console.log('Final deals after all preferences:', deals.length);
   console.log('=======================\n');
 
   return deals;
 }
-
+// Filter out pantry ingredients from recipe parsing
+function shouldIncludeIngredient(ingredientText) {
+  const pantryKeywords = [
+    'salt', 'peber', 'olie', 'vand', 'sukker', 'mel', 'bagepulver',
+    'vaniljesukker', 'kanel', 'karry', 'paprika', 'timian', 'oregano',
+    'basilikum', 'chilipeber', 'ingefær', 'hvidløg', 'muskatnød',
+    'eddike', 'hvidvinseddike', 'æbleeddike', 'balsamico',
+    'sennep', 'tomatpuré', 'bouillon', 'fond', 'tomatpasta',
+    'olivenolie', 'rapsolie', 'smør', 'margarine',
+    'rosmarin', 'laurbærblade', 'spidskommen', 'natron'
+  ];
+  
+  const lowerText = ingredientText.toLowerCase();
+  return !pantryKeywords.some(pantry => lowerText.includes(pantry));
+}
 // Parse ingredients from CSV format
 function parseIngredientsFromCSV(ingredientString) {
   const ingredients = ingredientString.split(/[;,]/).map(ing => ing.trim()).filter(ing => ing.length > 0);
   
-  return ingredients.map(ingredient => {
-    const match = ingredient.match(/(\d+(?:[.,]\d+)?)\s*([a-zA-ZæøåÆØÅ\s]+)|([a-zA-ZæøåÆØÅ\s]+)/);
-    
-    if (match) {
-      const amount = match[1] || '';
-      const item = (match[2] || match[3] || ingredient).trim();
-      return { originalText: ingredient, item: item, amount: amount };
-    }
-    
-    return { originalText: ingredient, item: ingredient, amount: '' };
-  });
+  return ingredients
+    .filter(ingredient => shouldIncludeIngredient(ingredient)) // ADD THIS LINE
+    .map(ingredient => {
+      const match = ingredient.match(/(\d+(?:[.,]\d+)?)\s*([a-zA-ZæøåÆØÅ\s]+)|([a-zA-ZæøåÆØÅ\s]+)/);
+      
+      if (match) {
+        const amount = match[1] || '';
+        const item = (match[2] || match[3] || ingredient).trim();
+        return { originalText: ingredient, item: item, amount: amount };
+      }
+      
+      return { originalText: ingredient, item: ingredient, amount: '' };
+    });
 }
 
 // Enhanced ingredient matching - FIXED with proper Danish characters
@@ -421,44 +443,73 @@ function matchIngredientsWithDeals(ingredientList, availableDeals) {
   });
 }
 
-// Generate shopping list with store distribution
+// Generate shopping list with store distribution and quantity aggregation
 function generateShoppingList(mealPlan) {
   const shoppingList = { 
     coop: [], rema: [], lidl: [], netto: [], foetex: [], discount365: [], almindelig: [] 
   };
   
+  // Track items with quantities to aggregate duplicates
+  const itemsByStore = new Map(); // Map<store, Map<normalizedItem, {item, totalPrice, onSale, dealInfo}>>
+  
   mealPlan.forEach(meal => {
     meal.ingredients.forEach(ing => {
-      const pantryItems = ['salt', 'peber', 'olie', 'eddike'];
-      const isPantryItem = pantryItems.some(pantry => 
-        ing.item.toLowerCase().includes(pantry)
-      );
+      const normalizedItem = ing.item.toLowerCase().trim();
+      const store = (ing.store || 'almindelig').toLowerCase();
       
-      if (!isPantryItem) {
-        let targetList;
-        
-        switch(ing.store?.toLowerCase()) {
-          case 'coop': targetList = shoppingList.coop; break;
-          case 'rema 1000':
-          case 'rema': targetList = shoppingList.rema; break;
-          case 'lidl': targetList = shoppingList.lidl; break;
-          case 'netto': targetList = shoppingList.netto; break;
-          case 'føtex':
-          case 'foetex': targetList = shoppingList.foetex; break;
-          case 'discount365': targetList = shoppingList.discount365; break;
-          default: targetList = shoppingList.almindelig;
-        }
-        
-        const existing = targetList.find(item => item.item === ing.item);
-        if (!existing) {
-          targetList.push({
-            item: ing.item,
-            price: ing.price,
-            onSale: ing.onSale,
-            dealInfo: ing.dealInfo || null
-          });
-        }
+      // Initialize store map if needed
+      if (!itemsByStore.has(store)) {
+        itemsByStore.set(store, new Map());
       }
+      
+      const storeItems = itemsByStore.get(store);
+      
+      if (storeItems.has(normalizedItem)) {
+        // Item exists - add to quantity/price
+        const existing = storeItems.get(normalizedItem);
+        existing.totalPrice += ing.price;
+        existing.count += 1;
+        // Keep "on sale" status if ANY instance is on sale
+        existing.onSale = existing.onSale || ing.onSale;
+      } else {
+        // New item
+        storeItems.set(normalizedItem, {
+          item: ing.item,
+          totalPrice: ing.price,
+          count: 1,
+          onSale: ing.onSale,
+          dealInfo: ing.dealInfo || null
+        });
+      }
+    });
+  });
+  
+  // Convert Maps to shopping list arrays
+  itemsByStore.forEach((items, store) => {
+    let targetList;
+    
+    switch(store) {
+  case 'coop': targetList = shoppingList.coop; break;
+  case 'rema 1000':
+  case 'rema': targetList = shoppingList.rema; break;
+  case 'lidl': targetList = shoppingList.lidl; break;
+  case 'netto': targetList = shoppingList.netto; break;
+  case 'føtex':
+  case 'foetex': targetList = shoppingList.foetex; break;
+  case 'discount365': targetList = shoppingList.discount365; break;
+  default: 
+    if (!shoppingList['diverse']) shoppingList['diverse'] = [];
+    targetList = shoppingList['diverse'];
+}
+    
+    items.forEach((itemData) => {
+      targetList.push({
+        item: itemData.item,
+        price: Math.round(itemData.totalPrice),
+        onSale: itemData.onSale,
+        count: itemData.count > 1 ? itemData.count : null, // Only show count if >1
+        dealInfo: itemData.dealInfo
+      });
     });
   });
 
@@ -487,9 +538,10 @@ app.post('/api/generate-meal-plan', async (req, res) => {
     }
 
     const availableDeals = getFoodDeals(preferences);
-    
-    console.log(`Generating ${days}-day meal plan for ${familySize} people, budget: ${budget} kr`);
-    console.log(`Using ${recipeData.length} recipes and ${availableDeals.length} deals`);
+
+console.log('DEBUG - Preferences object:', JSON.stringify(preferences, null, 2));
+console.log(`Generating ${days}-day meal plan for ${familySize} people, budget: ${budget} kr`);
+console.log(`Using ${recipeData.length} recipes and ${availableDeals.length} deals`);
 
     // Stealth upgrade templates
     const stealthUpgrades = {
@@ -537,22 +589,40 @@ app.post('/api/generate-meal-plan', async (req, res) => {
         if (b.storesUsed.length !== a.storesUsed.length) return b.storesUsed.length - a.storesUsed.length;
         return a.cost - b.cost;
       });
+// Select recipes with variety
+const selectedRecipes = [];
+const usedRecipeIds = new Set();
+const usedMainIngredients = new Map(); // Track protein variety
+const shuffledRecipes = processedRecipes.sort(() => Math.random() - 0.5);
 
-    // Select recipes with variety
-    const selectedRecipes = [];
-    const usedRecipeIds = new Set();
-    const shuffledRecipes = processedRecipes.sort(() => Math.random() - 0.5);
+// Helper function to identify main protein
+function getMainProtein(recipe) {
+  const ingredients = recipe.ingredients.map(i => i.item.toLowerCase());
+  if (ingredients.some(i => i.includes('kylling'))) return 'kylling';
+  if (ingredients.some(i => i.includes('oksekød') || i.includes('hakket kød'))) return 'oksekød';
+  if (ingredients.some(i => i.includes('svinekød'))) return 'svinekød';
+  if (ingredients.some(i => i.includes('fisk') || i.includes('torsk') || i.includes('laks'))) return 'fisk';
+  if (ingredients.some(i => i.includes('bønner') && !i.includes('kød'))) return 'vegetar';
+  return 'andet';
+}
 
-    for (const recipe of shuffledRecipes) {
-      if (selectedRecipes.length >= days) break;
-      
-      const recipeId = recipe.originalRecipe.id || recipe.recipe;
-      
-      if (!usedRecipeIds.has(recipeId)) {
-        selectedRecipes.push(recipe);
-        usedRecipeIds.add(recipeId);
-      }
-    }
+for (const recipe of shuffledRecipes) {
+  if (selectedRecipes.length >= days) break;
+  
+  const recipeId = recipe.originalRecipe.id || recipe.recipe;
+  const mainProtein = getMainProtein(recipe);
+  const proteinCount = usedMainIngredients.get(mainProtein) || 0;
+  
+  // For plans with 5 or fewer days, avoid repeats. For longer plans, allow max 2
+const maxRepeats = days <= 5 ? 1 : 2;
+if (proteinCount >= maxRepeats) continue;
+  
+  if (!usedRecipeIds.has(recipeId)) {
+    selectedRecipes.push(recipe);
+    usedRecipeIds.add(recipeId);
+    usedMainIngredients.set(mainProtein, proteinCount + 1);
+  }
+}
 
     // Fallback for insufficient recipes
     while (selectedRecipes.length < days && processedRecipes.length > 0) {

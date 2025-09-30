@@ -114,6 +114,39 @@
                                 <button type="button" class="day-btn p-2 border border-gray-300 rounded-lg text-center hover:bg-balanz-green hover:text-white transition-colors" data-days="7">7 dage</button>
                             </div>
                         </div>
+						<!-- Store Preferences -->
+<div>
+    <label class="block text-sm font-semibold text-gray-700 mb-2">
+        Foretrukne butikker
+    </label>
+    <div class="space-y-2 max-h-48 overflow-y-auto border border-gray-200 rounded-lg p-3">
+        <label class="flex items-center">
+            <input type="checkbox" value="Coop" class="store-checkbox mr-2" checked>
+            <span class="text-sm">Coop</span>
+        </label>
+        <label class="flex items-center">
+            <input type="checkbox" value="REMA 1000" class="store-checkbox mr-2" checked>
+            <span class="text-sm">REMA 1000</span>
+        </label>
+        <label class="flex items-center">
+            <input type="checkbox" value="Lidl" class="store-checkbox mr-2" checked>
+            <span class="text-sm">Lidl</span>
+        </label>
+        <label class="flex items-center">
+            <input type="checkbox" value="Netto" class="store-checkbox mr-2" checked>
+            <span class="text-sm">Netto</span>
+        </label>
+        <label class="flex items-center">
+            <input type="checkbox" value="Føtex" class="store-checkbox mr-2" checked>
+            <span class="text-sm">Føtex</span>
+        </label>
+        <label class="flex items-center">
+            <input type="checkbox" value="Discount365" class="store-checkbox mr-2" checked>
+            <span class="text-sm">Discount365</span>
+        </label>
+    </div>
+    <p class="text-xs text-gray-500 mt-1">Vælg hvilke butikker du normalt handler i</p>
+</div>
 
                         <!-- Generate Button -->
                         <button type="submit" id="generateBtn" 
@@ -209,18 +242,30 @@
         }
 
         async function handleFormSubmit(e) {
-            e.preventDefault();
-            console.log('📝 Form submitted');
-            
-            const formData = {
-                familySize: parseInt(document.getElementById('familySize').value),
-                budget: parseInt(document.getElementById('budgetRange').value),
-                days: selectedDays
-            };
-            
-            console.log('📊 Request data:', formData);
-            await generateMealPlan(formData);
+    e.preventDefault();
+    console.log('📝 Form submitted');
+    
+    // Get selected stores
+    const selectedStores = Array.from(document.querySelectorAll('.store-checkbox:checked'))
+        .map(cb => cb.value);
+    
+    if (selectedStores.length === 0) {
+        alert('Vælg venligst mindst én butik');
+        return;
+    }
+    
+    const formData = {
+        familySize: parseInt(document.getElementById('familySize').value),
+        budget: parseInt(document.getElementById('budgetRange').value),
+        days: selectedDays,
+        preferences: {
+            stores: selectedStores  // ADD THIS
         }
+    };
+    
+    console.log('📊 Request data:', formData);
+    await generateMealPlan(formData);
+}
 
         async function generateMealPlan(formData) {
             const generateBtn = document.getElementById('generateBtn');
@@ -387,7 +432,7 @@
                 'foetex': 'Føtex',
                 'føtex': 'Føtex',
                 'discount365': 'Discount365',
-                'almindelig': 'Anden butik'
+                'almindelig': 'Diverse varer'
             };
 
             const storeColors = {
@@ -427,18 +472,16 @@
                         <h4 class="font-semibold text-${colorClass} mb-2">${storeName} (${items.length} varer)</h4>
                         <ul class="space-y-1">
                             ${items.map(item => `
-                                <li class="flex justify-between text-sm">
-                                    <span class="flex items-center">
-                                        ${item.onSale ? '✅' : '⚫'} ${item.item || 'Ukendt vare'}
-                                    </span>
-                                    <span class="font-semibold">
-                                        ${item.price ? (item.onSale ? `${Math.round(item.price)} kr` : `~${Math.round(item.price)} kr`) : 'Se pris'}
-                                        <span class="text-xs text-gray-500 ml-1">
-                                            ${item.onSale ? '(På tilbud)' : '(Est.)'}
-                                        </span>
-                                    </span>
-                                </li>
-                            `).join('')}
+  <li class="flex justify-between text-sm">
+    <span class="flex items-center">
+      ${item.onSale ? '✅' : '⚫'} ${item.item}
+      ${item.count && item.count > 1 ? `<span class="text-xs text-gray-500 ml-1">(${item.count}x)</span>` : ''}
+    </span>
+    <span class="font-semibold">
+      ${item.price ? (item.onSale ? `${Math.round(item.price)} kr` : `~${Math.round(item.price)} kr`) : 'Se pris'}
+    </span>
+  </li>
+`).join('')}
                         </ul>
                     </div>
                 `;
