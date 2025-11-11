@@ -69,10 +69,11 @@
     </section>
 
     <!-- Features Section -->
-    <section class="max-w-5xl mx-auto px-4 py-12">
-        <div class="text-center mb-8">
-            <h2 class="text-2xl font-semibold text-gray-800">Intelligent planlægning — Få din indkøbsliste sorteret og klar til brug</h2>
-        </div>
+<section class="max-w-5xl mx-auto px-4 py-12">
+    <div class="text-center mb-8">
+        <p class="text-lg text-balanz-green font-semibold mb-2" id="week-display">Baseret på tilbuddene uge <span id="week-number"></span></p>
+        <h2 class="text-2xl font-semibold text-gray-800">Intelligent planlægning — Få din indkøbsliste sorteret og klar til brug</h2>
+    </div>
         <div class="grid md:grid-cols-3 gap-6">
             <div class="bg-white rounded-xl p-6 shadow-sm border border-balanz-blue">
                 <div class="w-12 h-12 bg-balanz-green rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -137,5 +138,18 @@ src="https://c.statcounter.com/13169788/0/053d0dd1/1/"
 alt="Web Analytics"
 referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
 <!-- End of Statcounter Code -->
+<script>
+// Calculate and display current week number
+function getCurrentWeek() {
+    const now = new Date();
+    const start = new Date(now.getFullYear(), 0, 1);
+    const days = Math.floor((now - start) / (24 * 60 * 60 * 1000));
+    return Math.ceil((days + start.getDay() + 1) / 7);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('week-number').textContent = getCurrentWeek();
+});
+</script>
 </body>
 </html>
