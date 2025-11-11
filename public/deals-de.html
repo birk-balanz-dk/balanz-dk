@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alle Tilbud - SmartBalanz.dk</title>
+    <title>Alle Angebote - SmartBalanz.dk</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -27,14 +27,12 @@
                 <img src="/images/header-logo.png" alt="Balanz.dk" class="h-8 sm:h-10 w-auto">
             </a>
             <div class="flex gap-2 sm:gap-4">
-    <a href="/deals-de.html" class="bg-balanz-green text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all flex items-center gap-2">
-    <img src="/images/flag-de.png" alt="DE" class="w-4 h-3">
-    <span>Deutsch</span>
+                <a href="/deals.html" class="bg-balanz-green text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all flex items-center gap-2">
+    <img src="/images/flag-dk.png" alt="DK" class="w-4 h-3">
+    <span>Dansk</span>
 </a>
-    <a href="/pre-planner-bridge.html" class="bg-balanz-green text-white px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold hover:bg-opacity-90 transition-all">
-        Madplanlægger
-    </a>
-</div>
+            </div>
+        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -49,11 +47,15 @@
             <div class="order-1 lg:order-2 text-center lg:text-left">
                 <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 sm:mb-6 leading-tight">
                     AKTUELLE<br>
-                    <span class="text-balanz-green">TILBUD</span>
+                    <span class="text-balanz-green">ANGEBOTE</span>
                 </h1>
                 
-                <p class="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0">
-                    Se bedste tilbud fra 6 danske supermarkeder samlet ét sted.
+                <p class="text-lg sm:text-xl text-gray-600 mb-4 max-w-lg mx-auto lg:mx-0">
+                    Die clevere Art im Urlaub einzukaufen
+                </p>
+
+                <p class="text-base text-gray-500 mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0">
+                    Sie sind im Dänemark-Urlaub? Wir zeigen Ihnen alle Wochenangebote der großen Supermarktketten – damit Sie clever einkaufen und mehr vom Urlaub haben.
                 </p>
             </div>
         </div>
@@ -64,7 +66,7 @@
         <div class="text-center mb-6 sm:mb-8">
             <div id="category-filters" class="flex flex-wrap justify-center gap-2 sm:gap-4">
                 <button onclick="filterByCategory('all')" class="category-btn active bg-balanz-green text-white px-3 sm:px-4 py-2 rounded-full text-sm font-semibold">
-                    Alle Kategorier
+                    Alle Kategorien
                 </button>
                 <!-- Dynamic category buttons will be added here -->
             </div>
@@ -74,18 +76,18 @@
     <!-- Deals List -->
     <div class="max-w-7xl mx-auto px-4 mb-4 sm:mb-6 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-4">
         <div class="text-gray-600 text-center sm:text-left">
-            <span id="deals-count">0</span> tilbud fundet
+            <span id="deals-count">0</span> Angebote gefunden
         </div>
         <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center">
             <button onclick="printDeals()" 
                     class="w-full sm:w-auto bg-balanz-green text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors flex items-center justify-center space-x-2">
                 <span>🖨️</span>
-                <span>Print Tilbud</span>
+                <span>Angebote drucken</span>
             </button>
             <select id="sort-select" onchange="sortDeals()" class="w-full sm:w-auto bg-white border border-gray-300 rounded-lg px-4 py-2">
-                <option value="">Sorter efter</option>
-                <option value="store">Supermarkeder (incl kategori)</option>
-                <option value="category">Kategorier</option>
+                <option value="">Sortieren nach</option>
+                <option value="store">Supermarkt (inkl. Kategorie)</option>
+                <option value="category">Kategorien</option>
             </select>
         </div>
     </div>
@@ -95,18 +97,15 @@
         <div class="bg-white rounded-lg shadow-sm border border-balanz-blue overflow-hidden">
             <div id="deals-container" class="max-h-96 overflow-y-auto">
                 <div class="p-6 text-center text-gray-500">
-                    Henter tilbud...
+                    Angebote werden geladen...
                 </div>
             </div>
         </div>
 
         <!-- CTA Section -->
         <div class="text-center mt-8 sm:mt-12 p-6 sm:p-8 bg-white rounded-2xl shadow-sm">
-            <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Se hvordan du kan spare penge med vores smarte ugeplanner!</h3>
-            <p class="text-gray-600 mb-4 sm:mb-6">Vælg dit budget og få en madplan baseret på disse tilbud</p>
-            <a href="/pre-planner-bridge.html" class="inline-block bg-balanz-green text-white px-6 sm:px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all shadow-lg">
-                Start planneren →
-            </a>
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Genießen Sie Ihren Urlaub – wir kümmern uns um die besten Angebote!</h3>
+            <p class="text-gray-600 mb-4 sm:mb-6">Alle Wochenangebote von 6 dänischen Supermarktketten auf einen Blick</p>
         </div>
     </div>
 
@@ -114,17 +113,17 @@
     <footer class="bg-gray-800 text-white py-8 sm:py-12 mt-8">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <div class="mb-4 text-sm sm:text-base">
-                © 2025 SmartBalanz.dk - Den smartere måde at handle ind
+                © 2025 SmartBalanz.dk - Die clevere Art einzukaufen
             </div>
             <div class="mb-4 flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-0">
-                <a href="/privacy.html" class="text-gray-300 hover:text-balanz-green transition-colors text-sm sm:mx-4">Privatlivspolitik</a>
+                <a href="/privacy.html" class="text-gray-300 hover:text-balanz-green transition-colors text-sm sm:mx-4">Datenschutz</a>
                 <span class="hidden sm:inline text-gray-500">|</span>
-                <a href="#" class="text-gray-300 hover:text-balanz-green transition-colors text-sm sm:mx-4">Vilkår og betingelser</a>
+                <a href="#" class="text-gray-300 hover:text-balanz-green transition-colors text-sm sm:mx-4">AGB</a>
                 <span class="hidden sm:inline text-gray-500">|</span>
                 <a href="#" class="text-gray-300 hover:text-balanz-green transition-colors text-sm sm:mx-4">Kontakt</a>
             </div>
             <div class="text-gray-400 text-sm">
-                Lavet med ❤️ i Danmark
+                Mit ❤️ in Dänemark gemacht
             </div>
         </div>
     </footer>
@@ -135,20 +134,19 @@
         let currentCategoryFilter = 'all';
         let uniqueCategories = new Set();
 
-        // Translation mapping from English CSV categories to Danish UI labels
+        // German translation mapping
         const categoryTranslations = {
-            'Bakery & Bread': 'Bageri',
-            'Beverages': 'Drikkevarer',
-            'Dairy & Eggs': 'Mejeri',
-            'Fish & Seafood': 'Fisk',
-            'Frozen Foods': 'Frost',
-            'Fruits & Vegetables': 'Grøntsager',
-            'Meat & Poultry': 'Kød',
-            'Pantry Items': 'Basisvarer',
-            'Organic': 'Økologisk'
+            'Bakery & Bread': 'Bäckerei',
+            'Beverages': 'Getränke',
+            'Dairy & Eggs': 'Milchprodukte',
+            'Fish & Seafood': 'Fisch',
+            'Frozen Foods': 'Tiefkühlkost',
+            'Fruits & Vegetables': 'Obst & Gemüse',
+            'Meat & Poultry': 'Fleisch',
+            'Pantry Items': 'Grundnahrungsmittel',
+            'Organic': 'Bio'
         };
 
-        // Load deals on page load
         document.addEventListener('DOMContentLoaded', function() {
             loadDeals();
         });
@@ -158,7 +156,6 @@
                 const response = await fetch('/api/deals');
                 const data = await response.json();
                 
-                // Try different possible data structures
                 if (data && Array.isArray(data)) {
                     allDeals = data;
                 } else if (data && data.deals && Array.isArray(data.deals)) {
@@ -170,12 +167,10 @@
                     allDeals = [];
                 }
                 
-                // Collect unique categories
                 allDeals.forEach(deal => {
                     if (deal.category) uniqueCategories.add(deal.category);
                 });
                 
-                // Create dynamic category filters
                 createCategoryFilters();
                 
                 filteredDeals = [...allDeals];
@@ -185,7 +180,7 @@
             } catch (error) {
                 console.error('Error loading deals:', error);
                 document.getElementById('deals-container').innerHTML = 
-                    '<div class="p-6 text-center text-red-500">Kunne ikke hente tilbud. Prøv igen senere.</div>';
+                    '<div class="p-6 text-center text-red-500">Angebote konnten nicht geladen werden. Bitte versuchen Sie es später erneut.</div>';
             }
         }
 
@@ -193,16 +188,14 @@
             const filterContainer = document.getElementById('category-filters');
             const allButton = filterContainer.querySelector('.category-btn');
             
-            // Create buttons for each unique category with Danish translations
             Array.from(uniqueCategories).sort().forEach(category => {
                 const button = document.createElement('button');
                 button.onclick = () => filterByCategory(category);
                 button.className = 'category-btn bg-white text-gray-700 px-3 sm:px-4 py-2 rounded-full text-sm font-semibold border hover:bg-gray-50';
                 
-                // Use Danish translation if available, otherwise use original English
-                const danishLabel = categoryTranslations[category] || category;
-                button.textContent = danishLabel;
-                button.setAttribute('data-category', category); // Store original English category for filtering
+                const germanLabel = categoryTranslations[category] || category;
+                button.textContent = germanLabel;
+                button.setAttribute('data-category', category);
                 
                 filterContainer.appendChild(button);
             });
@@ -225,30 +218,30 @@
         }
 
         function applyFilters() {
-    filteredDeals = allDeals.filter(deal => {
-        if (currentCategoryFilter === 'all') return true;
-        return deal.category === currentCategoryFilter; // Changed from deal.Category
-    });
-    
-    sortDeals();
-}
+            filteredDeals = allDeals.filter(deal => {
+                if (currentCategoryFilter === 'all') return true;
+                return deal.category === currentCategoryFilter;
+            });
+            
+            sortDeals();
+        }
 
         function sortDeals() {
             const sortBy = document.getElementById('sort-select').value;
             
             if (sortBy === 'store') {
                 filteredDeals.sort((a, b) => {
-                    const storeA = a.Store || 'Ukendt';
-                    const storeB = b.Store || 'Ukendt';
+                    const storeA = a.store || 'Unbekannt';
+                    const storeB = b.store || 'Unbekannt';
                     const storeCompare = storeA.localeCompare(storeB);
                     if (storeCompare !== 0) return storeCompare;
-                    return (a.Category || '').localeCompare(b.Category || '');
+                    return (a.category || '').localeCompare(b.category || '');
                 });
             } else if (sortBy === 'category') {
                 filteredDeals.sort((a, b) => {
-                    const categoryCompare = (a.Category || '').localeCompare(b.Category || '');
+                    const categoryCompare = (a.category || '').localeCompare(b.category || '');
                     if (categoryCompare !== 0) return categoryCompare;
-                    return (a["Deal Name"] || '').localeCompare(b["Deal Name"] || '');
+                    return (a.title || '').localeCompare(b.title || '');
                 });
             }
             
@@ -260,26 +253,25 @@
             const container = document.getElementById('deals-container');
             
             if (filteredDeals.length === 0) {
-                container.innerHTML = '<div class="p-6 text-center text-gray-500">Ingen tilbud fundet med de valgte filtre</div>';
+                container.innerHTML = '<div class="p-6 text-center text-gray-500">Keine Angebote mit den gewählten Filtern gefunden</div>';
                 return;
             }
             
             const dealsList = filteredDeals.map((deal, index) => {
-                // Translate category for display
                 const displayCategory = categoryTranslations[deal.category] || deal.category;
                 
                 return `
                 <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center py-4 px-4 sm:px-6 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-balanz-beige transition-colors border-b border-gray-100 last:border-b-0">
                     <div class="flex-1 mb-2 sm:mb-0">
-                        <div class="font-medium text-gray-800 mb-1">${deal.title || 'Ukendt produkt'}</div>
+                        <div class="font-medium text-gray-800 mb-1">${deal.title || 'Unbekanntes Produkt'}</div>
                         <div class="text-sm text-gray-500 flex flex-wrap gap-2">
                             <span>${deal.amount || ''}</span>
-<span class="font-medium text-balanz-green">${deal.store || 'Ukendt butik'}</span>
+                            <span class="font-medium text-balanz-green">${deal.store || 'Unbekannter Markt'}</span>
                         </div>
                     </div>
                     <div class="flex items-center justify-between sm:justify-end gap-3 sm:gap-4">
                         <span class="text-xs bg-gray-100 px-2 py-1 rounded whitespace-nowrap">${displayCategory}</span>
-                        <span class="font-bold text-balanz-green text-lg">${deal.price || 'Se pris'}</span>
+                        <span class="font-bold text-balanz-green text-lg">${deal.price || 'Siehe Preis'}</span>
                     </div>
                 </div>
             `}).join('');
@@ -292,10 +284,9 @@
         }
 
         function printDeals() {
-    // Store the currently filtered deals for the print page
-    localStorage.setItem('filteredDeals', JSON.stringify(filteredDeals));
-    window.open('/print-deals-list.html?autoprint=true', '_blank', 'width=800,height=600');
-}
+            localStorage.setItem('filteredDeals', JSON.stringify(filteredDeals));
+            window.open('/print-deals-list.html?autoprint=true', '_blank', 'width=800,height=600');
+        }
     </script>
 </body>
 </html>

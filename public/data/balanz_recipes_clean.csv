@@ -1,71 +1,80 @@
 id,title,servings,ingredients
-31,Saftige Frikadeller med Linser,4,hakket oksekød 250g; røde linser 250g; løg 1 stk; æg 1 stk; mælk 100ml
-32,Gulerodsbrud med Rodfrugter,6,hvedemel 500g; gulerødder 200g; pastinakker 100g; mælk 300ml
-33,Cremet Kartoffelsalat med Bønner,6,kartofler 800g; hvide bønner 400g; mayonnaise 150ml; persille 1 bundt
-34,Grøntsagsfyldte Karbonader,4,svinekød 400g; gulerødder 150g; zucchini 100g; løg 1 stk; æg 1 stk
-35,Hakkebøf med Linser og Kartofler,4,hakket oksekød 300g; røde linser 200g; løg 2 stk; kartofler 800g
-36,Karryboller med Kokos og Grønt,4,hakket kød 400g; selleri 200g; gulerødder 150g; løg 1 stk; kokosmælk 400ml
-37,Fyldig Pastasauce med Linser og Oksekød,4,hakket oksekød 300g; røde linser 200g; hakkede tomater 400g; løg 1 stk; hvidløg 2 fed
-38,Cremet Leverpostej med Gulerod,8,svinelever 500g; gulerødder 200g; løg 1 stk; æg 2 stk; fløde 200ml
-39,Lun Rødkålssalat med Æbler og Linser,6,rødkål 1 kg; røde linser 150g; æbler 2 stk; løg 1 stk; eddike 100ml
-40,Fluffy Proteinpandekager med Yoghurt,4,hvedemel 200g; æg 3 stk; mælk 500ml; græsk yogurt 200g
-41,Lasagne med Gemt Grønt og Smeltet Ost,6,lasagneplader 250g; hakket kød 400g; zucchini 200g; gulerødder 150g; ost 300g
-42,Rustik Ærtegryde med Bacon og Linser,4,gule ærter 400g; røde linser 200g; bacon 200g; løg 1 stk; gulerødder 2 stk
-43,Fiskefrikadeller med Quinoa og Dild,4,torsk 400g; quinoa 100g; æg 1 stk; løg 1 stk; dild 1 bundt
-44,Cremet Suppe med Grønkål og Fløde,4,kartofler 600g; grønkål 200g; bouillon 1 liter; løg 1 stk; fløde 100ml
-45,Blomkåls-Kartoffelmos med Yoghurt,4,blomkål 800g; kartofler 400g; græsk yogurt 200g; mælk 100ml
-46,Frisk Agurkesalat med Quinoa og Dild,4,agurker 3 stk; quinoa 150g; dild 1 bundt; eddike 100ml
-47,Tomatsauce med Linser og Krydret Kød,4,hakket kød 300g; røde linser 250g; tomatpuré 200g; løg 2 stk
-48,Groft Rugbrød med Linser og Surdej,12,rugmel 400g; hvedemel 200g; røde linser 100g; surdej 200g
-49,Æggekage med Bacon og Grøntsager,4,æg 6 stk; mælk 200ml; bacon 150g; gulerødder 100g; løg 1 stk
-50,Tarteletter med Kylling og Grønt,6,tørbagt tærte 6 stk; kylling 300g; selleri 200g; ærter 150g; gulerødder 100g
-51,Lasagne med Ricotta og Spinat,6,lasagneplader 250g; hakket kød 300g; spinat 300g; ricotta 250g; ost 200g
-52,Langtidsstegt Flæskesteg med Rodfrugter,8,svinekam 2 kg; gulerødder 400g; selleri 200g; løg 2 stk
-53,Cremet Mos med Blomkål og Kartofler,6,kartofler 1 kg; blomkål 400g; mælk 200ml
-54,Fiskesuppe med Dild og Rodfrugter,4,torsk 400g; laks 200g; kartofler 400g; gulerødder 200g; dild 1 bundt
-55,Chili con Carne med Bønner og Krydderi,4,hakket kød 300g; røde bønner 400g; sorte bønner 400g; tomater 400g; løg 1 stk
-56,Frisk Stjerneskud med Avocado og Spinat,2,røget laks 200g; rejer 150g; avocado 1 stk; spinat 100g; rugbrød 4 skiver
-57,Kogt Torsk med Smør og Persille,4,torsk 600g; gulerødder 300g; kartofler 800g; persille 1 bundt
-58,Cremet Risengrød med Quinoa og Kanel,4,ris 200g; quinoa 100g; mælk 1 liter
-59,Smørrebrød med Linser og Leverpostej,4,rugbrød 8 skiver; leverpostej 200g; røgte linser 150g; agurk 1 stk; radiser 8 stk
-60,Kødboller med Ris og Grøntsagsfyld,4,hakket kød 400g; zucchini 200g; selleri 150g; ris 300g; bouillon 600ml
-61,One Pot Kylling i Karry,4,kyllingebryst 400g; røde linser 200g; ris 300g; gulerødder 200g; løg 1 stk; kokosmælk 400ml
-62,One Pot Paella med Kylling,6,kyllingelår 600g; quinoa 200g; ris 200g; chorizo 150g; peberfrugt 2 stk; ærter 150g; bouillon 800ml
-63,One Pot Kylling med Asparges,4,kyllingebryst 500g; asparges 300g; quinoa 250g; selleri 150g; persille 1 bundt; fløde 200ml
-64,One Pot Kylling og Ris,4,kyllingelår 500g; røde linser 250g; ris 200g; gulerødder 200g; løg 1 stk; bouillon 600ml
-65,One Pot Mexicansk Gryderett,4,hakket oksekød 300g; sorte bønner 400g; quinoa 200g; ris 150g; peberfrugt 2 stk; løg 1 stk
-66,One Pot Pasta med Kylling,4,pasta 400g; kyllingebryst 300g; spinat 200g; cherry tomater 300g; gulerødder 150g; parmesan 100g
-67,One Pot Pasta med Bacon og Fløde,4,pasta 400g; bacon 200g; kyllingebryst 300g; fløde 300ml; spinat 150g; parmesan 100g; hvidløg 2 fed
-68,One Pot Grøn Dahl,4,grønne linser 300g; røde linser 150g; kokosmælk 400ml; spinat 200g; løg 1 stk; ingefær 1 stk
-69,One Pot Blomkålsrisotto,4,blomkål 600g; quinoa 200g; kyllingebryst 400g; parmesan 150g; fløde 200ml; bouillon 600ml
-70,One Pot Græsk Kylling med Ris,4,kyllingelår 600g; ris 250g; quinoa 150g; citron 2 stk; oliven 100g; feta 150g; persille 1 bundt
-71,One Pot Italiensk Pastaret,4,pasta 400g; hakket oksekød 300g; røde linser 200g; tomatsauce 400g; mozzarella 200g; basilikum 1 bundt
-72,One Pot Lasagnesuppe,4,hakket oksekød 300g; røde linser 200g; pasta 300g; hakkede tomater 800g; ost 200g
-73,One Pot Orientalsk Oksekød og Ris,4,hakket oksekød 300g; røde linser 200g; ris 300g; gulerødder 200g; løg 1 stk; kokosmælk 200ml
-74,One Pot Indisk Vegetar Karry,4,kikærter 400g; røde linser 200g; kokosmælk 400ml; spinat 300g; løg 1 stk; ingefær 2 cm
-75,One Pot Mexicansk Kyllingegryderett,4,kyllingelår 500g; quinoa 200g; ris 150g; sorte bønner 400g; peberfrugt 2 stk; løg 1 stk
-76,One Pot Svensk Pølseret,4,pølser 6 stk; kartofler 600g; quinoa 200g; fløde 300ml; løg 1 stk
-77,One Pot Mexicansk Quinoagryderett,4,quinoa 300g; sorte bønner 400g; kidneybønner 400g; hakket oksekød 200g; peberfrugt 2 stk; løg 1 stk
-78,One Pot Chili sin Carne,4,røde linser 300g; sorte bønner 400g; kidneybønner 400g; hakkede tomater 800g; peberfrugt 3 stk; løg 2 stk
-79,Lun Quinoasalat med Rødbede og Feta,4,"quinoa 200g; rødbede 300g; feta 150g; valnødder 50g; persille 1 bundt
-80,Grøntsagslasagne med Linser og Ricotta,6,"lasagneplader 250g; røde linser 200g; ricotta 200g; spinat 300g; tomatsauce 400g
-81,Krydret Kikærtegryde med Spinat og Tomat,4,"kikærter 400g; spinat 200g; tomater 400g; løg 1 stk; hvidløg 2 fed
-82,Rugbrødssandwich med Æg og Avocado,2,"rugbrød 4 skiver; æg 2 stk; avocado 1 stk; salat 50g; mayonnaise 50ml
-83,Bagt Laks med Citron og Dild,4,"laks 600g; citron 2 stk; dild 1 bundt; kartofler 800g; smør 50g
-84,Vegetarisk Karrysuppe med Kokosmælk,4,"gulerødder 300g; kartofler 400g; kokosmælk 400ml; karry 2 tsk; løg 1 stk
-85,Fuldkornspasta med Broccoli og Parmesan,4,"fuldkornspasta 300g; broccoli 300g; parmesan 100g; fløde 100ml; hvidløg 1 fed
-86,Rødbedebøffer med Quinoa og Feta,4,"rødbede 300g; quinoa 150g; feta 100g; æg 1 stk; havregryn 50g
-87,Tærte med Porre og Skinke,6,"tærtebund 1 stk; porrer 2 stk; skinke 200g; æg 3 stk; fløde 200ml
-88,Grøntsagswok med Nudler og Soja,4,"nudler 300g; broccoli 200g; gulerødder 150g; soja 50ml; sesamfrø 30g
-89,Bagt Aubergine med Tomat og Mozzarella,4,"aubergine 2 stk; tomatsauce 300g; mozzarella 200g; basilikum 1 bund
-90,Fisk i Papir med Citron og Grøntsager,4,"torsk 400g; gulerødder 200g; porrer 1 stk; citron 1 stk; persille 1 bundt
-91,Kyllingesalat med Æbler og Valnødder,4,"kyllingebryst 300g; æbler 2 stk; valnødder 50g; salat 100g; dressing 100ml
-92,Linsegryde med Gulerod og Selleri,4,"røde linser 300g; gulerødder 200g; selleri 150g; bouillon 600ml; løg 1 stk
-93,Kartoffelgratin med Ost og Porre,6,"kartofler 800g; porrer 2 stk; ost 200g; fløde 300ml; muskatnød 1 tsk
-94,Æggekage med Spinat og Tomat,4,"æg 6 stk; spinat 200g; tomater 200g; mælk 100ml; ost 100g
-95,Fuldkornsburger med Hjemmelavet Bøf,4,"fuldkornsburgerboller 4 stk; hakket oksekød 400g; salat 100g; tomat 2 stk; dressing 100ml
-96,Couscoussalat med Kikærter og Granatæble,4,"couscous 200g; kikærter 200g; granatæble 1 stk; mynte 1 bundt; citron 1 stk
-97,Bagt Græskar med Feta og Timian,4,"hokkaido græskar 1 stk; feta 150g; timian 1 tsk; olivenolie 50ml
-98,Kylling i Paprika med Ris,4,"kyllingebryst 400g; paprika 2 tsk; ris 300g; fløde 200ml; løg 1 stk
-99,Vegetarisk Bolognese med Linser,4,"røde linser 300g; tomatsauce 400g; gulerødder 200g; løg 1 stk; hvidløg 2 fed
-100,Torskefrikadeller med Rødbede og Remoulade,4,"torsk 400g; rødbede 200g; æg 1 stk; løg 1 stk; remoulade 100ml
+1,Stegte nudler med forårsblanding- broccoli & soya,4,1 pose forårsblanding;1 stk broccoli;0.5 dl soya;350 g fuldkornsnudler;2 spsk smagsneutral olie
+2,Pesto wrap med linser og nordisk slaw,2,2 stk store tortilla wraps;2 håndfulde persille;1 håndfuld mandler;1 stk øko citron – skal og saft;salt;sort peber;smagsneutral olie;1 dåse linser (eller bønner);1 bakke kålsalat med korn & knas;1 stk moden avocado
+3,Æblesalat- grønkål og gedeost,4,100 g grønkål;4 stk æbler;80 g gedeost;1 bundt forårsløg;6 spsk kerner/nødder;1 stk økologisk citron;3 spsk olivenolie;3 spsk æblemost;2 spsk æblecidereddike;1 tsk dijon sennep;1 spsk honning;salt;sort peber
+4,Grillet madbrød med falalfler & bønnecreme,4,2 stk grillet madbrød;1 dåse røde kidney bønner;1 potte bredbladet persille;0.5 stk spidskål;1 stk moden avocado;1 stk øko citron – skal og saft;salt;sort peber;0.5 stk rød chili;1 bakke falafelfars;2 spsk smør;1 spsk smagsneutral olie
+5,Matjes sild med æg & purløg,4,300 g matjes sild;6 stk æg;1 pose god mayonnaise;50 g creme fraiche 38%;1 bundt purløg
+6,Couscous- bagt græskar & peberfrugtcreme,4,200 g mandler;2 stk hokkaido græskar;100 g græskarkerner;300 g grov couscous;5 stk røde peberfrugter;helt hvidløg;smagsneutral olie;sort peber;2 stk små potter persille;2 stk citroner- skal & saft;salt
+7,Helstegt blomkål med et asiatisk twist,4,1 stk blomkål;2 spsk dijon sennep;2 dl sweet chili sauce;0.5 dl sojasauce;1 spsk tabasco;1 spsk karry;2 spsk sesamfrø;2 dl rasp;1 dl olivenolie;1 pose salatmix;1 bakke tomater;salt;peber
+8,Linsesovs,4,150 g røde linser;1 stk løg;1 stk peberfrugt;2 stk bouillonterning;3 fed hvidløg;1 dåse hakkede tomater;1 dåse tomatpuré;1 dåse kokosmælk;1 spsk citronsaft;1 tsk sukker;0.5 tsk chilipulver;0.5 tsk spidskommen;røget paprika;1 bundt frisk basilikum;pasta eller ris
+9,Glutenfri kartoffel-porresuppe,4,1 kg kartofler;2 stk porre;1 stk løg;3 fed hvidløg;1 l vand;1 spsk frisk ingefær;0.5 stk frisk chili;3.5 dl fløde;5 skiver serranoskinke;2 spsk olie
+10,Cremet thaisuppe med kokosmælk og karry,4,1 pakke hønsekødsuppe;1 dåse kokosmælk;1 spsk karry;2 tsk grofthakket frisk koriander;1 tsk finhakket rød chili;friskkværnet salt;friskkværnet peber
+11,Saftige Frikadeller med Linser,4,hakket oksekød 250g; røde linser 250g; løg 1 stk; æg 1 stk; mælk 100ml
+12,Gulerodsbrud med Rodfrugter,6,hvedemel 500g; gulerødder 200g; pastinakker 100g; mælk 300ml
+13,Cremet Kartoffelsalat med Bønner,6,kartofler 800g; hvide bønner 400g; mayonnaise 150ml; persille 1 bundt
+14,Grøntsagsfyldte Karbonader,4,svinekød 400g; gulerødder 150g; zucchini 100g; løg 1 stk; æg 1 stk
+15,Hakkebøf med Linser og Kartofler,4,hakket oksekød 300g; røde linser 200g; løg 2 stk; kartofler 800g
+16,Karryboller med Kokos og Grønt,4,hakket kød 400g; selleri 200g; gulerødder 150g; løg 1 stk; kokosmælk 400ml
+17,Fyldig Pastasauce med Linser og Oksekød,4,hakket oksekød 300g; røde linser 200g; hakkede tomater 400g; løg 1 stk; hvidløg 2 fed
+18,Cremet Leverpostej med Gulerod,8,svinelever 500g; gulerødder 200g; løg 1 stk; æg 2 stk; fløde 200ml
+19,Lun Rødkålssalat med Æbler og Linser,6,rødkål 1 kg; røde linser 150g; æbler 2 stk; løg 1 stk; eddike 100ml
+20,Fluffy Proteinpandekager med Yoghurt,4,hvedemel 200g; æg 3 stk; mælk 500ml; græsk yogurt 200g
+21,Lasagne med Gemt Grønt og Smeltet Ost,6,lasagneplader 250g; hakket kød 400g; zucchini 200g; gulerødder 150g; ost 300g
+22,Rustik Ærtegryde med Bacon og Linser,4,gule ærter 400g; røde linser 200g; bacon 200g; løg 1 stk; gulerødder 2 stk
+23,Fiskefrikadeller med Quinoa og Dild,4,torsk 400g; quinoa 100g; æg 1 stk; løg 1 stk; dild 1 bundt
+24,Cremet Suppe med Grønkål og Fløde,4,kartofler 600g; grønkål 200g; bouillon 1 liter; løg 1 stk; fløde 100ml
+25,Blomkåls-Kartoffelmos med Yoghurt,4,blomkål 800g; kartofler 400g; græsk yogurt 200g; mælk 100ml
+26,Frisk Agurkesalat med Quinoa og Dild,4,agurker 3 stk; quinoa 150g; dild 1 bundt; eddike 100ml
+27,Tomatsauce med Linser og Krydret Kød,4,hakket kød 300g; røde linser 250g; tomatpuré 200g; løg 2 stk
+28,Groft Rugbrød med Linser og Surdej,12,rugmel 400g; hvedemel 200g; røde linser 100g; surdej 200g
+29,Æggekage med Bacon og Grøntsager,4,æg 6 stk; mælk 200ml; bacon 150g; gulerødder 100g; løg 1 stk
+30,Tarteletter med Kylling og Grønt,6,tørbagt tærte 6 stk; kylling 300g; selleri 200g; ærter 150g; gulerødder 100g
+31,Lasagne med Ricotta og Spinat,6,lasagneplader 250g; hakket kød 300g; spinat 300g; ricotta 250g; ost 200g
+32,Langtidsstegt Flæskesteg med Rodfrugter,8,svinekam 2 kg; gulerødder 400g; selleri 200g; løg 2 stk
+33,Cremet Mos med Blomkål og Kartofler,6,kartofler 1 kg; blomkål 400g; mælk 200ml
+34,Fiskesuppe med Dild og Rodfrugter,4,torsk 400g; laks 200g; kartofler 400g; gulerødder 200g; dild 1 bundt
+35,Chili con Carne med Bønner og Krydderi,4,hakket kød 300g; røde bønner 400g; sorte bønner 400g; tomater 400g; løg 1 stk
+36,Frisk Stjerneskud med Avocado og Spinat,2,røget laks 200g; rejer 150g; avocado 1 stk; spinat 100g; rugbrød 4 skiver
+37,Kogt Torsk med Smør og Persille,4,torsk 600g; gulerødder 300g; kartofler 800g; persille 1 bundt
+38,Cremet Risengrød med Quinoa og Kanel,4,ris 200g; quinoa 100g; mælk 1 liter
+39,Smørrebrød med Linser og Leverpostej,4,rugbrød 8 skiver; leverpostej 200g; røgte linser 150g; agurk 1 stk; radiser 8 stk
+40,Kødboller med Ris og Grøntsagsfyld,4,hakket kød 400g; zucchini 200g; selleri 150g; ris 300g; bouillon 600ml
+41,One Pot Kylling i Karry,4,kyllingebryst 400g; røde linser 200g; ris 300g; gulerødder 200g; løg 1 stk; kokosmælk 400ml
+42,One Pot Paella med Kylling,6,kyllingelår 600g; quinoa 200g; ris 200g; chorizo 150g; peberfrugt 2 stk; ærter 150g; bouillon 800ml
+43,One Pot Kylling med Asparges,4,kyllingebryst 500g; asparges 300g; quinoa 250g; selleri 150g; persille 1 bundt; fløde 200ml
+44,One Pot Kylling og Ris,4,kyllingelår 500g; røde linser 250g; ris 200g; gulerødder 200g; løg 1 stk; bouillon 600ml
+45,One Pot Mexicansk Gryderett,4,hakket oksekød 300g; sorte bønner 400g; quinoa 200g; ris 150g; peberfrugt 2 stk; løg 1 stk
+46,One Pot Pasta med Kylling,4,pasta 400g; kyllingebryst 300g; spinat 200g; cherry tomater 300g; gulerødder 150g; parmesan 100g
+47,One Pot Pasta med Bacon og Fløde,4,pasta 400g; bacon 200g; kyllingebryst 300g; fløde 300ml; spinat 150g; parmesan 100g; hvidløg 2 fed
+48,One Pot Grøn Dahl,4,grønne linser 300g; røde linser 150g; kokosmælk 400ml; spinat 200g; løg 1 stk; ingefær 1 stk
+49,One Pot Blomkålsrisotto,4,blomkål 600g; quinoa 200g; kyllingebryst 400g; parmesan 150g; fløde 200ml; bouillon 600ml
+50,One Pot Græsk Kylling med Ris,4,kyllingelår 600g; ris 250g; quinoa 150g; citron 2 stk; oliven 100g; feta 150g; persille 1 bundt
+51,One Pot Italiensk Pastaret,4,pasta 400g; hakket oksekød 300g; røde linser 200g; tomatsauce 400g; mozzarella 200g; basilikum 1 bundt
+52,One Pot Lasagnesuppe,4,hakket oksekød 300g; røde linser 200g; pasta 300g; hakkede tomater 800g; ost 200g
+53,One Pot Orientalsk Oksekød og Ris,4,hakket oksekød 300g; røde linser 200g; ris 300g; gulerødder 200g; løg 1 stk; kokosmælk 200ml
+54,One Pot Indisk Vegetar Karry,4,kikærter 400g; røde linser 200g; kokosmælk 400ml; spinat 300g; løg 1 stk; ingefær 2 cm
+55,One Pot Mexicansk Kyllingegryderett,4,kyllingelår 500g; quinoa 200g; ris 150g; sorte bønner 400g; peberfrugt 2 stk; løg 1 stk
+56,One Pot Svensk Pølseret,4,pølser 6 stk; kartofler 600g; quinoa 200g; fløde 300ml; løg 1 stk
+57,One Pot Mexicansk Quinoagryderett,4,quinoa 300g; sorte bønner 400g; kidneybønner 400g; hakket oksekød 200g; peberfrugt 2 stk; løg 1 stk
+58,One Pot Chili sin Carne,4,røde linser 300g; sorte bønner 400g; kidneybønner 400g; hakkede tomater 800g; peberfrugt 3 stk; løg 2 stk
+59,Lun Quinoasalat med Rødbede og Feta,4,quinoa 200g; rødbede 300g; feta 150g; valnødder 50g; persille 1 bundt
+60,Krydret Kikærtegryde med Spinat og Tomat,4,kikærter 400g; spinat 200g; tomater 400g; løg 1 stk; hvidløg 2 fed
+61,Rugbrødssandwich med Æg og Avocado,2,rugbrød 4 skiver; æg 2 stk; avocado 1 stk; salat 50g; mayonnaise 50ml
+62,Vegetarisk Karrysuppe med Kokosmælk,4,gulerødder 300g; kartofler 400g; kokosmælk 400ml; karry 2 tsk; løg 1 stk
+63,Rødbedebøffer med Quinoa og Feta,4,rødbede 300g; quinoa 150g; feta 100g; æg 1 stk; havregryn 50g
+64,Grøntsagswok med Nudler og Soja,4,nudler 300g; broccoli 200g; gulerødder 150g; soja 50ml; sesamfrø 30g
+65,Fisk i Papir med Citron og Grøntsager,4,torsk 400g; gulerødder 200g; porrer 1 stk; citron 1 stk; persille 1 bundt
+66,Linsegryde med Gulerod og Selleri,4,røde linser 300g; gulerødder 200g; selleri 150g; bouillon 600ml; løg 1 stk
+67,Æggekage med Spinat og Tomat,4,æg 6 stk; spinat 200g; tomater 200g; mælk 100ml; ost 100g
+68,Couscoussalat med Kikærter og Granatæble,4,couscous 200g; kikærter 200g; granatæble 1 stk; mynte 1 bundt; citron 1 stk
+69,Bagt Laks med Citron og Dild,4,laks 600g; citron 2 stk; dild 1 bundt; kartofler 800g; smør 50g
+70,Kylling i Paprika med Ris,4,kyllingebryst 400g; paprika 2 tsk; ris 300g; fløde 200ml; løg 1 stk
+71,Fuldkornspasta med Broccoli og Parmesan,4,fuldkornspasta 300g; broccoli 300g; parmesan 100g; fløde 100ml; hvidløg 1 fed
+72,Tærte med Porre og Skinke,6,tærtebund 1 stk; porrer 2 stk; skinke 200g; æg 3 stk; fløde 200ml
+73,Bagt Aubergine med Tomat og Mozzarella,4,aubergine 2 stk; tomatsauce 300g; mozzarella 200g; basilikum 1 bund
+74,Kyllingesalat med Æbler og Valnødder,4,kyllingebryst 300g; æbler 2 stk; valnødder 50g; salat 100g; dressing 100ml
+75,Kartoffelgratin med Ost og Porre,6,kartofler 800g; porrer 2 stk; ost 200g; fløde 300ml; muskatnød 1 tsk
+76,Fuldkornsburger med Hjemmelavet Bøf,4,fuldkornsburgerboller 4 stk; hakket oksekød 400g; salat 100g; tomat 2 stk; dressing 100ml
+77,Bagt Græskar med Feta og Timian,4,hokkaido græskar 1 stk; feta 150g; timian 1 tsk; olivenolie 50ml
+78,Vegetarisk Bolognese med Linser,4,røde linser 300g; tomatsauce 400g; gulerødder 200g; løg 1 stk; hvidløg 2 fed
+79,Torskefrikadeller med Rødbede og Remoulade,4,torsk 400g; rødbede 200g; æg 1 stk; løg 1 stk; remoulade 100ml

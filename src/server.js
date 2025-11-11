@@ -135,6 +135,38 @@ function extractPrice(priceStr) {
   return match ? parseFloat(match[1].replace(',', '.')) : 0;
 }
 
+// Normalize price format from CSV inconsistencies
+function normalizePrice(priceStr) {
+  if (!priceStr || typeof priceStr !== 'string') return priceStr;
+  
+  let cleaned = priceStr.trim();
+  
+  // Fix missing decimal: "3995" or "3995kr" → "39.95 kr."
+  if (/^\d{3,4}(kr)?$/i.test(cleaned)) {
+    const digits = cleaned.replace(/kr/i, '');
+    if (digits.length === 4) {
+      cleaned = `${digits.slice(0, 2)}.${digits.slice(2)} kr.`;
+    } else if (digits.length === 3) {
+      cleaned = `${digits.slice(0, 1)}.${digits.slice(1)} kr.`;
+    }
+  }
+  
+  // Fix whole numbers: "39" → "39.-"
+  if (/^\d{1,3}$/.test(cleaned)) {
+    cleaned = `${cleaned}.-`;
+  }
+  
+  // Ensure space before kr: "39.-kr" → "39.- kr."
+  cleaned = cleaned.replace(/([0-9.-]+)(kr\.?)$/i, '$1 $2');
+  
+  // Standardize kr ending: "kr" → "kr."
+  if (!cleaned.endsWith('kr.') && cleaned.includes('kr')) {
+    cleaned = cleaned.replace(/kr$/i, 'kr.');
+  }
+  
+  return cleaned;
+}
+
 // Debug function to see category distribution
 function debugIngredientMatching(ingredientList, availableDeals) {
   console.log('\n=== INGREDIENT MATCHING DEBUG ===');
