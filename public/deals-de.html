@@ -59,8 +59,45 @@
                 </p>
             </div>
         </div>
+		
     </section>
-
+<section class="max-w-7xl mx-auto px-4 py-8">
+    <!-- Feedback & Newsletter Widget -->
+    <div class="bg-white rounded-xl shadow-md p-6 max-w-lg mx-auto">
+    <h3 class="text-lg font-bold text-gray-800 mb-4">📬 Bleiben Sie informiert</h3>
+    
+    <!-- Newsletter Signup -->
+    <div class="mb-4">
+        <p class="text-sm text-gray-600 mb-3">Möchten Sie die Wochenangebote per E-Mail erhalten?</p>
+        <button 
+            onclick="window.open('https://forms.gle/bS6NN1etZvp3ZiD57', '_blank')"
+            class="w-full bg-balanz-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-colors">
+            📧 Zum Newsletter anmelden
+        </button>
+    </div>
+    
+    <!-- Divider -->
+    <div class="border-t border-gray-200 my-4"></div>
+    
+    <!-- Quick Feedback -->
+    <div>
+        <p class="text-sm text-gray-600 mb-3">War diese Seite hilfreich?</p>
+        <div class="flex gap-3">
+            <button 
+                onclick="window.open('https://forms.gle/AgNQfoSFqmSbs1Zb8', '_blank')"
+                class="flex-1 bg-green-50 text-green-700 px-4 py-2 rounded-lg font-semibold hover:bg-green-100 transition-colors border border-green-200">
+                👍 Ja
+            </button>
+            <button 
+                onclick="window.open('https://forms.gle/AgNQfoSFqmSbs1Zb8', '_blank')"
+                class="flex-1 bg-red-50 text-red-700 px-4 py-2 rounded-lg font-semibold hover:bg-green-100 transition-colors border border-red-200">
+                👎 Nein
+            </button>
+        </div>
+        <p class="text-xs text-gray-500 mt-2">Ihr Feedback öffnet sich in einem neuen Fenster</p>
+    </div>
+</div>
+</section>
     <!-- Filters Section -->
     <section class="max-w-7xl mx-auto px-4 py-4 sm:py-8">
         <div class="text-center mb-6 sm:mb-8">
@@ -76,7 +113,7 @@
     <!-- Deals List -->
     <div class="max-w-7xl mx-auto px-4 mb-4 sm:mb-6 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-4">
         <div class="text-gray-600 text-center sm:text-left">
-            <span id="deals-count">0</span> Angebote gefunden
+            <span id="deals-count" class="font-bold">0</span> Angebote gefunden
         </div>
         <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center">
             <button onclick="printDeals()" 
@@ -113,14 +150,14 @@
     <footer class="bg-gray-800 text-white py-8 sm:py-12 mt-8">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <div class="mb-4 text-sm sm:text-base">
-                © 2025 SmartBalanz.dk - Die clevere Art einzukaufen
+                © 2025 SmartBalanz.dk - Die clevere Art in Dänemark einzukaufen
             </div>
             <div class="mb-4 flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-0">
                 <a href="/privacy-de.html" class="text-gray-300 hover:text-balanz-green transition-colors text-sm sm:mx-4">Datenschutz</a>
 <span class="hidden sm:inline text-gray-500">|</span>
 <a href="/privacy-de.html" class="text-gray-300 hover:text-balanz-green transition-colors text-sm sm:mx-4">Nutzungsbedingungen</a>
                 <span class="hidden sm:inline text-gray-500">|</span>
-                <a href="#" class="text-gray-300 hover:text-balanz-green transition-colors text-sm sm:mx-4">Kontakt</a>
+                <a href="mailto:smartbalanzdk@gmail.com" class="text-gray-200...">Kontakt</a>
             </div>
             <div class="text-gray-400 text-sm">
                 Mit ❤️ in Dänemark gemacht
