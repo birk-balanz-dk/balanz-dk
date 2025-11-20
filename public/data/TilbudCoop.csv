@@ -1,130 +1,104 @@
 Category,Deal Name,Amount,Price
-Bakery & Bread,Julebolle,Stk,15.-
-Bakery & Bread,Julesmåkager,170-200 g,30.-
-Bakery & Bread,Kohberg brød,1 pakke,18.-
-Bakery & Bread,Onsdagssnegl - Bløddejssnegl eller høj snegl,Stk,10.-
-Bakery & Bread,Softkerne- eller græskarkernerugbrød,Stk,30.-
-Bakery & Bread,Valgkage,Stk,20.-
-Beverages,1000 Stories,75 cl,99.-
-Beverages,Amarone Pagus Bisano eller Morel Gigondas,75 cl,159.-
-Beverages,Aventino 200 Barrels eller Guigal Côtes-du-Rhône,75 cl,79.-
-Beverages,Bollinger Champagne Special Cuvée,75 cl,379.-
-Beverages,Borgo del Mandorlo Primitivo di Manduria,75 cl,69.-
-Beverages,Bombay Sapphire Gin- Johnnie Walker Red Whisky- Ga-Jol Shots eller Underberg Box,70 cl- 12x2 cl,109.-
-Beverages,Braunstein eller Willemoes,50 cl,12.-
-Beverages,Brooklyn- Brøl- Guinness- Mikkeller eller Ugly Duck,33-50 cl,18.-
-Beverages,Burmester 10 Year Old Tawny,75 cl,99.-
-Beverages,Burmester Colheita 2005,75 cl,179.-
-Beverages,Burmester LBV 2019,75 cl,109.-
-Beverages,Burmester Tawny eller Ruby,75 cl,79.-
-Beverages,Bushmills Original Whiskey- Stoli Vodka eller Casoni Sambuca,70 cl,99.-
-Beverages,Carlsberg eller Tuborg,18-20 x 33 cl,112.-
-Beverages,Cellier d'Or Côtes-du-Rhône eller Château Guion Barrail,75 cl,40.-
-Beverages,Chateau La Fleur Peilhan eller La Croix Chaigneau,75 cl,119.-
-Beverages,Coca-Cola- Fanta- Schweppes- Sprite eller Nestea,125-150 cl,10.-
-Beverages,Faxe Kondi eller Pepsi Max,24 x 33 cl,79.-
-Beverages,Fragments de Loire Pouilly Fumé,75 cl,129.-
-Beverages,Frissé,75 cl,25.-
-Beverages,Harboe eller Leffe,75 cl- 6 x 33 cl,25.-
-Beverages,¡H! Cava,75 cl,69.-
-Beverages,Irma gløgg,75 cl,45.-
-Beverages,La Mascota,75 cl,50.-
-Beverages,Laroche Chablis,75 cl,139.-
-Beverages,Laugel Cremant d'Alsace,75 cl,75.-
-Beverages,Laugel Riesling eller Pinot Blanc,75 cl,59.-
+Bakery & Bread,Irma julekager,180-240 g,28.-
+Bakery & Bread,Klejner,5 stk,40.-
+Bakery & Bread,Kohberg brød,320-1000 g,15.-
+Bakery & Bread,Onsdagssnegl,Stk,10.-
+Beverages,1664- Breezer- Grimbergen eller Somersby,27-5-33 cl,13.-
+Beverages,Ap Rosso- Bianco eller Rosato,75 cl,39.-
+Beverages,Blomberg's Gløgg,1 liter,45.-
+Beverages,Blue Keld,1 liter,7.-
+Beverages,Bread & Butter i boks,2-25 liter,149.-
+Beverages,Canaja Gold,6 x 75 cl,299.-
+Beverages,Carlsberg eller Tuborg 30 stk kasse,30 x 33 cl,135.-
+Beverages,COOP eller Gevalia hele kaffe bønner,900-1000 g,109.-
+Beverages,Coca-Cola eller Fanta 24-pak,24 x 33 cl,99.-
+Beverages,Coca-Cola- Fanta- Schweppes eller Sprite,125-150 cl,16.-
+Beverages,Die Weinmacher- Giordano Selvato eller LaCheteau…,75 cl,60.-
+Beverages,El Tocador- Dulong Bordeaux eller Duc Royal Blanc…,75 cl,50.-
+Beverages,Faxe Kondi Booster,50 cl,15.-
+Beverages,Fuentespina Crianza- Landgraf Riesling Spätlese eller…,75 cl,89.-
+Beverages,Grimbergen eller Jacobsen,75 cl,20.-
+Beverages,Heineken eller Royal 18/20-pak,18-20 x 33 cl,79.-
+Beverages,Karat eller Peter Larsen formalet kaffe,400 g,39.-
 Beverages,L'OR- Lavazza eller Cirkel Kaffe kapsler,10 kapsler,24.-
-Beverages,Manfredi Asti Spumante eller Moscato d'Asti,75 cl,55.-
-Beverages,Moillard Saint Veran,75 cl,99.-
-Beverages,Nescafe eller Peter Larsen Instant kaffe,100 g,55.-
-Beverages,Pasas,75 cl,35.-
-Beverages,Pascal Combeau VSOP Cognac- Malfy Gin eller Havana Club 7 års Rom,70 cl,179.-
-Beverages,PepperBox Shiraz eller Chardonnay,75 cl,69.-
-Beverages,Piccini Memoro i boks,3 liter,99.-
-Beverages,Red Bull eller Powerade,25-50 cl,12.-
-Beverages,Spier Blue Water Bay Pinot Noir eller Sauvignon Blanc,6 flasker,299.-
-Beverages,Sunrise,75 cl,30.-
-Beverages,The Glenlivet 12 års Single Malt Whisky- Normandin XO Cognac eller Bumbu Original,70 cl,249.-
-Beverages,Torres Coronas eller Esmeralda i boks,3 liter,149.-
-Beverages,Veronia Appassimento eller Hans Baer Riesling,75 cl,40.-
-Beverages,Viña Maipo i boks,3 liter,119.-
-Beverages,Yealands Reserve Sauvignon Blanc,75 cl,69.-
-Beverages,Yellow Tail,75 cl,45.-
-Beverages,Pier 39 Zinfandel eller Chardonnay i boks,3 liter,139.-
-Dairy & Eggs,Arla laktosefri smør eller smørbar,250 g,29.-
-Dairy & Eggs,Castello premium smelteost eller Saga,150-200 g,24.-
-Dairy & Eggs,Coop piskefløde,500 ml,19.-
-Dairy & Eggs,Coop revet ost,150-200 g,10.-
-Dairy & Eggs,Dr. Oetker dessert- Cheasy skyr eller Risifrutti,100-180 g,5.-
-Dairy & Eggs,Klovborg eller Cheasy skiveost,200-240 g,29.-
-Dairy & Eggs,Riberhus eller Castello Aged Havarti,Min. 400 g,49.-
-Dairy & Eggs,Stay Strong skyr,500 g,15.-
-Dairy & Eggs,Yoggi yoghurt eller Cultura A38,1 kg,14.-
-Fish & Seafood,Glyngøre fiske- eller laksefars,400 g,32.-
-Fish & Seafood,Glyngøre Premium tun,105 g,12.-
+Beverages,Linie Aquavit- Gammel Dansk Bitter eller Pure Shots,70 cl,109.-
+Beverages,Malibu- Ballantine's Whisky- Beefeater Gin eller Absolut Vodka,70 cl,89.-
+Beverages,Matilde kakao skummetmælk,1 liter,10.-
+Beverages,Mokai- Shaker eller Schiøtz,27-5-44 cl,10.-
+Beverages,Pickwick eller Fredsted Te,16-20 breve,12.-
+Beverages,Pocas 10 Years Old Tawny eller White,75 cl,119.-
+Beverages,Ribena,85 cl,20.-
+Beverages,Route 2 i boks,3 liter,109.-
+Beverages,Solco Toscana- Landgraf eller Coteaux d´Aix…,75 cl,79.-
+Beverages,Spier Signature,75 cl,35.-
+Beverages,Svaneke- Thisted- Thy eller Ørbæk,50 cl,18.-
+Beverages,Vinmarked (Australien eller Italien),75 cl,45.-
+Beverages,Vinmarked (Tosalet Montsant- Vila Annone- Novas eller Clarkson),75 cl,50.-
+Beverages,Z-Zinfandel eller Adobe i boks,3 liter,149.-
+Dairy & Eggs,Castello dessertost eller krans,125-200 g,20.-
+Dairy & Eggs,Cheasy hytteost,500 g,20.-
+Dairy & Eggs,Cheasy skæreost,495 g,55.-
+Dairy & Eggs,Coop yoghurt,1 kg,12.-
+Dairy & Eggs,Cremefine madlavning,250 ml,10.-
+Dairy & Eggs,Galbani mozzarella eller burrata,150-250 g,28.-
+Dairy & Eggs,Klovborg skæreost,Min- 585 g,55.-
+Dairy & Eggs,Lurpak smør eller smørbar,200 g,15.-
+Fish & Seafood,Amanda luksusrogn,200 g,16.-
+Fish & Seafood,Glyngøre lakse- eller torskefilet,225 g,49.-
+Fish & Seafood,Glyngøre sild,182-340 g,25.-
+Fish & Seafood,Glyngøre tun,105 g,12.-
 Fish & Seafood,Rahbek fiskefileter- Diskobay kutterrejer- røget eller gravad laks,100-400 g,20.-
-Fish & Seafood,Varmrøget laksesnitter,Stk,45.-
-Frozen Foods,Andebryst,160-200 g,2.-
-Frozen Foods,Bornholmergrisen stegeflæsk,1500 g,129.-
-Frozen Foods,Coop Italiana pizza,360-415 g,22.-
-Frozen Foods,Magnum is,255-330 ml,25.-
-Frozen Foods,Mou special supper,1000 g,28.-
-Frozen Foods,Stegeflæsk i skiver,2000 g,125.-
-Fruits & Vegetables,Danske Vildmosekartofler,1-5 kg,12.-
-Fruits & Vegetables,Irma Dulcita tomater,200 g,25.-
-Fruits & Vegetables,Klementiner i julesæk,1-5 kg,35.-
-Fruits & Vegetables,Portobello svampe,300 g,15.-
-Meat & Poultry,Coop bacon,3 x 100 g,25.-
-Meat & Poultry,Coop dansk kyllingebryst eller inderfilet,600 g,42.-
-Meat & Poultry,Coop dansk kyllingover- eller underlår,700-800 g,29.-
-Meat & Poultry,Coop hel ovnklar flæskesteg,4000-5000 g,199.-
-Meat & Poultry,Coop stegeflæsk i skiver,1000 g,69.-
-Meat & Poultry,Dansk hele kyllingelår uden ryg,2000 g,69.-
-Meat & Poultry,Dansk hel Holger kylling,1600 g,59.-
-Meat & Poultry,Dansk Kalv culotte eller tyndsteg,500 g,95.-
-Meat & Poultry,Dansk Kalv entrecote,250- 275 g,65.-
-Meat & Poultry,Entrecote eller ribeye,400 g,99.-
-Meat & Poultry,Gammeldags oksegrydesteg af bov eller tykkam,500 g,70.-
-Meat & Poultry,Gourmetsaltet stegeflæsk XL,375 g,35.-
-Meat & Poultry,Hakket gris 8-12%- hakket kylling 7-10% eller julemedister,450-500 g,29.-
+Fish & Seafood,Rossini laks eller Royal Greenland kutterrejer XL,100-230 g,45.-
+Frozen Foods,Coop æbleskiver,560 g,10.-
+Frozen Foods,Coop grøntsager,300-750 g,14.-
+Frozen Foods,Coop Kylling,300-1500 g,32.-
+Frozen Foods,Gustav Berberi bryststeg,450 g,69.-
+Frozen Foods,Mou kød- og melboller eller kødboller,700-900 g,44.-
+Frozen Foods,Tradizionale Pizza,360-390 g,22.-
+Fruits & Vegetables,Broccoli,Stk,12.-
+Fruits & Vegetables,Formodne avocadoer,3 stk,20.-
+Fruits & Vegetables,Irma danske rødder til ovn eller salat,1,3 kg,25.-
+Fruits & Vegetables,Rubens æbler fra Fejø,Bakke med 6-8 stk,20.-
+Fruits & Vegetables,Store appelsiner,4 stk,20.-
+Meat & Poultry,Coop dansk hel kylling,1350 g,39.-
+Meat & Poultry,Coop julemedister,500 g,25.-
+Meat & Poultry,Coop koteletter- skinkeschnitzler eller stegeflæsk,400-500 g,39.-
+Meat & Poultry,Coop mørbrad af gris eller flæskesteg,1500-2500 g,99.-
+Meat & Poultry,Dansk Kalv grydesteg af bov- tykkam eller spidsbryst,Pr- ½ kg,75.-
+Meat & Poultry,Dansk Kalv mørbrad,Pr- ½ kg,169.-
+Meat & Poultry,Entrecote,4 stk-/700g,159.-
+Meat & Poultry,Entrecote eller ribeye,Pr- ½ kg,75.-
+Meat & Poultry,Gårdlykke pålæg,60-90 g,16.-
 Meat & Poultry,Hakket oksekød 8-12% eller kyllingebryst med lage,600-1000 g,69.-
-Meat & Poultry,Irma gourmetsaltet flæskesteg,500 g,45.-
-Meat & Poultry,Kødboller,500 g,39.-
-Meat & Poultry,Koteletter eller skaftkoteletter,900-1000 g,75.-
-Meat & Poultry,Pålækker pålæg,70-125 g,10.-
-Meat & Poultry,Smag Forskellen delikatessepålæg eller belgisk paté,70-110 g,69.-
-Organic,Änglamark dansk økologisk flæsk i skiver,300 g,39.-
-Organic,Änglamark økologisk spinat - Skyllet og klar til brug,200 g,20.-
-Organic,Änglamark økologiske appelsiner,1-5 kg,28.-
-Organic,Änglamark økologiske bananer,Min. 1-3 kg,20.-
-Organic,Änglamark økologiske danske gulerødder,750 g,14.-
-Organic,Änglamark økologiske æg,10 stk,30.-
-Organic,Änglamark økologiske havregryn,3x1000 g,30.-
-Organic,Änglamark økologiske klementiner fra Rio Tinto,750 g,23.-
-Organic,Irma økologiske æbleskiver,336 g,25.-
-Organic,Thise dansk økologisk smør eller smørbar,200 g,20.-
-Pantry Items,Becel flydende eller OMA stege-bage,3 x 500 ml- 500 g,36.-
-Pantry Items,Carletti kæmpeplade,170-200 g,39.-
-Pantry Items,Coop mandelmel,30-270 g/38 ml,14.96 kr.
-Pantry Items,Coop Regnbue mix krymmel,30-270 g/38 ml,31.46 kr.
-Pantry Items,Coop Vaniljestang,30-270 g/38 ml,10.46 kr.
-Pantry Items,Dan Sukker,2000 g,15.-
-Pantry Items,De cecco pasta,500 g,22.-
-Pantry Items,Delikatessens tapasplatte,Stk,165.-
-Pantry Items,Dr. Oetker Konditorfarve rød,30-270 g/38 ml,13.46 kr.
-Pantry Items,Dr. Oetker Sukat,30-270 g/38 ml,15.71 kr.
-Pantry Items,Dr. Oetker Vaniljesukker,30-270 g/38 ml,13.46 kr.
-Pantry Items,Dr. Oetker vaniljearoma,30-270 g/38 ml,10.69 kr.
-Pantry Items,Graasten pålægssalater,120 g,10.-
-Pantry Items,Irma pålægssalater,150-175 g,25.-
-Pantry Items,Jensens Køkken sauce,250-350 ml,14.-
-Pantry Items,K-Salat remoulade eller mayonnaise,375 g,16.-
-Pantry Items,Kellogg's morgenmad,330-500 g,30.-
-Pantry Items,KiMs chips eller nødder,97-170 g,14.-
-Pantry Items,Odense lakridspulver,30-270 g/38 ml,18.75 kr.
-Pantry Items,Odense marcipan,200 g,35.-
-Pantry Items,Paradiso asparges,240 g,16.-
-Pantry Items,Storkøbsmarked,600-2000 g,129.-
-Pantry Items,Stryhns leverpostej,275-400 g,20.-
+Meat & Poultry,Hjemmelavet sylte,400-450 g,49.-
+Meat & Poultry,Irma Marie postej eller paté med hjortekød,100-200 g,15.-
+Meat & Poultry,Italiensk produceret pålæg,70-125 g,22.-
+Meat & Poultry,Jensens spareribs,500 g,49.-
+Meat & Poultry,Rå rullepølse,1000g,89.-
+Meat & Poultry,Ribbensteg- kogestykke-eller rullesteg,Pr- ½ kg,35.-
+Meat & Poultry,Steff Houlberg pølser,800-913 g,49.-
+Meat & Poultry,Stegte kyllingestykker,150 g,18.-
+Organic,Änglamark økologisk hakket oksekød 8-12%,400 g,59.-
+Organic,Änglamark økologisk pasta,500 g,10.-
+Organic,Hansens økologiske flødeis,600-725 ml,49.-
+Organic,I'm Your Organic eller Diamond Cellars i boks,3 liter,99.-
+Organic,Naturli' plantedrik,1 liter,12.-
+Organic,Poppelgris dansk økologisk flæskesteg,Pr- ½ kg,65.-
+Organic,Thise økologisk græsk inspireret yoghurt,1 kg,32.-
+Organic,Yealands Single Block Organic Sauvignon Blanc,75 cl,69.-
+Organic,Økologisk Godmorgen juice eller Nektar,850 ml,25.-
+Pantry Items,Ama flydende eller stege-bage,500 ml/500 g,15.-
+Pantry Items,Bähncke fast food dressinger,225-425 g,16.-
+Pantry Items,Coop marcipan,400 g,45.-
+Pantry Items,Deli pizza,1000g,55.-
+Pantry Items,Delikatessens tapasplatte,1 stk,165.-
+Pantry Items,Den gamle fabrik marmelade,600 g,25.-
+Pantry Items,Galle & Jessen pålægschokolade,3x216 g,100.-
+Pantry Items,Guldknas eller Mini snebolde,75 g,15.-
+Pantry Items,Heinz ketchup,580-1000 g,25.-
+Pantry Items,Jensens Køkken sauce,500 ml,25.-
+Pantry Items,K-Salat pålægssalater,100-150 g,12.-
+Pantry Items,Malaco- snøre- stjerner eller Katjes,92-120 g,10.-
+Pantry Items,Ota grødris,450 g,10.-
+Pantry Items,Taffel chips eller nødder,110-175 g,14.-
 Pantry Items,Toms bars- Toms Mini- M&M's eller Maltesers,105-150 g,25.-
-Pantry Items,Twist,144-145 g,35.-
-Pantry Items,Valsemøllen dansk hvedemel,2000 g,12.-
